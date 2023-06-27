@@ -1,6 +1,6 @@
 <?php
 
-namespace dotwitter\Core;
+namespace dotwitter\app\Core;
 
 class Router
 {

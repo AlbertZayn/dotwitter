@@ -2,8 +2,8 @@
 
 spl_autoload_register(function ($className) {
     var_dump($className);
-    $baseNamespace = 'dotwitter\\app\\';
-    $baseDirectory = __DIR__ . '/dotwitter/app/';
+    $baseNamespace = 'dotwitter\\';
+    $baseDirectory = __DIR__ . '/';
 
     $className = ltrim($className, '\\');
     $fileName = '';
@@ -21,5 +21,5 @@ spl_autoload_register(function ($className) {
     if (file_exists($file)) {
         require $file;
     }
-    var_dump($file);
+ 
 });
