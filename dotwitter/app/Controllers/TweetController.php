@@ -11,6 +11,6 @@ class TweetController
         $model = new TweetModel();
         $message = $model->getMessage();
 
-        include_once __DIR__ . '/../Views/HomePage.php';
+        include_once __DIR__ . '/../Views/home.php';
     }
 }

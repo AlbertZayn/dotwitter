@@ -1,9 +1,8 @@
 <?php
-$title = 'Explore / dotwitter';
+$title = 'Main / dotwitter';
 ?>
 
 <html>
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,8 +14,8 @@ $title = 'Explore / dotwitter';
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">
-    </script>
+            integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+            crossorigin="anonymous"></script>
     <!-- Favicon -->
     <link rel="shortcut icon" href="/public/images/favicon32x.png" type="image/png">
     <!-- Fonts -->
@@ -39,13 +38,26 @@ $title = 'Explore / dotwitter';
     }
 
     .birdSide {
+        position: relative;
         background-color: #1DA1F2;
     }
 
+    .birdSide-container {
+        position: relative;
+    }
+
     .birdSide-bg-img {
-        height: 100%;
+        display: block;
         width: 100%;
-        z-index: -1;
+        height: 100vh;
+    }
+
+    .birdSide-fr-img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
     }
 
     .loginSide {
@@ -54,7 +66,7 @@ $title = 'Explore / dotwitter';
 
     .col {
         width: 100%;
-        height: 661px;
+        height: auto;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -75,6 +87,11 @@ $title = 'Explore / dotwitter';
         margin-bottom: 32px;
     }
 
+    .loginSide-functionality {
+        display: grid;
+        flex-direction: column;
+    }
+
     #username {
         height: 44px;
         width: 300px;
@@ -88,6 +105,7 @@ $title = 'Explore / dotwitter';
         height: 44px;
         width: 300px;
         border-radius: 24px;
+        margin-bottom: 20px;
         border-style: solid;
         border-color: rgb(207, 217, 222);
     }
@@ -101,14 +119,16 @@ $title = 'Explore / dotwitter';
         padding: 0 0 0 20px;
     }
 
+    .or-span {
+        padding: 2px 4px 0;
+    }
+
     hr {
         width: 134px;
         color: rgb(185, 202, 211)
     }
 
-
-
-    .signUp {
+    .logIn-btn {
         width: 300px;
         border-radius: 24px;
         background-color: rgb(29, 155, 240);
@@ -119,20 +139,19 @@ $title = 'Explore / dotwitter';
         border-style: none;
         font-size: 16px;
         font-weight: 700;
-     }
+        cursor: pointer;
+    }
 
-    .signUp:hover {
+    .logIn-btn:hover {
         background-color: rgb(26, 140, 216);
     }
 
-    .logIn-bottom {
-        position: relative;
-        display: inline-block;
-        padding: 40px 0 20px;
+    .SignUp-question {
+        padding: 40px 0 0;
         font-weight: 700;
     }
 
-    .logIn-btn {
+    .SignUp-btn {
         width: 300px;
         border-radius: 24px;
         border-style: double;
@@ -145,36 +164,48 @@ $title = 'Explore / dotwitter';
         height: 40px;
         font-size: 17px;
         letter-spacing: -0.5px;
+        cursor: pointer;
     }
 
+    .SignUp-btn:hover {
+        background-color: rgb(29, 150, 240, 0.1);
+    }
 </style>
-
-</head>
 
 <body>
 <div class="grid-container">
     <section class="birdSide">
-        <img src="/public/images/birdSide.png" class="img-fluid birdSide-bg-img" alt="#">
+        <div class="birdSide-container">
+            <img src="/public/images/birdSide.png" class="img-fluid birdSide-bg-img" alt="#">
+            <svg class="img-fluid birdSide-fr-img" xmlns="http://www.w3.org/2000/svg" width="359" height="292"
+                 viewBox="0 0 512 512">
+                <style>svg {
+                        fill: #ffffff
+                    }</style>
+                <path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/>
+            </svg>
+        </div>
     </section>
     <section class="loginSide">
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <img src="/public/images/favicon96x.png" height="96" width="96" class="img-fluid" alt="...">
+                    <img src="https://cdn.iconscout.com/icon/free/png-256/free-twitter-241-721979.png" height="34.2"
+                         width="42.6" class="img-fluid" alt="...">
                     <h1>Happening now</h1>
-                    <h2>Join Twitter today</h2>
-                    <input type="text" id="username" placeholder="  Username">
-                    <input type="password" id="password" placeholder="  Password">
-                    <div class="or">
-                        <hr>
-                        <span>or</span>
-                        <hr>
-                        <br>
-                    </div>
-                    <button class="signUp">Create account</button>
-                    <div class="logIn-bottom">
-                        <span>Already have an account?</span><br>
-                        <button class="logIn-btn">Log in</button>
+                    <h2>Join dotwitter today</h2>
+                    <div class="loginSide-functionality">
+                        <input type="text" id="username" placeholder="  Username">
+                        <input type="password" id="password" placeholder="  Password">
+                        <button class="logIn-btn">Log In</button>
+                        <div class="or">
+                            <hr>
+                            <span class="or-span">or</span>
+                            <hr>
+                            <br>
+                        </div>
+                        <span class="SignUp-question">Don't have an account?</span><br>
+                        <button class="SignUp-btn">Create account</button>
                     </div>
                 </div>
             </div>
