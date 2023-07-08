@@ -8,9 +8,6 @@ class TweetController
 {
     public function index()
     {
-        $model = new TweetModel();
-        $message = $model->getMessage();
-
-        include_once __DIR__ . '/../Views/home.php';
+        include_once __DIR__ . '/../Views/main.php';
     }
 }

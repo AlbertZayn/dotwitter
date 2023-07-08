@@ -1,5 +1,5 @@
 <?php
-$title = 'Home / dotwitter';
+$title = 'Explore / dotwitter';
 ?>
 
 <!DOCTYPE html>

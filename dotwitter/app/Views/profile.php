@@ -1,5 +1,5 @@
 <?php
-$title = 'Home / dotwitter';
+$title = 'Profile / dotwitter';
 ?>
 
 <!DOCTYPE html>
@@ -13,3 +13,4 @@ $title = 'Home / dotwitter';
     
 </body>
 </html>
+
