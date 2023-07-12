@@ -1,10 +1,8 @@
 <?php
 
-namespace dotwitter\App\Controllers;
+namespace dotwitter\app\Controllers;
 
-use dotwitter\App\Models\TweetModel;
-
-class TweetController
+class MainController
 {
     public function index()
     {

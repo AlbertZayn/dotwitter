@@ -9,7 +9,7 @@ $title = 'Main / dotwitter';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $title; ?></title>
     <!-- CSS -->
-    <link rel="stylesheet" href="/public/styles.css">
+    <link rel="stylesheet" href="/styles.css">
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
@@ -17,7 +17,7 @@ $title = 'Main / dotwitter';
             integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
             crossorigin="anonymous"></script>
     <!-- Favicon -->
-    <link rel="shortcut icon" href="/public/images/favicon32x.png" type="image/png">
+    <link rel="shortcut icon" href="/images/favicon32x.png" type="image/png">
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -176,7 +176,7 @@ $title = 'Main / dotwitter';
 <div class="grid-container">
     <section class="birdSide">
         <div class="birdSide-container">
-            <img src="/public/images/birdSide.png" class="img-fluid birdSide-bg-img" alt="#">
+            <img src="/images/birdSide.png" class="img-fluid birdSide-bg-img" alt="#">
             <svg class="img-fluid birdSide-fr-img" xmlns="http://www.w3.org/2000/svg" width="359" height="292"
                  viewBox="0 0 512 512">
                 <style>svg {

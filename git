@@ -1,0 +1,9 @@
+Complete main page accoding to milestone
+
+Solve the problem with links after redirecting index.php file.
+Complete accessebility to links for home, profile, explore pages.
+Autoformate entire code.
+Fix autoloader.
+
+User Story 1, `public/index.php`, autoformating
+ 

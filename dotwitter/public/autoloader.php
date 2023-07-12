@@ -1,7 +1,6 @@
 <?php
 
 spl_autoload_register(function ($className) {
-    var_dump($className);
     $baseNamespace = 'dotwitter\\';
     $baseDirectory = __DIR__ . '/';
 
@@ -12,14 +11,12 @@ spl_autoload_register(function ($className) {
     if ($lastNsPos = strrpos($className, '\\')) {
         $namespace = substr($className, 0, $lastNsPos);
         $className = substr($className, $lastNsPos + 1);
-        $fileName = $baseDirectory . str_replace('\\', DIRECTORY_SEPARATOR, $namespace) . DIRECTORY_SEPARATOR;
+        $fileName = '..' . DIRECTORY_SEPARATOR . 'app' . DIRECTORY_SEPARATOR . 'Core' . DIRECTORY_SEPARATOR . 'Router.php';
     }
 
-    $fileName .= str_replace('_', DIRECTORY_SEPARATOR, $className) . '.php';
-    $file = $baseDirectory . DIRECTORY_SEPARATOR . $fileName;
-
-    if (file_exists($file)) {
-        require $file;
+    if (file_exists($fileName)) {
+        require_once $fileName;
+    } else {
+        echo "File not found: $fileName";
     }
-
 });
