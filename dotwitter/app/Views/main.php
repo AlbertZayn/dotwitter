@@ -1,4 +1,5 @@
 <?php
+
 $title = 'Main / dotwitter';
 ?>
 
@@ -7,9 +8,8 @@ $title = 'Main / dotwitter';
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $title; ?></title>
-    <!-- CSS -->
-    <link rel="stylesheet" href="/styles.css">
+    <title><?php
+        echo $title; ?></title>
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
@@ -22,155 +22,9 @@ $title = 'Main / dotwitter';
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700;800;900&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="/styles.css">
 </head>
-
-<style>
-    body {
-        margin: 0;
-        padding: 0;
-        font-family: 'Work Sans', sans-serif;
-    }
-
-    .grid-container {
-        display: grid;
-        grid-template-columns: 1.175fr 1fr;
-        height: 100vh;
-    }
-
-    .birdSide {
-        position: relative;
-        background-color: #1DA1F2;
-    }
-
-    .birdSide-container {
-        position: relative;
-    }
-
-    .birdSide-bg-img {
-        display: block;
-        width: 100%;
-        height: 100vh;
-    }
-
-    .birdSide-fr-img {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 1;
-    }
-
-    .loginSide {
-        padding: 20px;
-    }
-
-    .col {
-        width: 100%;
-        height: auto;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    h1 {
-        font-size: 64px;
-        font-weight: 800;
-        letter-spacing: 2.2px;
-        margin-bottom: 48px;
-        margin-top: 48px;
-    }
-
-    h2 {
-        font-size: 32px;
-        font-weight: 700;
-        font-stretch: 200%;
-        margin-bottom: 32px;
-    }
-
-    .loginSide-functionality {
-        display: grid;
-        flex-direction: column;
-    }
-
-    #username {
-        height: 44px;
-        width: 300px;
-        border-radius: 24px;
-        margin-bottom: 20px;
-        border-style: solid;
-        border-color: rgb(207, 217, 222);
-    }
-
-    #password {
-        height: 44px;
-        width: 300px;
-        border-radius: 24px;
-        margin-bottom: 20px;
-        border-style: solid;
-        border-color: rgb(207, 217, 222);
-    }
-
-    .or {
-        display: flex;
-        flex-direction: row;
-        justify-content: left;
-        width: 280px;
-        margin: 4px 0 4px;
-        padding: 0 0 0 20px;
-    }
-
-    .or-span {
-        padding: 2px 4px 0;
-    }
-
-    hr {
-        width: 134px;
-        color: rgb(185, 202, 211)
-    }
-
-    .logIn-btn {
-        width: 300px;
-        border-radius: 24px;
-        background-color: rgb(29, 155, 240);
-        color: #fff;
-        letter-spacing: -0.5px;
-        margin-bottom: 8px;
-        height: 40px;
-        border-style: none;
-        font-size: 16px;
-        font-weight: 700;
-        cursor: pointer;
-    }
-
-    .logIn-btn:hover {
-        background-color: rgb(26, 140, 216);
-    }
-
-    .SignUp-question {
-        padding: 40px 0 0;
-        font-weight: 700;
-    }
-
-    .SignUp-btn {
-        width: 300px;
-        border-radius: 24px;
-        border-style: double;
-        border-color: rgb(223, 230, 234);
-        background-color: #fff;
-        color: rgb(29, 155, 240);
-        font-weight: 700;
-        letter-spacing: -1px;
-        margin-bottom: 8px;
-        height: 40px;
-        font-size: 17px;
-        letter-spacing: -0.5px;
-        cursor: pointer;
-    }
-
-    .SignUp-btn:hover {
-        background-color: rgb(29, 150, 240, 0.1);
-    }
-</style>
 
 <body>
 <div class="grid-container">
@@ -204,8 +58,14 @@ $title = 'Main / dotwitter';
                             <hr>
                             <br>
                         </div>
-                        <span class="SignUp-question">Don't have an account?</span><br>
-                        <button class="SignUp-btn">Create account</button>
+                        <div class="SignUp-question">
+                            <span>Don't have an account?</span>
+                            <span>Want to explore without registration?</span>
+                        </div>
+                        <div class="SignUp-btn-box">
+                            <button class="SignUp-btn">Create account</button>
+                            <button class="SignUp-btn">Explore</button>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -4,8 +4,8 @@ namespace dotwitter\app\Controllers;
 
 class MainController
 {
-    public function index()
+    public static function getPage()
     {
-        include_once __DIR__ . '/../Views/main.php';
+        require_once '/../app/Views/main.php';
     }
 }
