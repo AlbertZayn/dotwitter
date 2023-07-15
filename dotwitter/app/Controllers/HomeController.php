@@ -4,9 +4,8 @@ namespace dotwitter\app\Controllers;
 
 class HomeController
 {
-    public function index()
+    public static function getPage()
     {
-        include_once __DIR__ . '/../Views/home.php';
+        require_once __DIR__ . '/../Views/home.php';
     }
 }
-

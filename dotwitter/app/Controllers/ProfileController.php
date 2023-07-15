@@ -4,8 +4,8 @@ namespace dotwitter\app\Controllers;
 
 class ProfileController
 {
-    public function index()
+    public static function getPage()
     {
-        include_once __DIR__ . '/../Views/profile.php';
+        require_once __DIR__ . '/../Views/profile.php';
     }
 }

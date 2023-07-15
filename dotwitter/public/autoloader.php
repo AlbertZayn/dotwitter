@@ -2,16 +2,14 @@
 
 spl_autoload_register(function ($className) {
     $baseNamespace = 'dotwitter\\';
-    $baseDirectory = __DIR__ . '/';
+    $baseDirectory = __DIR__ . '/../';
 
     $className = ltrim($className, '\\');
     $fileName = '';
-    $namespace = '';
 
-    if ($lastNsPos = strrpos($className, '\\')) {
-        $namespace = substr($className, 0, $lastNsPos);
-        $className = substr($className, $lastNsPos + 1);
-        $fileName = '..' . DIRECTORY_SEPARATOR . 'app' . DIRECTORY_SEPARATOR . 'Core' . DIRECTORY_SEPARATOR . 'Router.php';
+    if (strpos($className, $baseNamespace) === 0) {
+        $className = substr($className, strlen($baseNamespace));
+        $fileName = $baseDirectory . str_replace('\\', DIRECTORY_SEPARATOR, $className) . '.php';
     }
 
     if (file_exists($fileName)) {
@@ -20,4 +18,3 @@ spl_autoload_register(function ($className) {
         echo "File not found: $fileName";
     }
 });
-

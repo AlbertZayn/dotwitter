@@ -49,8 +49,8 @@ $title = 'Main / dotwitter';
                     <h1>Happening now</h1>
                     <h2>Join dotwitter today</h2>
                     <div class="loginSide-functionality">
-                        <input type="text" id="username" placeholder="  Username">
-                        <input type="password" id="password" placeholder="  Password">
+                        <input type="text" id="username" maxlength="50" placeholder="  Username" onfocus="" onblur="this.placeholder">
+                        <input type="password" id="password" ondragstart="" placeholder="  Password" onfocus="" onblur="this.placeholder">
                         <button class="logIn-btn">Log In</button>
                         <div class="or">
                             <hr>
@@ -67,6 +67,11 @@ $title = 'Main / dotwitter';
                             <button class="SignUp-btn">Explore</button>
                         </div>
                     </div>
+                    <footer>
+                        <div>
+
+                        </div>
+                    </footer>
                 </div>
             </div>
     </section>

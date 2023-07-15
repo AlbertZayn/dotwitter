@@ -2,20 +2,27 @@
 
 namespace dotwitter\app\Core;
 use dotwitter\app\Controllers\MainController;
-
+use dotwitter\app\Controllers\HomeController;
+use dotwitter\app\Controllers\ExploreController;
+use dotwitter\app\Controllers\ProfileController;
 class Router
 {
     public function handleRequest()
     {
-        $controller = MainController::class;
-        $controller::getPage();
+        $path = $_SERVER['REQUEST_URI'];
+        $routes = [
+            '/' => ['class' => MainController::class, 'action' => 'getPage'],
+            '/home' => ['class' => HomeController::class, 'action' => 'getPage'],
+            '/explore' => ['class' => ExploreController::class, 'action' => 'getPage'],
+            '/profile' => ['class' => ProfileController::class, 'action' => 'getPage'],
+        ];
 
-//        if (isset($_GET['controller'])) {
-//            $controllerName = 'dotwitter\\app\\Controllers\\' . ucfirst($_GET['controller']) . 'Controller';
-//        }
-//
-//        if (isset($_GET['action'])) {
-//            $action = $_GET['action'];
-//        }
+        if (isset($routes[$path])) {
+            $controllerClass = $routes[$path]['class'];
+            $action = $routes[$path]['action'];
+
+            $controller = new $controllerClass();
+            $controller->$action();
+        }
     }
 }

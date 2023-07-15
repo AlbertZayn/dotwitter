@@ -1,11 +1,7 @@
 <?php
 
-require_once __DIR__ . '/autoloader.php';
-
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+require __DIR__ . '/autoloader.php';
 
 use dotwitter\app\Core\Router;
 $router = new Router();
 $router->handleRequest();
-

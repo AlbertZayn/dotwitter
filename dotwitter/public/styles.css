@@ -1,4 +1,4 @@
-
+/*Main page*/
 body {
     margin: 0;
     padding: 0;
@@ -118,6 +118,7 @@ hr {
 
 .logIn-btn:hover {
     background-color: rgb(26, 140, 216);
+    transition-duration: 0.2s;
 }
 
 .SignUp-question {
@@ -151,4 +152,5 @@ hr {
 
 .SignUp-btn:hover {
     background-color: rgb(29, 150, 240, 0.1);
+    transition-duration: 0.2s;
 }
