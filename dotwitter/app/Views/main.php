@@ -34,8 +34,8 @@ $title = 'Main / dotwitter';
 
 <body>
 <div class="grid-container container-fluid">
-    <div class="row">
-        <div class="col col-lg-6">
+    <div class="row main-page-row">
+        <div class="col-lg-6 main-page-columns">
             <section class="birdSide">
                 <div class="birdSide-container">
                     <img src="/images/birdSide.png" class="img-fluid birdSide-bg-img" alt="#">
@@ -49,7 +49,7 @@ $title = 'Main / dotwitter';
                 </div>
             </section>
         </div>
-        <div class="col col-lg-6">
+        <div class="col-lg-6 main-page-columns">
             <section class="loginSide">
                 <div class="container">
                     <div class="row">
@@ -92,9 +92,9 @@ $title = 'Main / dotwitter';
                             </div>
                             <footer>
                                 <div>
-                                    <span class="Footer-spans">About</span>
+                                    <a class="Footer-spans" href="https://coda.io/d/dotwitter_dCS56yYS_aJ/General-Description_suy5I#_luqY_">About</a>
                                     <span class="Footer-spans">Agreement</span>
-                                    <span class="Footer-spans">© 2023 .wrk</span>
+                                    <a class="Footer-spans" href="https://dotwrk.com/">© 2023 .wrk</a>
                                 </div>
                             </footer>
                         </div>
