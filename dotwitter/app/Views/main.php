@@ -85,7 +85,9 @@ $title = 'Main / dotwitter';
                                         </div>
                                         <div class="col-lg-6">
                                             <span class="SignUp-question">Explore without registration?</span>
-                                            <button class="SignUp-btn" onclick="explore()">Explore</button>
+                                            <a href="http://45.9.41.41/explore" onclick="explore()">
+                                                <button class="SignUp-btn">Explore</button>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
