@@ -46,7 +46,7 @@ body {
     padding: 0 20px;
 }
 
-h1 {
+.loginSide-h1 {
     font-size: 64px;
     font-weight: 800;
     letter-spacing: 2.2px;
@@ -54,7 +54,7 @@ h1 {
     margin-top: 38px;
 }
 
-h2 {
+.loginSide-h2 {
     font-size: 32px;
     font-weight: 700;
     font-stretch: 200%;
@@ -297,4 +297,14 @@ footer {
     text-indent: 12px;
     margin: 0 0 12px;
     padding: 0;
+}
+
+/*     SignUp pop up    */
+.modal {
+    display: none;
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
 }

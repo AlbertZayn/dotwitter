@@ -24,17 +24,12 @@ $title = 'Main / dotwitter';
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700;800;900&display=swap" rel="stylesheet">
     <!-- CSS -->
     <link rel="stylesheet" href="/styles.css">
-    <!-- JavaScript -->
-    <script>
-        function explore() {
-            window.location.href = 'http://45.9.41.41/explore';
-        }
-    </script>
 </head>
 
 <body>
 <div class="grid-container container-fluid">
     <div class="row main-page-row">
+        <!--BIRD SIDE-->
         <div class="col-lg-6 main-page-columns">
             <section class="birdSide">
                 <div class="birdSide-container">
@@ -49,6 +44,7 @@ $title = 'Main / dotwitter';
                 </div>
             </section>
         </div>
+        <!--LOGIN SIDE-->
         <div class="col-lg-6 main-page-columns">
             <section class="loginSide">
                 <div class="container">
@@ -57,12 +53,12 @@ $title = 'Main / dotwitter';
                             <img src="https://cdn.iconscout.com/icon/free/png-256/free-twitter-241-721979.png"
                                  height="34.2"
                                  width="42.6" class="img-fluid" alt="...">
-                            <h1>Happening now</h1>
-                            <h2>Join dotwitter today</h2>
+                            <h1 class="loginSide-h1">Happening now</h1>
+                            <h2 class="loginSide-h2">Join dotwitter today</h2>
                             <div class="loginSide-functionality">
-                                <input type="text" id="username" minlength="6" maxlength="50" placeholder="Username"
+                                <input type="text" id="username" minlength="8" maxlength="50" placeholder="Username"
                                        onfocus="" onblur="this.placeholder">
-                                <input type="password" id="password" minlength="6" maxlength="50" placeholder="Password"
+                                <input type="password" id="password" minlength="8" maxlength="50" placeholder="Password"
                                        onfocus="" onblur="this.placeholder">
                                 <button class="logIn-btn">Log In</button>
                                 <div class="or">
@@ -75,8 +71,7 @@ $title = 'Main / dotwitter';
                                     <div class="SignUp-btn-box row">
                                         <div class="col-lg-6">
                                             <span class="SignUp-question">Don't have an account?</span>
-                                            <button class="SignUp-btn">Create account</button>
-                                            <br>
+                                            <button class="SignUp-btn modal-btn">Create account</button>
                                             <div class="SignUp-agreement">
                                                 <span> By signing up, you are signing an <a
                                                             style="cursor: pointer; color: rgb(29, 155, 240); text-decoration: none;"
@@ -85,7 +80,7 @@ $title = 'Main / dotwitter';
                                         </div>
                                         <div class="col-lg-6">
                                             <span class="SignUp-question">Explore without registration?</span>
-                                            <a href="http://45.9.41.41/explore" onclick="explore()">
+                                            <a href="http://45.9.41.41/explore">
                                                 <button class="SignUp-btn">Explore</button>
                                             </a>
                                         </div>
@@ -94,7 +89,8 @@ $title = 'Main / dotwitter';
                             </div>
                             <footer>
                                 <div>
-                                    <a class="Footer-spans" href="https://coda.io/d/dotwitter_dCS56yYS_aJ/General-Description_suy5I#_luqY_">About</a>
+                                    <a class="Footer-spans"
+                                       href="https://coda.io/d/dotwitter_dCS56yYS_aJ/General-Description_suy5I#_luqY_">About</a>
                                     <span class="Footer-spans">Agreement</span>
                                     <a class="Footer-spans" href="https://dotwrk.com/">© 2023 .wrk</a>
                                 </div>
@@ -105,6 +101,76 @@ $title = 'Main / dotwitter';
         </div>
     </div>
 </div>
+<!--SignUp popup-->
+<div class="modal">
+<!--Step-1-->
+    <div class="modal-step1">
+        <div class="modal-step1_content">
+            <div class="modal-header">
+                <svg class="modal-closer"></svg>
+                <h2 class="modal-h2">Step 1 of 2</h2>
+            </div>
+            <div class="modal-step1-functionality">
+                <h1 class="modal-h1">Create your account</h1>
+                <input type="text" id="name" minlength="6" maxlength="50" placeholder="Name"
+                       onfocus="" onblur="this.placeholder">
+                <input type="email" id="email" minlength="6" maxlength="70" placeholder="Email"
+                       onfocus="" onblur="this.placeholder">
+                <span class="DOBPhrase">Date of birth</span>
+                <span class="modal-warning">This will not be shown publicly. Confirm your own age, even if this account is for a business, a pet, or something else.</span>
+                <div class="modal_date-pickers">
+                    <div class="month-picker">
+                        <label for="">Month</label>
+                        <select name="" id=""></select>
+                        <svg class="date-chooser"></svg>
+                    </div>
+                    <div class="day-picker">
+                        <label for="">Day</label>
+                        <select name="" id=""></select>
+                        <svg class="date-chooser"></svg>
+                    </div>
+                    <div class="year-picker">
+                        <label for="">Year</label>
+                        <select name="" id=""></select>
+                        <svg class="date-chooser"></svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="modal-next-btn">Next</button>
+        </div>
+    </div>
+<!--Step-2-->
+    <div class="modal-step2">
+        <div class="modal-step2_content">
+            <div class="modal-header">
+                <svg class="modal-returner"></svg>
+                <h2 class="modal-h2">Step 2 of 2</h2>
+            </div>
+            <div class="modal-step2-functionality">
+                <h1 class="modal-h1">You'll need a password</h1>
+                <span class="modal-warning">Make sure it's 8 characters or more</span>
+                <input type="password" id="password-creator" minlength="8" maxlength="50" placeholder="Password"
+                       onfocus="" onblur="this.placeholder">
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="modal-next-btn">Next</button>
+        </div>
+    </div>
+<!--Final-step-->
+    <div class="modal-final">
+        <div class="modal-header">
+            <svg class="modal-closer"></svg>
+        </div>
+        <h1 class="modal-h1">Account successfully created!</h1>
+        <div class="modal-footer">
+            <button class="modal-final-btn">Next</button>
+        </div>
+    </div>
+</div>
+<script src="/index.js"></script>
 </body>
 
 </html>
