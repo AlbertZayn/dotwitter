@@ -300,11 +300,54 @@ footer {
 }
 
 /*     SignUp pop up    */
-.modal {
-    display: none;
+
+.modal-dialog-step1 {
+    --bs-modal-width: 600px;
 }
 
-.modal-content {
+.modal-step1_content {
+    max-width: 80vw;
+    max-height: 90vh;
+    height: 650px;
+    min-width: 600px;
+    max-width: 800px;
+    overflow: hidden;
+    border-radius: 16px;
+    padding: 0;
+    margin: 0;
+}
+
+.modal-step1_header {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: flex-start;
+    border-bottom: none;
+    --bs-modal-header-padding: 0;
+}
+
+.modal-closer:hover {
+    cursor: pointer;
+    background-color: rgb(15, 20, 25, 0.1);
+    transition-duration: 0.2s;
+    border-radius: 9999px;
+    width: 36px;
+    height: 36px;
+}
+
+.modal-h2 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+.modal-step1-body {
     display: flex;
     flex-direction: column;
 }
+
+.modal_date-pickers {
+    display: flex;
+    flex-direction: row;
+}
+

@@ -71,7 +71,9 @@ $title = 'Main / dotwitter';
                                     <div class="SignUp-btn-box row">
                                         <div class="col-lg-6">
                                             <span class="SignUp-question">Don't have an account?</span>
-                                            <button class="SignUp-btn modal-btn">Create account</button>
+                                            <button class="SignUp-btn modal-btn" data-bs-target="#modal-step1"
+                                                    data-bs-toggle="modal">Create account
+                                            </button>
                                             <div class="SignUp-agreement">
                                                 <span> By signing up, you are signing an <a
                                                             style="cursor: pointer; color: rgb(29, 155, 240); text-decoration: none;"
@@ -101,16 +103,20 @@ $title = 'Main / dotwitter';
         </div>
     </div>
 </div>
-<!--SignUp popup-->
-<div class="modal">
+<!--SignUp Modal Window-->
 <!--Step-1-->
-    <div class="modal-step1">
-        <div class="modal-step1_content">
-            <div class="modal-header">
-                <svg class="modal-closer"></svg>
+<div class="modal fade" id="modal-step1" aria-hidden="true" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-step1">
+        <div class="modal-content modal-step1_content">
+            <div class="modal-header modal-step1_header">
+                <svg class="modal-closer" width="24" height="24" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41L17.59 5Z"
+                          fill="black"/>
+                </svg>
                 <h2 class="modal-h2">Step 1 of 2</h2>
             </div>
-            <div class="modal-step1-functionality">
+            <div class="modal-body modal-step1-body">
                 <h1 class="modal-h1">Create your account</h1>
                 <input type="text" id="name" minlength="6" maxlength="50" placeholder="Name"
                        onfocus="" onblur="this.placeholder">
@@ -122,55 +128,59 @@ $title = 'Main / dotwitter';
                     <div class="month-picker">
                         <label for="">Month</label>
                         <select name="" id=""></select>
-                        <svg class="date-chooser"></svg>
                     </div>
                     <div class="day-picker">
                         <label for="">Day</label>
                         <select name="" id=""></select>
-                        <svg class="date-chooser"></svg>
                     </div>
                     <div class="year-picker">
                         <label for="">Year</label>
                         <select name="" id=""></select>
-                        <svg class="date-chooser"></svg>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="modal-footer">
-            <button class="modal-next-btn">Next</button>
+            <div class="modal-footer modal-step1_footer">
+                <button class="modal-next-btn" data-bs-target="#modal-step2" data-bs-toggle="modal">Next</button>
+            </div>
         </div>
     </div>
+</div>
 <!--Step-2-->
-    <div class="modal-step2">
-        <div class="modal-step2_content">
-            <div class="modal-header">
+<div class="modal fade" id="modal-step2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content modal-step2_content">
+            <div class="modal-header modal-step2_header">
                 <svg class="modal-returner"></svg>
                 <h2 class="modal-h2">Step 2 of 2</h2>
             </div>
-            <div class="modal-step2-functionality">
+            <div class="modal-body modal-step2-body">
                 <h1 class="modal-h1">You'll need a password</h1>
                 <span class="modal-warning">Make sure it's 8 characters or more</span>
                 <input type="password" id="password-creator" minlength="8" maxlength="50" placeholder="Password"
                        onfocus="" onblur="this.placeholder">
             </div>
-        </div>
-        <div class="modal-footer">
-            <button class="modal-next-btn">Next</button>
-        </div>
-    </div>
-<!--Final-step-->
-    <div class="modal-final">
-        <div class="modal-header">
-            <svg class="modal-closer"></svg>
-        </div>
-        <h1 class="modal-h1">Account successfully created!</h1>
-        <div class="modal-footer">
-            <button class="modal-final-btn">Next</button>
+            <div class="modal-footer modal-step2_footer">
+                <button class="modal-next-btn" data-bs-target="#modal-final" data-bs-toggle="modal">Next</button>
+            </div>
         </div>
     </div>
 </div>
-<script src="/index.js"></script>
+<!--Final-step-->
+<div class="modal fade" id="modal-final" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content modal-final_content">
+            <div class="modal-header modal-final_header">
+                <svg class="modal-closer"></svg>
+            </div>
+            <div class="modal-body modal-final_body">
+                <h1 class="modal-h1">Account successfully created!</h1>
+            </div>
+            <div class="modal-footer modal-final_footer">
+                <button class="modal-final-btn">To the profile page!</button>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 
 </html>
