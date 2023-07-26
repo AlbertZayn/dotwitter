@@ -299,14 +299,13 @@ footer {
     padding: 0;
 }
 
-/*     SignUp pop up    */
+/*     SignUp Modal Window   */
 
 .modal-dialog-step1 {
     --bs-modal-width: 600px;
 }
 
 .modal-step1_content {
-    max-width: 80vw;
     max-height: 90vh;
     height: 650px;
     min-width: 600px;
@@ -321,9 +320,15 @@ footer {
     display: flex;
     flex-direction: row;
     justify-content: left;
-    align-items: flex-start;
     border-bottom: none;
-    --bs-modal-header-padding: 0;
+    --bs-modal-header-padding: 8px 0 0 8px;
+    margin-bottom: 9px;
+
+}
+.modal-closer {
+    padding: 6px;
+    width: 36px;
+    height: 36px;
 }
 
 .modal-closer:hover {
@@ -331,23 +336,69 @@ footer {
     background-color: rgb(15, 20, 25, 0.1);
     transition-duration: 0.2s;
     border-radius: 9999px;
-    width: 36px;
-    height: 36px;
 }
 
 .modal-h2 {
     font-size: 20px;
     font-weight: 700;
     margin-bottom: 0;
+    padding: 0 28px 0;
 }
 
 .modal-step1-body {
     display: flex;
     flex-direction: column;
+    padding: 0 80px;
+}
+
+.modal-h1 {
+    padding: 20px 0 0;
+    font-size: 31px;
+    line-height: 36px;
+    font-weight: 700;
+    margin-bottom: 0;
 }
 
 .modal_date-pickers {
     display: flex;
     flex-direction: row;
 }
+
+.modal-name_box,
+.modal-email_box {
+    padding: 12px 0;
+}
+
+.modal-name_box2, .modal-email_box2 {
+    margin: 16px 0 0;
+    padding: 12px 0 8px;
+}
+
+.namebox-label, .emailbox-label {
+    width: 100%;
+}
+
+.name-input, .email-input {
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    border-style: solid;
+    border-color: rgb(207, 217, 222);
+    font-size: 17px;
+    text-indent: 6px;
+
+}
+
+.name-input:focus,
+.email-input:focus {
+    border-color: rgb(29, 155, 240);
+    box-shadow: rgb(29, 155, 240) 0 0 0 0.5px;
+    outline: none;
+}
+
+.DOBPhrase {
+    padding: 20px 0;
+}
+
+
 

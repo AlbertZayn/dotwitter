@@ -118,10 +118,16 @@ $title = 'Main / dotwitter';
             </div>
             <div class="modal-body modal-step1-body">
                 <h1 class="modal-h1">Create your account</h1>
-                <input type="text" id="name" minlength="6" maxlength="50" placeholder="Name"
-                       onfocus="" onblur="this.placeholder">
-                <input type="email" id="email" minlength="6" maxlength="70" placeholder="Email"
-                       onfocus="" onblur="this.placeholder">
+                <div class="modal-name_box">
+                    <div class="modal-name_box2">
+                            <input type="text" class="name-input" minlength="6" maxlength="50" placeholder="Name">
+                    </div>
+                </div>
+                <div class="modal-email_box">
+                    <div class="modal-email_box2">
+                            <input type="email" class="email-input" minlength="6" maxlength="70" placeholder="Email">
+                    </div>
+                </div>
                 <span class="DOBPhrase">Date of birth</span>
                 <span class="modal-warning">This will not be shown publicly. Confirm your own age, even if this account is for a business, a pet, or something else.</span>
                 <div class="modal_date-pickers">
@@ -181,6 +187,7 @@ $title = 'Main / dotwitter';
         </div>
     </div>
 </div>
+
 </body>
 
 </html>
