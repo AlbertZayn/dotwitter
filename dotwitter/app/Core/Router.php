@@ -1,12 +1,21 @@
 <?php
 
 namespace dotwitter\app\Core;
+
 use dotwitter\app\Controllers\MainController;
 use dotwitter\app\Controllers\HomeController;
 use dotwitter\app\Controllers\ExploreController;
 use dotwitter\app\Controllers\ProfileController;
+
 class Router
 {
+    protected $container;
+
+    public function __construct(Container $container)
+    {
+        $this->container = $container;
+    }
+
     public function handleRequest()
     {
         $path = $_SERVER['REQUEST_URI'];

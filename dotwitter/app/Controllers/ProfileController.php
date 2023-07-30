@@ -8,6 +8,8 @@ class ProfileController
 {
     public static function getPage()
     {
+        $pageContent = app('PageContent');
+
         ob_start();
         require_once __DIR__ . '/../Views/profile.php';
         $ProfilePageContent = ob_get_contents();
