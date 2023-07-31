@@ -300,12 +300,12 @@ footer {
 }
 
 /*     SignUp Modal Window   */
-
-.modal-dialog-step1 {
+/*     Step 1                */
+.modal-dialog-steps {
     --bs-modal-width: 600px;
 }
 
-.modal-step1_content {
+.modal-steps_content {
     max-height: 90vh;
     height: 650px;
     min-width: 600px;
@@ -417,15 +417,19 @@ footer {
     border-color: rgb(207, 217, 222);
     border-width: 1px;
     padding: .375rem 5.15rem 1.375rem .75rem;
-    color: rgb(83, 100, 113);
 
 }
 
-.date-picker-form:hover {
+.date-picker-form:focus {
     border-color: rgb(29, 155, 240);
     box-shadow: rgb(29, 155, 240) 0 0 0 1px;
-    outline: none;
     color: rgb(29, 155, 240);
+    outline: none;
+
+}
+
+.option-enabled {
+    color: #333333;
 }
 
 .modal-step1_footer {
@@ -453,6 +457,7 @@ footer {
     transition-duration: 0.2s;
 }
 
+/*     Step 2         */
 
 
 

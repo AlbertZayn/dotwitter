@@ -65,7 +65,7 @@
                                     <a class="Footer-spans"
                                        href="https://coda.io/d/dotwitter_dCS56yYS_aJ/General-Description_suy5I#_luqY_">About</a>
                                     <span class="Footer-spans">Agreement</span>
-                                    <a class="Footer-spans" href="https://dotwrk.com/">© 2023 .wrk</a>
+                                    <a class="Footer-spans footer-year" href="https://dotwrk.com/">© 2023 .wrk</a>
                                 </div>
                             </footer>
                         </div>
@@ -77,8 +77,8 @@
 <!--SignUp Modal Window-->
 <!--Step-1-->
 <div class="modal fade" id="modal-step1" aria-hidden="true" tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered modal-dialog-step1">
-        <div class="modal-content modal-step1_content">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-steps">
+        <div class="modal-content modal-steps_content">
             <div class="modal-header modal-step1_header">
                 <svg class="modal-closer" width="24" height="24" fill="none"
                      xmlns="http://www.w3.org/2000/svg">
@@ -105,54 +105,54 @@
                     <div class="month-picker">
                         <select class="form-select date-picker-form">
                             <option disabled selected>Month</option>
-                            <option value="1">January</option>
-                            <option value="2">February</option>
-                            <option value="3">March</option>
-                            <option value="4">April</option>
-                            <option value="5">May</option>
-                            <option value="6">June</option>
-                            <option value="7">July</option>
-                            <option value="8">August</option>
-                            <option value="9">September</option>
-                            <option value="10">October</option>
-                            <option value="11">November</option>
-                            <option value="12">December</option>
+                            <option class="option-enabled"  value="1">January</option>
+                            <option class="option-enabled" value="2">February</option>
+                            <option class="option-enabled" value="3">March</option>
+                            <option class="option-enabled" value="4">April</option>
+                            <option class="option-enabled" value="5">May</option>
+                            <option class="option-enabled" value="6">June</option>
+                            <option class="option-enabled" value="7">July</option>
+                            <option class="option-enabled" value="8">August</option>
+                            <option class="option-enabled" value="9">September</option>
+                            <option class="option-enabled" value="10">October</option>
+                            <option class="option-enabled" value="11">November</option>
+                            <option class="option-enabled" value="12">December</option>
                         </select>
                     </div>
                     <div class="day-picker">
                         <select class="form-select date-picker-form">
                             <option disabled selected>Day</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                            <option value="11">11</option>
-                            <option value="12">12</option>
-                            <option value="13">13</option>
-                            <option value="14">14</option>
-                            <option value="15">15</option>
-                            <option value="16">16</option>
-                            <option value="17">17</option>
-                            <option value="18">18</option>
-                            <option value="19">19</option>
-                            <option value="20">20</option>
-                            <option value="21">21</option>
-                            <option value="22">22</option>
-                            <option value="23">23</option>
-                            <option value="24">24</option>
-                            <option value="25">25</option>
-                            <option value="26">26</option>
-                            <option value="27">27</option>
-                            <option value="28">28</option>
-                            <option value="29">29</option>
-                            <option value="30">30</option>
-                            <option value="31">31</option>
+                            <option class="option-enabled" value="1">1</option>
+                            <option class="option-enabled" value="2">2</option>
+                            <option class="option-enabled" value="3">3</option>
+                            <option class="option-enabled" value="4">4</option>
+                            <option class="option-enabled" value="5">5</option>
+                            <option class="option-enabled" value="6">6</option>
+                            <option class="option-enabled" value="7">7</option>
+                            <option class="option-enabled" value="8">8</option>
+                            <option class="option-enabled" value="9">9</option>
+                            <option class="option-enabled" value="10">10</option>
+                            <option class="option-enabled" value="11">11</option>
+                            <option class="option-enabled" value="12">12</option>
+                            <option class="option-enabled" value="13">13</option>
+                            <option class="option-enabled" value="14">14</option>
+                            <option class="option-enabled" value="15">15</option>
+                            <option class="option-enabled" value="16">16</option>
+                            <option class="option-enabled" value="17">17</option>
+                            <option class="option-enabled" value="18">18</option>
+                            <option class="option-enabled" value="19">19</option>
+                            <option class="option-enabled" value="20">20</option>
+                            <option class="option-enabled" value="21">21</option>
+                            <option class="option-enabled" value="22">22</option>
+                            <option class="option-enabled" value="23">23</option>
+                            <option class="option-enabled" value="24">24</option>
+                            <option class="option-enabled" value="25">25</option>
+                            <option class="option-enabled" value="26">26</option>
+                            <option class="option-enabled" value="27">27</option>
+                            <option class="option-enabled" value="28">28</option>
+                            <option class="option-enabled" value="29">29</option>
+                            <option class="option-enabled" value="30">30</option>
+                            <option class="option-enabled" value="31">31</option>
                         </select>
                     </div>
                     <div class="year-picker">
@@ -170,8 +170,8 @@
 </div>
 <!--Step-2-->
 <div class="modal fade" id="modal-step2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content modal-step2_content">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-steps">
+        <div class="modal-content modal-steps_content">
             <div class="modal-header modal-step2_header">
                 <svg class="modal-returner"></svg>
                 <h2 class="modal-h2">Step 2 of 2</h2>
@@ -190,8 +190,8 @@
 </div>
 <!--Final-step-->
 <div class="modal fade" id="modal-final" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content modal-final_content">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-steps">
+        <div class="modal-content modal-steps_content">
             <div class="modal-header modal-final_header">
                 <svg class="modal-closer"></svg>
             </div>
@@ -205,11 +205,19 @@
     </div>
 </div>
 <script>
+    //Footer year script
+    const currentFooterYear = new Date().getFullYear();
+    const FooterYearElement = document.querySelector(".footer-year");
+    FooterYearElement.innerHTML = "© " + currentFooterYear + " .wrk";
+
+
+    //Date-picker years script
     const currentYear = new Date().getFullYear();
     const yearSelect = document.getElementById('year');
 
     for (let i = currentYear; i >= currentYear - 100; i--) {
         const option = document.createElement('option');
+        option.classList.add("option-enabled");
         option.value = i;
         option.textContent = i;
         yearSelect.appendChild(option);
