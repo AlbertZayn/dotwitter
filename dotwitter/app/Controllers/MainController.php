@@ -2,7 +2,7 @@
 
 namespace dotwitter\app\Controllers;
 
-use dotwitter\app\Views\PageContent;
+use dotwitter\app\Views\Recycles\PageContent;
 
 class MainController
 {

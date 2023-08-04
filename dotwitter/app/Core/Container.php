@@ -35,9 +35,7 @@ class Container
         if (is_callable($concrete)) {
             return $concrete();
         }
-
-        // Add additional logic for more complex dependencies here.
-        // For simplicity, let's assume that the concrete is a class name for now.
+        
         if (class_exists($concrete)) {
             return new $concrete();
         }

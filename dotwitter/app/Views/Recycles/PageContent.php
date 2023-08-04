@@ -1,6 +1,6 @@
 <?php
 
-namespace dotwitter\app\Views;
+namespace dotwitter\app\Views\Recycles;
 
 class PageContent
 {
@@ -20,6 +20,6 @@ class PageContent
         $pageContent = ob_get_contents();
         ob_end_clean();
 
-        require_once __DIR__ . '/page.php';
+        require_once __DIR__ . '/../page.php';
     }
 }

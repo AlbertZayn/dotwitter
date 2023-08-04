@@ -65,7 +65,10 @@
                                     <a class="Footer-spans"
                                        href="https://coda.io/d/dotwitter_dCS56yYS_aJ/General-Description_suy5I#_luqY_">About</a>
                                     <span class="Footer-spans">Agreement</span>
-                                    <a class="Footer-spans footer-year" href="https://dotwrk.com/">© 2023 .wrk</a>
+                                    <?php
+                                    $currentYear = date("Y");
+                                    ?>
+                                    <a class="Footer-spans footer-year" href="https://dotwrk.com/"><?php echo '© ' . $currentYear . ' .wrk' ?></a>
                                 </div>
                             </footer>
                         </div>
@@ -79,24 +82,24 @@
 <div class="modal fade" id="modal-step1" aria-hidden="true" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered modal-dialog-steps">
         <div class="modal-content modal-steps_content">
-            <div class="modal-header modal-step1_header">
+            <div class="modal-header modal-steps_header">
                 <svg class="modal-closer" width="24" height="24" fill="none"
-                     xmlns="http://www.w3.org/2000/svg">
+                     xmlns="http://www.w3.org/2000/svg" data-bs-dismiss="modal">
                     <path d="M17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41L17.59 5Z"
                           fill="black"/>
                 </svg>
                 <h2 class="modal-h2">Step 1 of 2</h2>
             </div>
-            <div class="modal-body modal-step1-body">
+            <div class="modal-body modal-steps-body">
                 <h1 class="modal-h1">Create your account</h1>
                 <div class="modal-name_box">
                     <div class="modal-name_box2">
-                            <input type="text" class="name-input" minlength="6" maxlength="50" placeholder="Name">
+                        <input type="text" class="name-input" minlength="6" maxlength="50" placeholder="Name">
                     </div>
                 </div>
                 <div class="modal-email_box">
                     <div class="modal-email_box2">
-                            <input type="email" class="email-input" minlength="6" maxlength="70" placeholder="Email">
+                        <input type="email" class="email-input" minlength="6" maxlength="70" placeholder="Email">
                     </div>
                 </div>
                 <span class="DOBPhrase">Date of birth</span>
@@ -105,7 +108,7 @@
                     <div class="month-picker">
                         <select class="form-select date-picker-form">
                             <option disabled selected>Month</option>
-                            <option class="option-enabled"  value="1">January</option>
+                            <option class="option-enabled" value="1">January</option>
                             <option class="option-enabled" value="2">February</option>
                             <option class="option-enabled" value="3">March</option>
                             <option class="option-enabled" value="4">April</option>
@@ -122,47 +125,26 @@
                     <div class="day-picker">
                         <select class="form-select date-picker-form">
                             <option disabled selected>Day</option>
-                            <option class="option-enabled" value="1">1</option>
-                            <option class="option-enabled" value="2">2</option>
-                            <option class="option-enabled" value="3">3</option>
-                            <option class="option-enabled" value="4">4</option>
-                            <option class="option-enabled" value="5">5</option>
-                            <option class="option-enabled" value="6">6</option>
-                            <option class="option-enabled" value="7">7</option>
-                            <option class="option-enabled" value="8">8</option>
-                            <option class="option-enabled" value="9">9</option>
-                            <option class="option-enabled" value="10">10</option>
-                            <option class="option-enabled" value="11">11</option>
-                            <option class="option-enabled" value="12">12</option>
-                            <option class="option-enabled" value="13">13</option>
-                            <option class="option-enabled" value="14">14</option>
-                            <option class="option-enabled" value="15">15</option>
-                            <option class="option-enabled" value="16">16</option>
-                            <option class="option-enabled" value="17">17</option>
-                            <option class="option-enabled" value="18">18</option>
-                            <option class="option-enabled" value="19">19</option>
-                            <option class="option-enabled" value="20">20</option>
-                            <option class="option-enabled" value="21">21</option>
-                            <option class="option-enabled" value="22">22</option>
-                            <option class="option-enabled" value="23">23</option>
-                            <option class="option-enabled" value="24">24</option>
-                            <option class="option-enabled" value="25">25</option>
-                            <option class="option-enabled" value="26">26</option>
-                            <option class="option-enabled" value="27">27</option>
-                            <option class="option-enabled" value="28">28</option>
-                            <option class="option-enabled" value="29">29</option>
-                            <option class="option-enabled" value="30">30</option>
-                            <option class="option-enabled" value="31">31</option>
+                            <?php
+                            for ($day = 1; $day <= 31; $day++) {
+                                echo '<option class="option-enabled" value="' . $day . '">' . $day . '</option>';
+                            }
+                            ?>
                         </select>
                     </div>
                     <div class="year-picker">
                         <select class="form-select date-picker-form" id="year">
                             <option disabled selected>Year</option>
+                            <?php
+                            for ($year = $currentYear; $year >= $currentYear - 120; $year--) {
+                                echo '<option class="option-enabled" value="' . $year . '">' . $year . '</option>';
+                            }
+                            ?>
                         </select>
                     </div>
                 </div>
             </div>
-            <div class="modal-footer modal-step1_footer">
+            <div class="modal-footer modal-steps_footer">
                 <button class="modal-next-btn" data-bs-target="#modal-step2" data-bs-toggle="modal">Next</button>
             </div>
         </div>
@@ -172,17 +154,25 @@
 <div class="modal fade" id="modal-step2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered modal-dialog-steps">
         <div class="modal-content modal-steps_content">
-            <div class="modal-header modal-step2_header">
-                <svg class="modal-returner"></svg>
+            <div class="modal-header modal-steps_header">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black"
+                     class="bi bi-arrow-left modal-backer" viewBox="0 0 16 16" data-bs-target="#modal-step1" data-bs-toggle="modal">
+                    <path fill-rule="evenodd"
+                          d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z" fill="black"/>
+                </svg>
                 <h2 class="modal-h2">Step 2 of 2</h2>
             </div>
-            <div class="modal-body modal-step2-body">
+            <div class="modal-body modal-steps-body">
                 <h1 class="modal-h1">You'll need a password</h1>
                 <span class="modal-warning">Make sure it's 8 characters or more</span>
-                <input type="password" id="password-creator" minlength="8" maxlength="50" placeholder="Password"
+                <div class="modal-passowrd_box">
+                    <div class="modal-password_box2">
+                <input type="password" class="password-creator" minlength="8" maxlength="50" placeholder="Password"
                        onfocus="" onblur="this.placeholder">
+                    </div>
+                </div>
             </div>
-            <div class="modal-footer modal-step2_footer">
+            <div class="modal-footer modal-steps_footer">
                 <button class="modal-next-btn" data-bs-target="#modal-final" data-bs-toggle="modal">Next</button>
             </div>
         </div>
@@ -192,34 +182,15 @@
 <div class="modal fade" id="modal-final" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered modal-dialog-steps">
         <div class="modal-content modal-steps_content">
-            <div class="modal-header modal-final_header">
+            <div class="modal-header modal-steps_header">
                 <svg class="modal-closer"></svg>
             </div>
-            <div class="modal-body modal-final_body">
-                <h1 class="modal-h1">Account successfully created!</h1>
+            <div class="modal-body modal-steps-body modal-final-body">
+                <h1 class="modal-h1 ">Account successfully created!</h1>
             </div>
-            <div class="modal-footer modal-final_footer">
-                <button class="modal-final-btn">To the profile page!</button>
+            <div class="modal-footer modal-steps_footer">
+                <button class="modal-next-btn">To the profile page!</button>
             </div>
         </div>
     </div>
 </div>
-<script>
-    //Footer year script
-    const currentFooterYear = new Date().getFullYear();
-    const FooterYearElement = document.querySelector(".footer-year");
-    FooterYearElement.innerHTML = "© " + currentFooterYear + " .wrk";
-
-
-    //Date-picker years script
-    const currentYear = new Date().getFullYear();
-    const yearSelect = document.getElementById('year');
-
-    for (let i = currentYear; i >= currentYear - 100; i--) {
-        const option = document.createElement('option');
-        option.classList.add("option-enabled");
-        option.value = i;
-        option.textContent = i;
-        yearSelect.appendChild(option);
-    }
-</script>

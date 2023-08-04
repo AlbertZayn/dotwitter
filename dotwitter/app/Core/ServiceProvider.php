@@ -2,7 +2,7 @@
 
 namespace dotwitter\app\Core;
 
-use dotwitter\app\Views\PageContent;
+use dotwitter\app\Views\Recycles\PageContent;
 
 class ServiceProvider
 {

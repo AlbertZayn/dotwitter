@@ -3,26 +3,61 @@
 
         <!-- LEFT SIDEBAR -->
         <div class="left-sidebar col col-lg-3">
-            <a href="#" class="left-sidebar-anchor">
-                <img class="sidebar-icon img-fluid"
-                     src="https://cdn.iconscout.com/icon/free/png-256/free-twitter-241-721979.png"
-                     width="28.4" height="23.1"
-                     alt="...">
-            </a>
-            <a href="#" class="left-sidebar-anchor">
-                <div>
-                    <img class="sidebar-icon img-fluid" src="/images/explore-icon.png" alt="..." width="29.25"
-                         height="29.25">
-                    <span>Explore</span>
-                </div>
-            </a>
-            <a href="#" class="left-sidebar-anchor">
-                <div>
-                    <img class="sidebar-icon img-fluid" src="/images/settings-icon.png" alt="..." width="25"
-                         height="25">
-                    <span>Settings</span>
-                </div>
-            </a>
+            <div class="left-sidebar-box">
+
+                <a href="#" class="left-sidebar-anchor">
+                    <img class="sidebar-icon img-fluid"
+                         src="https://cdn.iconscout.com/icon/free/png-256/free-twitter-241-721979.png"
+                         width="28.4" height="23.1"
+                         alt="...">
+                </a>
+
+                <a href="#" class="left-sidebar-anchor">
+                    <div class="sidebar-anchor">
+                        <div class="sidebar-icon">
+                            <img class="sidebar-icon img-fluid" src="/images/birdhouse-icon.png" alt="...">
+                        </div>
+                        <div class="sidebar-span">
+                            <span>Home</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="left-sidebar-anchor">
+                    <div class="sidebar-anchor">
+                        <div class="sidebar-icon">
+                            <img class="sidebar-icon img-fluid" src="/images/explore-icon.png" alt="...">
+                        </div>
+                        <div class="sidebar-span">
+                            <span>Explore</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="left-sidebar-anchor">
+                    <div class="sidebar-anchor">
+                        <div class="sidebar-icon">
+                            <img class="sidebar-icon img-fluid" src="/images/settings-icon.png" alt="...">
+                        </div>
+                        <div class="sidebar-span">
+                            <span>Settings</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="left-sidebar-anchor">
+                    <div class="sidebar-anchor">
+                        <div class="sidebar-icon">
+                            <img class="sidebar-icon img-fluid" src="/images/profile-icon.png" alt="...">
+                        </div>
+                        <div class="sidebar-span">
+                            <span>Profile</span>
+                        </div>
+                    </div>
+                </a>
+
+
+            </div>
         </div>
 
         <!--TWEET FEED -->
