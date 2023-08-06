@@ -1,9 +1,10 @@
 body {
+    overflow-x: hidden;
     margin: 0;
     padding: 0;
     font-family: 'Work Sans', sans-serif;
-    overflow-x: hidden;
 }
+
 /*     MAIN PAGE     */
 .grid-container {
     display: grid;
@@ -12,10 +13,10 @@ body {
 }
 
 .main-page-columns {
-    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    height: auto;
     padding: 0;
 }
 
@@ -36,10 +37,10 @@ body {
 
 .birdSide-fr-img {
     position: absolute;
+    z-index: 1;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 1;
 }
 
 .loginSide {
@@ -47,18 +48,18 @@ body {
 }
 
 .loginSide-h1 {
+    margin-bottom: 38px;
+    margin-top: 38px;
     font-size: 64px;
     font-weight: 800;
     letter-spacing: 2.2px;
-    margin-bottom: 38px;
-    margin-top: 38px;
 }
 
 .loginSide-h2 {
+    margin-bottom: 32px;
     font-size: 32px;
     font-weight: 700;
     font-stretch: 200%;
-    margin-bottom: 32px;
 }
 
 .loginSide-functionality {
@@ -67,12 +68,12 @@ body {
 }
 
 #username, #password {
-    height: 44px;
-    width: 300px;
-    border-radius: 24px;
     margin-bottom: 20px;
+    border-radius: 24px;
     border-style: solid;
     border-color: rgb(207, 217, 222);
+    width: 300px;
+    height: 44px;
     text-indent: 12px;
 }
 
@@ -85,8 +86,8 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: left;
-    width: 280px;
     margin: 4px 0 4px;
+    width: 280px;
     padding: 0 0 0 20px;
 }
 
@@ -100,17 +101,17 @@ hr {
 }
 
 .logIn-btn {
-    width: 300px;
-    border-radius: 24px;
-    background-color: rgb(29, 155, 240);
-    color: #fff;
-    letter-spacing: -0.5px;
     margin-bottom: 8px;
-    height: 40px;
     border-style: none;
+    border-radius: 24px;
+    width: 300px;
+    height: 40px;
+    background-color: rgb(29, 155, 240);
+    cursor: pointer;
     font-size: 16px;
     font-weight: 700;
-    cursor: pointer;
+    letter-spacing: -0.5px;
+    color: #fff;
 }
 
 .logIn-btn:hover {
@@ -132,30 +133,30 @@ hr {
 
 
 .SignUp-btn {
-    width: 300px;
+    margin-bottom: 8px;
     border-radius: 24px;
     border-style: double;
     border-color: rgb(223, 230, 234);
+    width: 300px;
+    height: 40px;
     background-color: #fff;
+    cursor: pointer;
     color: rgb(29, 155, 240);
+    font-size: 17px;
     font-weight: 700;
     letter-spacing: -1px;
-    margin-bottom: 8px;
-    height: 40px;
-    font-size: 17px;
-    cursor: pointer;
 }
 
 .SignUp-btn:hover {
-    background-color: rgb(29, 150, 240, 0.1);
     transition-duration: 0.2s;
+    background-color: rgb(29, 150, 240, 0.1);
 }
 
 .SignUp-agreement {
-    line-height: 12px;
-    font-size: 11px;
-    font-weight: 400;
     width: 300px;
+    font-size: 11px;
+    line-height: 12px;
+    font-weight: 400;
 }
 
 footer {
@@ -165,12 +166,12 @@ footer {
 }
 
 .Footer-spans {
-    font-size: 13px;
-    cursor: pointer;
-    font-weight: 400;
     padding: 16px 16px 0 0;
-    color: rgb(83, 100, 113);
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 400;
     text-decoration: none;
+    color: rgb(83, 100, 113);
 }
 
 .Footer-spans:hover {
@@ -204,45 +205,45 @@ footer {
 }
 
 .modal-steps_content {
-    max-height: 90vh;
-    height: 650px;
-    min-width: 600px;
-    max-width: 800px;
     overflow: hidden;
-    border-radius: 16px;
-    padding: 0;
     margin: 0;
+    border-radius: 16px;
+    max-width: 800px;
+    max-height: 90vh;
+    min-width: 600px;
+    height: 650px;
+    padding: 0;
 }
 
 .modal-steps_header {
     display: flex;
     flex-direction: row;
     justify-content: left;
+    margin-bottom: 9px;
     border-bottom: none;
     --bs-modal-header-padding: 8px 0 0 8px;
-    margin-bottom: 9px;
-
 }
+
 .modal-closer,
 .modal-backer {
-    padding: 6px;
     width: 36px;
     height: 36px;
+    padding: 6px;
 }
 
 .modal-closer:hover,
 .modal-backer:hover {
-    cursor: pointer;
-    background-color: rgb(15, 20, 25, 0.1);
     transition-duration: 0.2s;
     border-radius: 9999px;
+    background-color: rgb(15, 20, 25, 0.1);
+    cursor: pointer;
 }
 
 .modal-h2 {
-    font-size: 20px;
-    font-weight: 700;
     margin-bottom: 0;
     padding: 0 28px 0;
+    font-size: 20px;
+    font-weight: 700;
 }
 
 .modal-steps-body {
@@ -252,11 +253,11 @@ footer {
 }
 
 .modal-h1 {
+    margin-bottom: 0;
     padding: 20px 0;
     font-size: 31px;
     line-height: 36px;
     font-weight: 700;
-    margin-bottom: 0;
 }
 
 .modal_date-pickers {
@@ -272,37 +273,37 @@ footer {
 .name-input,
 .email-input,
 .password-creator {
+    margin: 14px 0 0;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 4px;
+    border-color: rgb(207, 217, 222);
     width: 100%;
     height: 100%;
-    border-radius: 4px;
-    border-style: solid;
-    border-color: rgb(207, 217, 222);
-    border-width: 1px;
+    padding: 12px 0 8px;
     font-size: 17px;
     text-indent: 6px;
-    margin: 14px 0 0;
-    padding: 12px 0 8px;
 }
 
 .name-input:focus,
 .email-input:focus,
 .password-creator:focus {
-    border-color: rgb(29, 155, 240);
     box-shadow: rgb(29, 155, 240) 0 0 0 1px;
+    border-color: rgb(29, 155, 240);
     outline: none;
 }
 
 .DOBPhrase {
-    padding: 20px 0 0;
-    font-weight: 700;
-    font-size: 15px;
     margin: 0 0 4px;
+    padding: 20px 0 0;
+    font-size: 15px;
+    font-weight: 700;
 }
 
 .modal-warning {
-    font-weight: 400;
-    font-size: 14px;
     margin: 0 0 4px;
+    font-size: 14px;
+    font-weight: 400;
     color: rgb(83, 100, 113);
 }
 
@@ -314,21 +315,19 @@ footer {
 }
 
 .date-picker-form {
-    font-size: 13px;
     border-radius: 4px;
     border-style: solid;
     border-color: rgb(207, 217, 222);
     border-width: 1px;
     padding: .375rem 5.15rem 1.375rem .75rem;
-
+    font-size: 13px;
 }
 
 .date-picker-form:focus {
-    border-color: rgb(29, 155, 240);
     box-shadow: rgb(29, 155, 240) 0 0 0 1px;
-    color: rgb(29, 155, 240);
+    border-color: rgb(29, 155, 240);
     outline: none;
-
+    color: rgb(29, 155, 240);
 }
 
 .option-enabled {
@@ -343,17 +342,17 @@ footer {
 }
 
 .modal-next-btn {
-    width: 100%;
-    border-radius: 24px;
-    background-color: rgb(29, 155, 240);
-    color: #fff;
-    letter-spacing: -0.5px;
     margin: 24px 0;
-    min-height: 52px;
     border-style: none;
-    font-weight: 700;
+    border-radius: 24px;
+    width: 100%;
+    min-height: 52px;
+    background-color: rgb(29, 155, 240);
     cursor: pointer;
     font-size: 17px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: #fff;
 }
 
 .modal-next-btn:hover {
@@ -368,10 +367,10 @@ footer {
 }
 
 .modal-backer:hover {
-    cursor: pointer;
-    background-color: rgb(15, 20, 25, 0.1);
     transition-duration: 0.2s;
     border-radius: 9999px;
+    background-color: rgb(15, 20, 25, 0.1);
+    cursor: pointer;
 }
 
 /*        Step 3         */
@@ -382,7 +381,7 @@ footer {
     text-align: center;
 }
 
- /*     LEFT-SIDE BAR FOR EXPLORE/MAIN/PROFILE PAGES     */
+/*     LEFT-SIDE BAR FOR EXPLORE/MAIN/PROFILE PAGES     */
 .explore-container {
     display: grid;
     height: 100vh;
@@ -392,16 +391,17 @@ footer {
 .left-sidebar-box {
     display: flex;
     flex-direction: column;
-    padding: 0 0 0 55px;
     align-items: flex-start;
-    font-weight: 400;
+    height: 90vh;
+    padding: 0 0 0 55px;
     font-size: 20px;
+    font-weight: 400;
 }
 
 .left-sidebar-anchor {
+    padding: 14px;
     text-decoration: none;
     color: #333;
-    padding: 14px;
 }
 
 .sidebar-anchor {
@@ -410,10 +410,10 @@ footer {
 }
 
 .sidebar-icon {
+    margin: 0;
     width: 1.75rem;
     height: 1.75rem;
     padding: 0;
-    margin: 0;
 }
 
 .sidebar-span {
@@ -421,16 +421,74 @@ footer {
     margin-left: 20px;
 }
 
-
 .left-sidebar-anchor:hover,
-.sidebar-icon-anchor:hover
-{
-    cursor: pointer;
-    background-color: rgb(15, 20, 25, 0.1);
+.sidebar-icon-anchor:hover,
+.tweet-feed-icon:hover {
     transition-duration: 0.2s;
     border-radius: 9999px;
+    background-color: rgb(15, 20, 25, 0.1);
+    cursor: pointer;
 }
 
+.sidebar-tweet {
+    padding: 14px;
+}
+
+.tweet-btn {
+    margin-bottom: 8px;
+    border-style: none;
+    border-radius: 9999px;
+    width: 219px;
+    height: 42px;
+    background-color: rgb(29, 155, 240);
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: #fff;
+}
+
+.sidebar-user {
+    display: flex;
+    flex-direction: column;
+    font-size: 15px;
+    font-weight: 400;
+    padding: 0 12px;
+}
+
+.tweet-btn:hover {
+    transition-duration: 0.2s;
+    background-color: rgb(26, 140, 216);
+}
+
+.left-userbar-anchor {
+    text-decoration: none;
+    color: #333;
+    width: 200px;
+}
+
+.left-userbar-anchor:hover {
+    transition-duration: 0.2s;
+    border-radius: 9999px;
+    background-color: rgb(15, 20, 25, 0.1);
+    cursor: pointer;
+}
+
+.userbar-anchor {
+    display: flex;
+    flex-direction: row;
+    padding: 12px 12px;
+}
+
+.sidebar-user-icon {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    width: 40px;
+    height: 40px;
+}
+
+/*TWEET FEED */
 .tweet-feed-column {
     border-style: solid;
     border-right-width: 1px;
@@ -443,18 +501,20 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    cursor: pointer;
-    height: 53px;
-    font-weight: 700;
-    font-size: 20px;
     width: 100%;
+    height: 53px;
     padding: 0 12px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 700;
 }
 
 .tweet-feed-header:hover {
-    background-color: rgb(0, 0, 0, 0.03);
     transition-duration: 0.2s;
+    background-color: rgb(0, 0, 0, 0.03);
 }
+
+/* Right sidebar */
 
 .right-sidebar {
     display: flex;
@@ -465,21 +525,21 @@ footer {
 .right-sidebar-functionality {
     display: flex;
     flex-direction: column;
+    border-radius: 16px;
     border-style: solid;
     border-width: 1px;
     border-color: rgb(239, 243, 244);
-    border-radius: 16px;
     max-width: 350px;
-    min-width: 290px;
-    padding: 0 25px 12px;
-    min-height: 380px;
     max-height: 546px;
+    min-width: 290px;
+    min-height: 380px;
+    padding: 0 25px 12px;
 }
 
 .right-sidebar-question {
+    padding: 12px 0;
     font-weight: 700;
     font-size: 20px;
-    padding: 12px 0;
 }
 
 .right-sidebar-SignUp-btn {
@@ -487,14 +547,14 @@ footer {
 }
 
 .right-sidebar-logIn-functionality {
-    height: 42px;
-    width: 300px;
+    margin: 0 0 12px;
     border-radius: 24px;
     border-style: solid;
     border-color: rgb(207, 217, 222);
-    text-indent: 12px;
-    margin: 0 0 12px;
+    width: 300px;
+    height: 42px;
     padding: 0;
+    text-indent: 12px;
 }
 
 

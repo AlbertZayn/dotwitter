@@ -11,6 +11,10 @@ class ProfileController
         $pageContent = app('PageContent');
 
         ob_start();
+        require_once __DIR__ . '/../Views/left-sidebar.php';
+        $leftSidebarContent = ob_get_clean();
+
+        ob_start();
         require_once __DIR__ . '/../Views/profile.php';
         $ProfilePageContent = ob_get_contents();
         ob_clean();

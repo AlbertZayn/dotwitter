@@ -11,6 +11,10 @@ class HomeController
         $pageContent = app('PageContent');
 
         ob_start();
+        require_once __DIR__ . '/../Views/left-sidebar.php';
+        $leftSidebarContent = ob_get_clean();
+
+        ob_start();
         require_once __DIR__ . '/../Views/home.php';
         $HomePageContent = ob_get_contents();
         ob_clean();
