@@ -5,6 +5,11 @@ body {
     font-family: 'Work Sans', sans-serif;
 }
 
+form {
+    margin: 0;
+    padding: 0
+}
+
 /*     MAIN PAGE     */
 .grid-container {
     display: grid;
@@ -12,7 +17,7 @@ body {
     padding: 0;
 }
 
-.main-page-columns {
+.MainPageColumns {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -67,7 +72,7 @@ body {
     flex-direction: column;
 }
 
-#username, #password {
+#username-login, #password-login {
     margin-bottom: 20px;
     border-radius: 24px;
     border-style: solid;
@@ -77,8 +82,8 @@ body {
     text-indent: 12px;
 }
 
-#username:focus,
-#password:focus {
+#username-login:focus,
+#password-login:focus {
     border-color: rgb(29, 155, 240);
 }
 
@@ -100,7 +105,7 @@ hr {
     color: rgb(185, 202, 211)
 }
 
-.logIn-btn {
+.login-btn {
     margin-bottom: 8px;
     border-style: none;
     border-radius: 24px;
@@ -119,20 +124,20 @@ hr {
     transition-duration: 0.2s;
 }
 
-.SignUp-question {
+.signup-question {
     display: flex;
     justify-content: space-between;
     padding: 30px 0 15px;
     font-weight: 700;
 }
 
-.SignUp-btn-box {
+.signup-btn-box {
     display: flex;
     justify-content: space-between;
 }
 
 
-.SignUp-btn {
+.signup-btn {
     margin-bottom: 8px;
     border-radius: 24px;
     border-style: double;
@@ -147,12 +152,12 @@ hr {
     letter-spacing: -1px;
 }
 
-.SignUp-btn:hover {
+.signup-btn:hover {
     transition-duration: 0.2s;
     background-color: rgb(29, 150, 240, 0.1);
 }
 
-.SignUp-agreement {
+.signup-agreement {
     width: 300px;
     font-size: 11px;
     line-height: 12px;
@@ -165,7 +170,7 @@ footer {
     padding: 40px 20px 20px 10px;
 }
 
-.Footer-spans {
+.footer-spans {
     padding: 16px 16px 0 0;
     cursor: pointer;
     font-size: 13px;
@@ -174,14 +179,14 @@ footer {
     color: rgb(83, 100, 113);
 }
 
-.Footer-spans:hover {
+.footer-spans:hover {
     text-decoration-thickness: 1px;
     text-decoration-line: underline;
     outline-style: none;
 }
 
 @media (max-width: 1000px) {
-    .main-page-row {
+    .MainPageRow {
         flex-direction: column-reverse;
     }
 
@@ -204,7 +209,7 @@ footer {
     --bs-modal-width: 600px;
 }
 
-.modal-steps_content {
+.modal-steps-content {
     overflow: hidden;
     margin: 0;
     border-radius: 16px;
@@ -215,7 +220,7 @@ footer {
     padding: 0;
 }
 
-.modal-steps_header {
+.modal-steps-header {
     display: flex;
     flex-direction: row;
     justify-content: left;
@@ -260,19 +265,16 @@ footer {
     font-weight: 700;
 }
 
-.modal_date-pickers {
-    display: flex;
-    flex-direction: row;
-}
-
-.modal-name_box,
-.modal-email_box {
+.modal-name-box,
+.modal-email-box,
+.modal-username-box {
     padding: 12px 0;
 }
 
 .name-input,
 .email-input,
-.password-creator {
+.password-creator,
+.username-input {
     margin: 14px 0 0;
     border-style: solid;
     border-width: 1px;
@@ -287,13 +289,14 @@ footer {
 
 .name-input:focus,
 .email-input:focus,
-.password-creator:focus {
+.password-creator:focus,
+.username-input:focus {
     box-shadow: rgb(29, 155, 240) 0 0 0 1px;
     border-color: rgb(29, 155, 240);
     outline: none;
 }
 
-.DOBPhrase {
+.dob-phrase {
     margin: 0 0 4px;
     padding: 20px 0 0;
     font-size: 15px;
@@ -307,7 +310,7 @@ footer {
     color: rgb(83, 100, 113);
 }
 
-.modal_date-pickers {
+.modal-date-pickers {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -334,7 +337,7 @@ footer {
     color: #333333;
 }
 
-.modal-steps_footer {
+.modal-steps-footer {
     display: flex;
     justify-content: center;
     border-top: none;
@@ -382,13 +385,13 @@ footer {
 }
 
 /*     LEFT-SIDE BAR FOR EXPLORE/MAIN/PROFILE PAGES     */
-.explore-container {
+.PageContainer {
     display: grid;
     height: 100vh;
     padding: 0;
 }
 
-.left-sidebar-box {
+.LeftSidebarBox {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -489,7 +492,7 @@ footer {
 }
 
 /*TWEET FEED */
-.tweet-feed-column {
+.TweetFeedColumn {
     border-style: solid;
     border-right-width: 1px;
     border-left-width: 1px;
@@ -516,7 +519,7 @@ footer {
 
 /* Right sidebar */
 
-.right-sidebar {
+.RightSidebar {
     display: flex;
     flex-direction: column;
     padding: 12px 30px;
@@ -542,11 +545,11 @@ footer {
     font-size: 20px;
 }
 
-.right-sidebar-SignUp-btn {
+.right-sidebar-signup-btn {
     margin: 12px 0 10px;
 }
 
-.right-sidebar-logIn-functionality {
+.right-sidebar-login-functionality {
     margin: 0 0 12px;
     border-radius: 24px;
     border-style: solid;

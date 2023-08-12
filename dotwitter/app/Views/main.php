@@ -1,7 +1,7 @@
 <div class="grid-container container-fluid">
-    <div class="row main-page-row">
+    <div class="row MainPageRow">
         <!--BIRD SIDE-->
-        <div class="col-lg-6 main-page-columns">
+        <div class="col-lg-6 MainPageColumns">
             <section class="birdSide">
                 <div class="birdSide-container">
                     <img src="/images/birdSide.png" class="img-fluid birdSide-bg-img" alt="#">
@@ -16,180 +16,200 @@
             </section>
         </div>
         <!--LOGIN SIDE-->
-        <div class="col-lg-6 main-page-columns">
-            <section class="loginSide">
-                <div class="container">
-                    <div class="row">
-                        <div class="col">
-                            <img src="https://cdn.iconscout.com/icon/free/png-256/free-twitter-241-721979.png"
-                                 height="34.2"
-                                 width="42.6" class="img-fluid" alt="...">
-                            <h1 class="loginSide-h1">Happening now</h1>
-                            <h2 class="loginSide-h2">Join dotwitter today</h2>
-                            <div class="loginSide-functionality">
-                                <input type="text" id="username" minlength="8" maxlength="50" placeholder="Username"
-                                       onfocus="" onblur="this.placeholder">
-                                <input type="password" id="password" minlength="8" maxlength="50" placeholder="Password"
-                                       onfocus="" onblur="this.placeholder">
-                                <button class="logIn-btn">Log In</button>
-                                <div class="or">
-                                    <hr>
-                                    <span class="or-span">or</span>
-                                    <hr>
-                                    <br>
-                                </div>
-                                <div class="container-fluid">
-                                    <div class="SignUp-btn-box row">
-                                        <div class="col-lg-6">
-                                            <span class="SignUp-question">Don't have an account?</span>
-                                            <button class="SignUp-btn modal-btn" data-bs-target="#modal-step1"
-                                                    data-bs-toggle="modal">Create account
-                                            </button>
-                                            <div class="SignUp-agreement">
+        <div class="col-lg-6 MainPageColumns">
+<!--            <form method="post" action="/app/DotwitterDB/login.php">-->
+                <section class="loginSide">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <img src="https://cdn.iconscout.com/icon/free/png-256/free-twitter-241-721979.png"
+                                     height="34.2"
+                                     width="42.6" class="img-fluid" alt="...">
+                                <h1 class="loginSide-h1">Happening now</h1>
+                                <h2 class="loginSide-h2">Join dotwitter today</h2>
+                                <div class="loginSide-functionality">
+                                    <input type="text" id="username-login" minlength="8" maxlength="50"
+                                           placeholder="Username"
+                                           onfocus="" onblur="this.placeholder" required>
+                                    <input type="password" id="password-login" minlength="8" maxlength="50"
+                                           placeholder="Password"
+                                           onfocus="" onblur="this.placeholder" required>
+                                    <button type="submit" class="login-btn">Log In</button>
+                                    <div class="or">
+                                        <hr>
+                                        <span class="or-span">or</span>
+                                        <hr>
+                                    </div>
+                                    <div class="container-fluid">
+                                        <div class="signup-btn-box row">
+                                            <div class="col-lg-6">
+                                                <span class="signup-question">Don't have an account?</span>
+                                                <button class="signup-btn modal-btn" data-bs-target="#modal-step1"
+                                                        data-bs-toggle="modal">Create account
+                                                </button>
+                                                <div class="signup-agreement">
                                                 <span> By signing up, you are signing an <a
                                                             style="cursor: pointer; color: rgb(29, 155, 240); text-decoration: none;"
                                                             href="#">Agreement</a>, that you are not stuffy or nitpicker person</span>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <span class="SignUp-question">Explore without registration?</span>
-                                            <a href="http://45.9.41.41/explore">
-                                                <button class="SignUp-btn">Explore</button>
-                                            </a>
+                                            <div class="col-lg-6">
+                                                <span class="signup-question">Explore without registration?</span>
+                                                <a href="http://45.9.41.41/anonym-explore">
+                                                    <button class="signup-btn">Explore</button>
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+                                <footer>
+                                    <div>
+                                        <a class="footer-spans"
+                                           href="https://coda.io/d/dotwitter_dCS56yYS_aJ/General-Description_suy5I#_luqY_">About</a>
+                                        <span class="footer-spans">Agreement</span>
+                                        <?php
+                                        $currentYear = date("Y");
+                                        ?>
+                                        <a class="footer-spans footer-year" href="https://dotwrk.com/"><?php
+                                            echo '© ' . $currentYear . ' .wrk' ?></a>
+                                    </div>
+                                </footer>
                             </div>
-                            <footer>
-                                <div>
-                                    <a class="Footer-spans"
-                                       href="https://coda.io/d/dotwitter_dCS56yYS_aJ/General-Description_suy5I#_luqY_">About</a>
-                                    <span class="Footer-spans">Agreement</span>
-                                    <?php
-                                    $currentYear = date("Y");
-                                    ?>
-                                    <a class="Footer-spans footer-year" href="https://dotwrk.com/"><?php echo '© ' . $currentYear . ' .wrk' ?></a>
-                                </div>
-                            </footer>
                         </div>
-                    </div>
-            </section>
+                </section>
+<!--            </form>-->
         </div>
     </div>
 </div>
 <!--SignUp Modal Window-->
 <!--Step-1-->
-<div class="modal fade" id="modal-step1" aria-hidden="true" tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered modal-dialog-steps">
-        <div class="modal-content modal-steps_content">
-            <div class="modal-header modal-steps_header">
-                <svg class="modal-closer" width="24" height="24" fill="none"
-                     xmlns="http://www.w3.org/2000/svg" data-bs-dismiss="modal">
-                    <path d="M17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41L17.59 5Z"
-                          fill="black"/>
-                </svg>
-                <h2 class="modal-h2">Step 1 of 2</h2>
-            </div>
-            <div class="modal-body modal-steps-body">
-                <h1 class="modal-h1">Create your account</h1>
-                <div class="modal-name_box">
-                    <div class="modal-name_box2">
-                        <input type="text" class="name-input" minlength="6" maxlength="50" placeholder="Name">
+<form method="post" action="/app/DotwitterDB/register.php">
+    <div class="modal fade" id="modal-step1" aria-hidden="true" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-steps">
+            <div class="modal-content modal-steps-content">
+                <div class="modal-header modal-steps-header">
+                    <svg class="modal-closer" width="24" height="24" fill="none"
+                         xmlns="http://www.w3.org/2000/svg" data-bs-dismiss="modal">
+                        <path d="M17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41L17.59 5Z"
+                              fill="black"/>
+                    </svg>
+                    <h2 class="modal-h2" contenteditable="false">Step 1 of 2</h2>
+                </div>
+                <div class="modal-body modal-steps-body">
+                    <h1 class="modal-h1">Create your account</h1>
+                    <div class="modal-name-box">
+                        <div>
+                            <input name="fullname" id="fullname" type="text" class="name-input" minlength="6"
+                                   maxlength="50" placeholder="Fullname" required>
+                        </div>
+                    </div>
+                    <div class="modal-email-box">
+                        <div>
+                            <input name="email" id="email" type="email" class="email-input" minlength="6" maxlength="70"
+                                   placeholder="Email" required>
+                        </div>
+                    </div>
+                    <div class="modal-username-box">
+                        <div>
+                            <input name="username" id="username" type="text" class="username-input" minlength="6"
+                                   maxlength="50" placeholder="@Username" required>
+                        </div>
+                    </div>
+                    <span class="dob-phrase">Date of birth</span>
+                    <span class="modal-warning">This will not be shown publicly. Confirm your own age, even if this account is for a business, a pet, or something else.</span>
+                    <div class="modal-date-pickers">
+                        <div class="month-picker">
+                            <select class="form-select date-picker-form">
+                                <option disabled selected>Month</option>
+                                <option class="option-enabled" value="1">January</option>
+                                <option class="option-enabled" value="2">February</option>
+                                <option class="option-enabled" value="3">March</option>
+                                <option class="option-enabled" value="4">April</option>
+                                <option class="option-enabled" value="5">May</option>
+                                <option class="option-enabled" value="6">June</option>
+                                <option class="option-enabled" value="7">July</option>
+                                <option class="option-enabled" value="8">August</option>
+                                <option class="option-enabled" value="9">September</option>
+                                <option class="option-enabled" value="10">October</option>
+                                <option class="option-enabled" value="11">November</option>
+                                <option class="option-enabled" value="12">December</option>
+                            </select>
+                        </div>
+                        <div class="day-picker">
+                            <select class="form-select date-picker-form">
+                                <option disabled selected>Day</option>
+                                <?php
+                                for ($day = 1; $day <= 31; $day++) {
+                                    echo '<option class="option-enabled" value="' . $day . '">' . $day . '</option>';
+                                }
+                                ?>
+                            </select>
+                        </div>
+                        <div class="year-picker">
+                            <select class="form-select date-picker-form" id="year">
+                                <option disabled selected>Year</option>
+                                <?php
+                                for ($year = $currentYear; $year >= $currentYear - 120; $year--) {
+                                    echo '<option class="option-enabled" value="' . $year . '">' . $year . '</option>';
+                                }
+                                ?>
+                            </select>
+                        </div>
                     </div>
                 </div>
-                <div class="modal-email_box">
-                    <div class="modal-email_box2">
-                        <input type="email" class="email-input" minlength="6" maxlength="70" placeholder="Email">
-                    </div>
+                <div class="modal-footer modal-steps-footer">
+                    <button class="modal-next-btn" data-bs-target="#modal-step2" data-bs-toggle="modal">Next</button>
                 </div>
-                <span class="DOBPhrase">Date of birth</span>
-                <span class="modal-warning">This will not be shown publicly. Confirm your own age, even if this account is for a business, a pet, or something else.</span>
-                <div class="modal_date-pickers">
-                    <div class="month-picker">
-                        <select class="form-select date-picker-form">
-                            <option disabled selected>Month</option>
-                            <option class="option-enabled" value="1">January</option>
-                            <option class="option-enabled" value="2">February</option>
-                            <option class="option-enabled" value="3">March</option>
-                            <option class="option-enabled" value="4">April</option>
-                            <option class="option-enabled" value="5">May</option>
-                            <option class="option-enabled" value="6">June</option>
-                            <option class="option-enabled" value="7">July</option>
-                            <option class="option-enabled" value="8">August</option>
-                            <option class="option-enabled" value="9">September</option>
-                            <option class="option-enabled" value="10">October</option>
-                            <option class="option-enabled" value="11">November</option>
-                            <option class="option-enabled" value="12">December</option>
-                        </select>
-                    </div>
-                    <div class="day-picker">
-                        <select class="form-select date-picker-form">
-                            <option disabled selected>Day</option>
-                            <?php
-                            for ($day = 1; $day <= 31; $day++) {
-                                echo '<option class="option-enabled" value="' . $day . '">' . $day . '</option>';
-                            }
-                            ?>
-                        </select>
-                    </div>
-                    <div class="year-picker">
-                        <select class="form-select date-picker-form" id="year">
-                            <option disabled selected>Year</option>
-                            <?php
-                            for ($year = $currentYear; $year >= $currentYear - 120; $year--) {
-                                echo '<option class="option-enabled" value="' . $year . '">' . $year . '</option>';
-                            }
-                            ?>
-                        </select>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer modal-steps_footer">
-                <button class="modal-next-btn" data-bs-target="#modal-step2" data-bs-toggle="modal">Next</button>
             </div>
         </div>
     </div>
-</div>
-<!--Step-2-->
-<div class="modal fade" id="modal-step2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered modal-dialog-steps">
-        <div class="modal-content modal-steps_content">
-            <div class="modal-header modal-steps_header">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black"
-                     class="bi bi-arrow-left modal-backer" viewBox="0 0 16 16" data-bs-target="#modal-step1" data-bs-toggle="modal">
-                    <path fill-rule="evenodd"
-                          d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z" fill="black"/>
-                </svg>
-                <h2 class="modal-h2">Step 2 of 2</h2>
-            </div>
-            <div class="modal-body modal-steps-body">
-                <h1 class="modal-h1">You'll need a password</h1>
-                <span class="modal-warning">Make sure it's 8 characters or more</span>
-                <div class="modal-passowrd_box">
-                    <div class="modal-password_box2">
-                <input type="password" class="password-creator" minlength="8" maxlength="50" placeholder="Password"
-                       onfocus="" onblur="this.placeholder">
+    <!--Step-2-->
+    <div class="modal fade" id="modal-step2" aria-hidden="true" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-steps">
+            <div class="modal-content modal-steps-content">
+                <div class="modal-header modal-steps-header">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black"
+                         class="bi bi-arrow-left modal-backer" viewBox="0 0 16 16" data-bs-target="#modal-step1"
+                         data-bs-toggle="modal">
+                        <path fill-rule="evenodd"
+                              d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"
+                              fill="black"/>
+                    </svg>
+                    <h2 class="modal-h2">Step 2 of 2</h2>
+                </div>
+                <div class="modal-body modal-steps-body">
+                    <h1 class="modal-h1">You'll need a password</h1>
+                    <span class="modal-warning">Make sure it's 8 characters or more</span>
+                    <div class="modal-password-box">
+                        <div>
+                            <input name="password" id="password" type="password" class="password-creator" minlength="8"
+                                   maxlength="50"
+                                   placeholder="Password"
+                                   onfocus="" onblur="this.placeholder" required>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="modal-footer modal-steps_footer">
-                <button class="modal-next-btn" data-bs-target="#modal-final" data-bs-toggle="modal">Next</button>
+                <div class="modal-footer modal-steps-footer">
+                    <button type="submit" class="modal-next-btn" data-bs-target="#modal-final" data-bs-toggle="modal">
+                        Create account
+                    </button>
+                </div>
             </div>
         </div>
     </div>
-</div>
+</form>
 <!--Final-step-->
-<div class="modal fade" id="modal-final" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+<div class="modal fade" id="modal-final" aria-hidden="true" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered modal-dialog-steps">
-        <div class="modal-content modal-steps_content">
-            <div class="modal-header modal-steps_header">
+        <div class="modal-content modal-steps-content">
+            <div class="modal-header modal-steps-header">
                 <svg class="modal-closer"></svg>
             </div>
             <div class="modal-body modal-steps-body modal-final-body">
                 <h1 class="modal-h1 ">Account successfully created!</h1>
             </div>
-            <div class="modal-footer modal-steps_footer">
-                <button class="modal-next-btn">To the profile page!</button>
+            <div class="modal-footer modal-steps-footer">
+                <button class="modal-next-btn" data-bs-dismiss="modal">Let's log in!</button>
             </div>
         </div>
     </div>

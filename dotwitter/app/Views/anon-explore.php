@@ -1,11 +1,11 @@
-<div class="container explore-container">
+<div class="container PageContainer">
     <div class="row explore-row">
 
         <!-- LEFT SIDEBAR -->
         <?php echo $leftSidebarContent; ?>
 
         <!--TWEET FEED -->
-        <div class="col col-lg-5 tweet-feed-column">
+        <div class="col col-lg-5 TweetFeedColumn">
             <div class="tweet-feed-header">
                 <span>Explore</span>
                 <a href="#" class="tweet-feed-icon">
@@ -15,11 +15,11 @@
         </div>
 
         <!--RIGHT SIDEBAR -->
-        <div class="col col-lg-4 right-sidebar">
+        <div class="col col-lg-4 RightSidebar">
             <div class="right-sidebar-functionality">
                 <span class="right-sidebar-question">New to dotwitter?</span>
-                <span class="SignUp-agreement">Sign up now to get your own personalized timeline</span>
-                <button class="SignUp-btn right-sidebar-SignUp-btn">Create account</button>
+                <span class="signup-agreement">Sign up now to get your own personalized timeline</span>
+                <button class="signup-btn right-sidebar-signup-btn">Create account</button>
                 <div class="SignUp-agreement ">
                 <span> By signing up, you are signing an <a
                         style="cursor: pointer; color: rgb(29, 155, 240); text-decoration: none;"
@@ -31,9 +31,9 @@
                     <hr>
                     <br>
                 </div>
-                <input type="text" class="right-sidebar-logIn-functionality" minlength="6" maxlength="50" placeholder="Username"
+                <input type="text" class="right-sidebar-login-functionality" minlength="6" maxlength="50" placeholder="Username"
                        onfocus="" onblur="this.placeholder">
-                <input type="password" class="right-sidebar-logIn-functionality"  minlength="6" maxlength="50" placeholder="Password"
+                <input type="password" class="right-sidebar-login-functionality"  minlength="6" maxlength="50" placeholder="Password"
                        onfocus="" onblur="this.placeholder">
                 <button class="logIn-btn">Log In</button>
             </div>

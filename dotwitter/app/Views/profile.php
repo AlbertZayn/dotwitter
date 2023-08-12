@@ -1,11 +1,11 @@
-<div class="container explore-container">
+<div class="container PageContainer"> 
     <div class="row explore-row">
 
         <!-- LEFT SIDEBAR -->
         <?php echo $leftSidebarContent; ?>
 
         <!--TWEET FEED -->
-        <div class="col col-lg-5 tweet-feed-column">
+        <div class="col col-lg-5 TweetFeedColumn">
             <div class="tweet-feed-header">
                 <span>Profile</span>
                 <a href="#" class="sidebar-icon-anchor">
@@ -15,7 +15,7 @@
         </div>
 
         <!--RIGHT SIDEBAR -->
-        <div class="col col-lg-4 right-sidebar">
+        <div class="col col-lg-4 RightSidebar">
             <div class="right-sidebar-functionality">
 
             </div>
