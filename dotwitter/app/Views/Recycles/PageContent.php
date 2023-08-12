@@ -13,13 +13,32 @@ class PageContent
         $this->title = $title;
     }
 
-    public function render()
+    public static function clipboardContent($pageView, $title)
     {
         ob_start();
-        echo $this->content;
+        require_once __DIR__ . '/../../Views/left-sidebar.php';
+        $leftSidebarContent = ob_get_clean();
+
+        ob_start();
+        require_once __DIR__ . '/../../Views/' . $pageView;
+        $pageContent = ob_get_clean();
+
+        return new self($pageContent, $title);
+    }
+
+    public function render($pageContent)
+    {
+        ob_start();
+        echo $pageContent;
         $pageContent = ob_get_contents();
         ob_end_clean();
 
         require_once __DIR__ . '/../page.php';
     }
+
+    public function getContent()
+    {
+        return $this->content;
+    }
+
 }

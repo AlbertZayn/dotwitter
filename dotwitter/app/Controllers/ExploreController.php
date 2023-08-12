@@ -8,19 +8,8 @@ class ExploreController
 {
     public static function getPage()
     {
-        $pageContent = app('PageContent');
-
-        ob_start();
-        require_once __DIR__ . '/../Views/left-sidebar.php';
-        $leftSidebarContent = ob_get_clean();
-
-        ob_start();
-        require_once __DIR__ . '/../Views/explore.php';
-        $ExplorePageContent = ob_get_contents();
-        ob_clean();
         $title = 'Explore / dotwitter';
-
-        $page = new PageContent($ExplorePageContent, $title);
-        $page->render();
+        $page = PageContent::clipboardContent('explore.php', $title);
+        $page->render($page->getContent());
     }
 }
