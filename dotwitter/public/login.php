@@ -1,13 +1,13 @@
 <?php
 
-require_once __DIR__.'/boot.php';
+require_once __DIR__ . '/boot.php';
 
 // проверяем наличие пользователя с указанным юзернеймом
 $stmt = pdo()->prepare("SELECT * FROM `user` WHERE `username` = :username");
 $stmt->execute(['username' => $_POST['username']]);
 if (!$stmt->rowCount()) {
     flash('Пользователь с такими данными не зарегистрирован');
-    header('Location: login.php');
+    header('Location: index.php');
     die;
 }
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -27,4 +27,4 @@ if (password_verify($_POST['password'], $user['password'])) {
 }
 
 flash('Пароль неверен');
-header('Location: dotwitter/index.php');
+header('Location: index.php');

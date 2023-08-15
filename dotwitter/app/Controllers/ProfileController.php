@@ -9,7 +9,7 @@ class ProfileController
     public static function getPage()
     {
         $title = 'Profile / dotwitter';
-        $page = PageContent::clipboardContent('home.php', $title);
+        $page = PageContent::clipboardContent('profile.php', $title);
         $page->render($page->getContent());
     }
 }

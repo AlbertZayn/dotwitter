@@ -16,8 +16,8 @@
             </section>
         </div>
         <!--LOGIN SIDE-->
-        <div class="col-lg-6 MainPageColumns">
-<!--            <form method="post" action="/app/DotwitterDB/login.php">-->
+<!--        <form method="post" action="login.php">-->
+            <div class="col-lg-6 MainPageColumns">
                 <section class="loginSide">
                     <div class="container">
                         <div class="row">
@@ -77,13 +77,13 @@
                             </div>
                         </div>
                 </section>
-<!--            </form>-->
-        </div>
+<!--        </form>-->
     </div>
+</div>
 </div>
 <!--SignUp Modal Window-->
 <!--Step-1-->
-<form method="post" action="/app/DotwitterDB/register.php">
+<form method="post" action="register.php">
     <div class="modal fade" id="modal-step1" aria-hidden="true" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered modal-dialog-steps">
             <div class="modal-content modal-steps-content">
@@ -112,7 +112,7 @@
                     <div class="modal-username-box">
                         <div>
                             <input name="username" id="username" type="text" class="username-input" minlength="6"
-                                   maxlength="50" placeholder="@Username" required>
+                                   maxlength="50" placeholder="Username" required>
                         </div>
                     </div>
                     <span class="dob-phrase">Date of birth</span>

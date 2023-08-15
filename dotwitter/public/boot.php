@@ -30,8 +30,8 @@ function flash(?string $message = null)
         unset($_SESSION['flash']);
     }
 }
-//
-//function check_auth(): bool
-//{
-//    return !!($_SESSION['user_id'] ?? false);
-//}
+
+function check_auth(): bool
+{
+    return !!($_SESSION['user_id'] ?? false);
+}
