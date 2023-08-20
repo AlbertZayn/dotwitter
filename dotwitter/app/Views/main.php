@@ -97,23 +97,17 @@
                 </div>
                 <div class="modal-body modal-steps-body">
                     <h1 class="modal-h1">Create your account</h1>
-                    <div class="modal-name-box">
-                        <div>
-                            <input name="fullname" id="fullname" type="text" class="name-input" minlength="6"
-                                   maxlength="50" placeholder="Fullname" required>
-                        </div>
+                    <div class="form-floating mb-3 modal-name-box">
+                        <input type="text" id="fullname" name="fullname" class="form-control fullname-input" placeholder="name@example.com">
+                        <label for="fullname">Fullname</label>
                     </div>
-                    <div class="modal-email-box">
-                        <div>
-                            <input name="email" id="email" type="email" class="email-input" minlength="6" maxlength="70"
-                                   placeholder="Email" required>
-                        </div>
+                    <div class="form-floating mb-3 modal-email-box">
+                        <input type="email" id="email" name="email" class="form-control email-input" placeholder="name@example.com">
+                        <label for="email">Email</label>
                     </div>
-                    <div class="modal-username-box">
-                        <div>
-                            <input name="username" id="username" type="text" class="username-input" minlength="6"
-                                   maxlength="50" placeholder="Username" required>
-                        </div>
+                    <div class="form-floating mb-3 modal-username-box">
+                        <input type="text" id="username" name="username" class="form-control username-input" placeholder="name@example.com">
+                        <label for="username">Username</label>
                     </div>
                     <span class="dob-phrase">Date of birth</span>
                     <span class="modal-warning">This will not be shown publicly. Confirm your own age, even if this account is for a business, a pet, or something else.</span>
@@ -158,7 +152,7 @@
                     </div>
                 </div>
                 <div class="modal-footer modal-steps-footer">
-                    <button class="modal-next-btn" data-bs-target="#modal-step2" data-bs-toggle="modal">Next</button>
+                    <button type="button" class="modal-next-btn" data-bs-target="#modal-step2" data-bs-toggle="modal">Next</button>
                 </div>
             </div>
         </div>
@@ -180,24 +174,19 @@
                 <div class="modal-body modal-steps-body">
                     <h1 class="modal-h1">You'll need a password</h1>
                     <span class="modal-warning">Make sure it's 8 characters or more</span>
-                    <div class="modal-password-box">
-                        <div>
-                            <input name="password" id="password" type="password" class="password-creator" minlength="8"
-                                   maxlength="50"
-                                   placeholder="Password"
-                                   onfocus="" onblur="this.placeholder" required>
-                        </div>
+                    <div class="form-floating mb-3 modal-password-box">
+                        <input type="password" id="password" name="password" class="form-control name-input password-creator" placeholder="name@example.com">
+                        <label for="fullname">Password</label>
                     </div>
                 </div>
                 <div class="modal-footer modal-steps-footer">
-                    <button type="submit" class="modal-next-btn" data-bs-target="#modal-final" data-bs-toggle="modal">
+                    <button type="button" class="modal-next-btn" data-bs-target="#modal-final" data-bs-toggle="modal">
                         Create account
                     </button>
                 </div>
             </div>
         </div>
     </div>
-</form>
 <!--Final-step-->
 <div class="modal fade" id="modal-final" aria-hidden="true" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered modal-dialog-steps">
@@ -209,8 +198,9 @@
                 <h1 class="modal-h1 ">Account successfully created!</h1>
             </div>
             <div class="modal-footer modal-steps-footer">
-                <button class="modal-next-btn" data-bs-dismiss="modal">Let's log in!</button>
+                <button type="submit" class="modal-next-btn" data-bs-dismiss="modal">Let's log in!</button>
             </div>
         </div>
     </div>
 </div>
+</form>

@@ -9,8 +9,9 @@ if ($stmt->rowCount() > 0) {
     header('Location: /');
     die;
 }
+var_dump(password_hash($_POST['password'], PASSWORD_DEFAULT));
 
-$stmt = pdo()->prepare("INSERT INTO `user` (`fullname`, `email`,  `username`, `password`) VALUES (:fullname, :email, :username, :password)");
+$stmt = pdo()->prepare("INSERT INTO `user` (`full_name`, `email`,  `username`, `password`) VALUES (:fullname, :email, :username, :password)");
 $stmt->execute([
     'fullname' => $_POST['fullname'],
     'email' => $_POST['email'],
@@ -18,9 +19,11 @@ $stmt->execute([
     'password' => password_hash($_POST['password'], PASSWORD_DEFAULT),
 ]);
 
-header('Location: index.php');
+header('Location: /');
 
 
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
 
 

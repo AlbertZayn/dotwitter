@@ -18,6 +18,3 @@ function app($abstract)
     global $container;
     return $container->make($abstract);
 }
-
-
-

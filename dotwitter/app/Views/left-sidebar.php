@@ -79,18 +79,17 @@
                                   fill="black"/>
                         </svg>
                     </div>
-                    <div class="modal-body">
-                        <div class="sidebar-user-icon">
+                    <div class="modal-body tweet-modal-body">
+                        <div class="sidebar-user-icon tweet-modal-useravatar">
                             <img class="sidebar-user-avatar img-fluid" src="/images/noavatar-icon" alt="...">
                         </div>
-                        <div>
-                            <p>
-                                <button type="button" class="btn btn-secondary" data-bs-container="body"
-                                        data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="For all">
-                                    For
-                                </button>
-                            </p>
-                            <h2 class="fs-5">What's happening?</h2>
+                        <div class="tweet-modal-functionality">
+                            <button type="button" class="btn btn-secondary tweet-modal-for" data-bs-container="body"
+                                    data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="For all">
+                                For
+                            </button>
+                            <textarea class="form-control tweet-modal-textarea" id="message-text"
+                                      placeholder="What's happening"></textarea>
                         </div>
                     </div>
                     <div class="modal-footer tweet-modal-footer">

@@ -2,7 +2,11 @@
 
 return [
     'db_name' => 'dotwitter_db',
-    'db_host' => '45.9.41.41',
-    'db_user' => 'Bert',
+    'db_host' => 'localhost',
+    'db_user' => 'Bert2',
     'db_pass' => 'dotwitter',
 ];
+
+var_dump($_POST);
+error_reporting(E_ALL);
+ini_set('display_errors', 1);

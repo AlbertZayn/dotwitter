@@ -6,7 +6,7 @@
 
         <!--TWEET FEED -->
         <div class="col col-lg-5 TweetFeedColumn">
-            <div class="tweet-feed-header">
+            <div class="home-feed-header">
                 <span>Home</span>
             </div>
         </div>

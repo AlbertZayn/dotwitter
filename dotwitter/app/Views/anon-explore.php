@@ -6,7 +6,7 @@
 
         <!--TWEET FEED -->
         <div class="col col-lg-5 TweetFeedColumn">
-            <div class="tweet-feed-header">
+            <div class="anonexplore-feed-header">
                 <span>Explore</span>
                 <a href="#" class="tweet-feed-icon">
                     <img class="sidebar-icon" src="/images/settings-icon.png" alt="..." width="16" height="16">
