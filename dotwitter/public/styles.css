@@ -698,7 +698,6 @@ footer {
 }
 
 .modal-profile-window {
-    overflow: hidden;
     margin: 0;
     border-radius: 16px;
     max-width: 800px;
@@ -764,6 +763,9 @@ footer {
     margin: 25px 0;
 }
 
-.bio-input {
-
+.form-floating>.bio-input {
+    padding: 2rem 0.75rem 60px;
+}
+.form-floating .bio-input:focus {
+    padding: 2rem 0.75rem 60px;
 }
