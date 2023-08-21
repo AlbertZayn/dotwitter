@@ -309,7 +309,6 @@ footer {
 .bio-input,
 .location-input,
 .web-site-input {
-    margin: 0 0 0;
     border-style: solid;
     border-width: 1px;
     border-radius: 4px;
@@ -332,6 +331,14 @@ footer {
     border-color: rgb(29, 155, 240);
     outline: none;
 }
+
+/*.fullname-input:invalid,*/
+/*.email-input:invalid,*/
+/*.username-input:invalid,*/
+/*.password-creator:invalid {*/
+/*    border-color: rgb(244, 33, 46);*/
+/*}*/
+
 
 .dob-phrase {
     margin: 0 0 4px;
