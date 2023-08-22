@@ -23,4 +23,3 @@
     <?php echo $pageContent; ?>
 </body>
 </html>
-

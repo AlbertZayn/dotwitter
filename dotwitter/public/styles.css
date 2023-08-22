@@ -293,7 +293,6 @@ footer {
 .modal-name-box,
 .modal-email-box,
 .modal-username-box {
-    padding: 0 0;
     color: rgb(83, 100, 113);
 }
 .modal-name-box:active,
@@ -332,13 +331,14 @@ footer {
     outline: none;
 }
 
-/*.fullname-input:invalid,*/
-/*.email-input:invalid,*/
-/*.username-input:invalid,*/
-/*.password-creator:invalid {*/
-/*    border-color: rgb(244, 33, 46);*/
-/*}*/
+.from-label {
+    margin-bottom: 8px;
+}
 
+.ValidationFullname {
+    padding: 0;
+    margin: 0;
+}
 
 .dob-phrase {
     margin: 0 0 4px;
@@ -386,6 +386,10 @@ footer {
     justify-content: center;
     border-top: none;
     padding: 0 80px;
+}
+
+.modal-next-btn:disabled {
+    background-color: rgb(15, 20, 25, 0.4);
 }
 
 .modal-next-btn {

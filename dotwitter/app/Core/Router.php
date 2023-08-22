@@ -16,7 +16,6 @@ class Router
     {
         $this->container = $container;
     }
-
     public function handleRequest()
     {
         $path = $_SERVER['REQUEST_URI'];

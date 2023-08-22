@@ -83,7 +83,7 @@
 </div>
 <!--SignUp Modal Window-->
 <!--Step-1-->
-<form method="post" action="register.php" class="needs-validation" novalidate>
+<form method="post" action="/dotwitter/app/Controllers/RegisterController.php/register" class="needs-validation" novalidate>
     <div class="modal fade" id="modal-step1" aria-hidden="true" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered modal-dialog-steps">
             <div class="modal-content modal-steps-content">
@@ -101,35 +101,25 @@
                         <input type="text" id="fullname" name="fullname" minlength="1" maxlength="50"
                                class="form-control fullname-input" placeholder="name@example.com" required>
                         <label for="fullname" class="form-label">Fullname</label>
-                        <div class="invalid-feedback">
+                        <div class="invalid-feedback ValidationFullname">
                             What is your name?
                         </div>
-                        <script>
-                            const fullnameInput = document.getElementById('fullname');
-                            const fullnameFeedback = document.getElementById('ValidationFullname');
-
-                            fullnameInput.addEventListener('input', () => {
-                                if (fullnameInput.value.length >= 1) {
-                                    fullnameInput.classList.add('is-valid');
-                                    fullnameInput.classList.remove('is-invalid');
-                                    fullnameFeedback.style.display = 'none';
-                                } else {
-                                    fullnameInput.classList.remove('is-valid');
-                                    fullnameInput.classList.add('is-invalid');
-                                    fullnameFeedback.style.display = 'block';
-                                }
-                            });
-                        </script>
                     </div>
                     <div class="form-floating mb-3 modal-email-box">
                         <input type="email" id="email" name="email" class="form-control email-input"
-                               placeholder="name@example.com">
-                        <label for="email">Email</label>
+                               placeholder="name@example.com" required>
+                        <label for="email" class="form-label">Email</label>
+                        <div class="invalid-feedback ValidationEmail">
+                            Please enter a valid email address
+                        </div>
                     </div>
                     <div class="form-floating mb-3 modal-username-box">
                         <input type="text" id="username" name="username" minlength="1" maxlength="50"
-                               class="form-control username-input" placeholder="name@example.com">
-                        <label for="username">Username</label>
+                               class="form-control username-input" placeholder="name@example.com" required>
+                        <label for="username" class="form-label">Username</label>
+                        <div class="invalid-feedback ValidationUsername">
+                            Please enter your @username
+                        </div>
                     </div>
                     <span class="dob-phrase">Date of birth</span>
                     <span class="modal-warning">This will not be shown publicly. Confirm your own age, even if this account is for a business, a pet, or something else.</span>
@@ -174,7 +164,7 @@
                     </div>
                 </div>
                 <div class="modal-footer modal-steps-footer">
-                    <button type="button" class="modal-next-btn" data-bs-target="#modal-step2" data-bs-toggle="modal">
+                    <button type="button" class="modal-next-btn step1-next-btn" data-bs-target="#modal-step2" data-bs-toggle="modal" disabled>
                         Next
                     </button>
                 </div>
@@ -199,13 +189,16 @@
                     <h1 class="modal-h1">You'll need a password</h1>
                     <span class="modal-warning">Make sure it's 8 characters or more</span>
                     <div class="form-floating mb-3 modal-password-box">
-                        <input type="password" id="password" name="password"
+                        <input type="password" id="password" name="password" minlength="8" maxlength="50"
                                class="form-control name-input password-creator" placeholder="name@example.com" required>
-                        <label for="fullname">Password</label>
+                        <label for="password">Password</label>
+                        <div class="invalid-feedback ValidationPassword">
+                            definitely not 8 characters
+                        </div>
                     </div>
                 </div>
                 <div class="modal-footer modal-steps-footer">
-                    <button type="button" class="modal-next-btn" data-bs-target="#modal-final" data-bs-toggle="modal">
+                    <button type="submit" class="modal-next-btn step2-next-btn" data-bs-target="#modal-final" data-bs-toggle="modal" disabled>
                         Create account
                     </button>
                 </div>
@@ -223,9 +216,102 @@
                     <h1 class="modal-h1 ">Account successfully created!</h1>
                 </div>
                 <div class="modal-footer modal-steps-footer">
-                    <button type="submit" class="modal-next-btn" data-bs-dismiss="modal">Let's log in!</button>
+                    <button type="button" class="modal-next-btn" data-bs-dismiss="modal">Let's log in!</button>
                 </div>
             </div>
         </div>
     </div>
 </form>
+<script>
+    const fullnameInput = document.getElementById('fullname');
+    const fullnameFeedback = document.getElementsByClassName('ValidationFullname');
+
+    fullnameInput.addEventListener('input', () => {
+        if (fullnameInput.value.length >= 1) {
+            fullnameInput.classList.add('is-valid');
+            fullnameInput.classList.remove('is-invalid');
+            fullnameFeedback.style.display = 'none';
+        } else {
+            fullnameInput.classList.remove('is-valid');
+            fullnameInput.classList.add('is-invalid');
+            fullnameFeedback.style.display = 'block';
+        }
+    });
+
+    const emailInput = document.getElementById('email');
+    const emailFeedback = document.getElementsByClassName('ValidationEmail');
+
+    emailInput.addEventListener('input', () => {
+        const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+        if (emailPattern.test(emailInput.value)) {
+            emailInput.classList.add('is-valid');
+            emailInput.classList.remove('is-invalid');
+            emailFeedback.style.display = 'none';
+        } else {
+            emailInput.classList.remove('is-valid');
+            emailInput.classList.add('is-invalid');
+            emailFeedback.style.display = 'block';
+        }
+    });
+
+        const usernameInput = document.getElementById('username');
+        const usernameFeedback = document.getElementsByClassName('ValidationUsername');
+
+        usernameInput.addEventListener('input', () => {
+        if (usernameInput.value.length >= 1) {
+        usernameInput.classList.add('is-valid');
+        usernameInput.classList.remove('is-invalid');
+        usernameFeedback.style.display = 'none';
+    } else {
+        usernameInput.classList.remove('is-valid');
+        usernameInput.classList.add('is-invalid');
+        usernameFeedback.style.display = 'block';
+    }
+    });
+
+    const nextButton = document.querySelector('.step1-next-btn');
+
+    fullnameInput.addEventListener('input', validateStep1);
+    emailInput.addEventListener('input', validateStep1);
+    usernameInput.addEventListener('input', validateStep1);
+
+    function validateStep1() {
+        const isFullnameValid = fullnameInput.value.length >= 1;
+        const isEmailValid = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(emailInput.value);
+        const isUsernameValid = usernameInput.value.length >= 1;
+
+        if (isFullnameValid && isEmailValid && isUsernameValid) {
+            nextButton.removeAttribute('disabled');
+        } else {
+            nextButton.setAttribute('disabled', 'true');
+        }
+    }
+
+    const passwordInput = document.getElementById('password');
+    const passwordFeedback = document.getElementsByClassName('ValidationPassword');
+
+    passwordInput.addEventListener('input', () => {
+        if (passwordInput.value.length >= 8) {
+            passwordInput.classList.add('is-valid');
+            passwordInput.classList.remove('is-invalid');
+            passwordFeedback.style.display = 'none';
+        } else {
+            passwordInput.classList.remove('is-valid');
+            passwordInput.classList.add('is-invalid');
+            passwordFeedback.style.display = 'block';
+        }
+    });
+
+    const createAccButton = document.querySelector('.step2-next-btn');
+
+    passwordInput.addEventListener('input', validateStep2);
+
+    function validateStep2() {
+        const isPasswordValid = passwordInput.value.length >= 8;
+        if (isPasswordValid) {
+            createAccButton.removeAttribute('disabled');
+        } else {
+            createAccButton.setAttribute('disabled', 'true');
+        }
+    }
+</script>
