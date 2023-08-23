@@ -2,9 +2,7 @@
     <div class="row explore-row">
 
         <!-- LEFT SIDEBAR -->
-        <?php
-        echo $leftSidebarContent; ?>
-
+        <?php echo $leftSidebarContent; ?>
         <!--TWEET FEED -->
         <div class="col col-lg-5 TweetFeedColumn">
             <!--      Profile feed header      -->
@@ -18,7 +16,7 @@
                     </svg>
                 </a>
                 <div class="userheader-info">
-                    <span class="username-feed">Fullname</span>
+                    <span class="username-feed"><?php echo $userFullname; ?></span>
                     <span class="tweets-amount">n posts</span>
                 </div>
             </div>

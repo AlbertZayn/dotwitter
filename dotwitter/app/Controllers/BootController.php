@@ -1,6 +1,7 @@
 <?php
 
 namespace dotwitter\app\Controllers;
+use PDO;
 class BootController
 {
     public function initSession()

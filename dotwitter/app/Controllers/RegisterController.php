@@ -19,8 +19,6 @@ class RegisterController
                  VALUES (:fullname, :email, :username, :password)"
             );
 
-            var_dump(password_hash($_POST['password'], PASSWORD_DEFAULT));
-
             $stmt->execute([
                 'fullname' => $_POST['fullname'],
                 'email' => $_POST['email'],
@@ -40,6 +38,3 @@ class RegisterController
 
 $registerController = new RegisterController();
 $registerController->register();
-
-error_reporting(E_ALL);
-ini_set('display_errors', 1);

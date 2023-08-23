@@ -16,74 +16,72 @@
             </section>
         </div>
         <!--LOGIN SIDE-->
-        <!--        <form method="post" action="login.php">-->
         <div class="col-lg-6 MainPageColumns">
-            <section class="loginSide">
-                <div class="container">
-                    <div class="row">
-                        <div class="col">
-                            <img src="https://cdn.iconscout.com/icon/free/png-256/free-twitter-241-721979.png"
-                                 height="34.2"
-                                 width="42.6" class="img-fluid" alt="...">
-                            <h1 class="loginSide-h1">Happening now</h1>
-                            <h2 class="loginSide-h2">Join dotwitter today</h2>
-                            <div class="loginSide-functionality">
-                                <input type="text" id="username-login" minlength="8" maxlength="50"
-                                       placeholder="Username"
-                                       onfocus="" onblur="this.placeholder" required>
-                                <input type="password" id="password-login" minlength="8" maxlength="50"
-                                       placeholder="Password"
-                                       onfocus="" onblur="this.placeholder" required>
-                                <button type="submit" class="login-btn">Log In</button>
-                                <div class="or">
-                                    <hr>
-                                    <span class="or-span">or</span>
-                                    <hr>
-                                </div>
-                                <div class="container-fluid">
-                                    <div class="signup-btn-box row">
-                                        <div class="col-lg-6">
-                                            <span class="signup-question">Don't have an account?</span>
-                                            <button class="signup-btn modal-btn" data-bs-target="#modal-step1"
-                                                    data-bs-toggle="modal">Create account
-                                            </button>
-                                            <div class="signup-agreement">
+            <form method="post" action="/login">
+                <section class="loginSide">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <img src="https://cdn.iconscout.com/icon/free/png-256/free-twitter-241-721979.png"
+                                     height="34.2"
+                                     width="42.6" class="img-fluid" alt="...">
+                                <h1 class="loginSide-h1">Happening now</h1>
+                                <h2 class="loginSide-h2">Join dotwitter today</h2>
+                                <div class="loginSide-functionality">
+                                    <input type="text" id="username-login" minlength="1" maxlength="50"
+                                           placeholder="Username"
+                                           onfocus="" onblur="this.placeholder" required>
+                                    <input type="password" id="password-login" minlength="8" maxlength="50"
+                                           placeholder="Password"
+                                           onfocus="" onblur="this.placeholder" required>
+                                    <button type="submit" class="login-btn">Log In</button>
+                                    <div class="or">
+                                        <hr>
+                                        <span class="or-span">or</span>
+                                        <hr>
+                                    </div>
+                                    <div class="container-fluid">
+                                        <div class="signup-btn-box row">
+                                            <div class="col-lg-6">
+                                                <span class="signup-question">Don't have an account?</span>
+                                                <button class="signup-btn modal-btn" data-bs-target="#modal-step1"
+                                                        data-bs-toggle="modal">Create account
+                                                </button>
+                                                <div class="signup-agreement">
                                                 <span> By signing up, you are signing an <a
                                                             style="cursor: pointer; color: rgb(29, 155, 240); text-decoration: none;"
                                                             href="#">Agreement</a>, that you are not stuffy or nitpicker person</span>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <span class="signup-question">Explore without registration?</span>
-                                            <a href="http://45.9.41.41/anonym-explore">
-                                                <button class="signup-btn">Explore</button>
-                                            </a>
+                                            <div class="col-lg-6">
+                                                <span class="signup-question">Explore without registration?</span>
+                                                <a href="http://45.9.41.41/anonym-explore">
+                                                    <button class="signup-btn">Explore</button>
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+                                <footer>
+                                    <div>
+                                        <a class="footer-spans"
+                                           href="https://coda.io/d/dotwitter_dCS56yYS_aJ/General-Description_suy5I#_luqY_">About</a>
+                                        <span class="footer-spans">Agreement</span>
+                                        <?php $currentYear = date("Y"); ?>
+                                        <a class="footer-spans footer-year" href="https://dotwrk.com/"><?php echo '© ' . $currentYear . ' .wrk' ?></a>
+                                    </div>
+                                </footer>
                             </div>
-                            <footer>
-                                <div>
-                                    <a class="footer-spans"
-                                       href="https://coda.io/d/dotwitter_dCS56yYS_aJ/General-Description_suy5I#_luqY_">About</a>
-                                    <span class="footer-spans">Agreement</span>
-                                    <?php
-                                    $currentYear = date("Y");
-                                    ?>
-                                    <a class="footer-spans footer-year" href="https://dotwrk.com/"><?php
-                                        echo '© ' . $currentYear . ' .wrk' ?></a>
-                                </div>
-                            </footer>
                         </div>
                     </div>
-            </section>
-            <!--        </form>-->
+                </section>
+            </form>
         </div>
     </div>
 </div>
 <!--SignUp Modal Window-->
 <!--Step-1-->
-<form method="post" action="/dotwitter/app/Controllers/RegisterController.php/register" class="needs-validation" novalidate>
+<form method="post" action="/register" class="needs-validation" novalidate>
     <div class="modal fade" id="modal-step1" aria-hidden="true" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered modal-dialog-steps">
             <div class="modal-content modal-steps-content">
@@ -164,7 +162,8 @@
                     </div>
                 </div>
                 <div class="modal-footer modal-steps-footer">
-                    <button type="button" class="modal-next-btn step1-next-btn" data-bs-target="#modal-step2" data-bs-toggle="modal" disabled>
+                    <button type="button" class="modal-next-btn step1-next-btn" data-bs-target="#modal-step2"
+                            data-bs-toggle="modal" disabled>
                         Next
                     </button>
                 </div>
@@ -198,7 +197,8 @@
                     </div>
                 </div>
                 <div class="modal-footer modal-steps-footer">
-                    <button type="submit" class="modal-next-btn step2-next-btn" data-bs-target="#modal-final" data-bs-toggle="modal" disabled>
+                    <button type="submit" class="modal-next-btn step2-next-btn" data-bs-target="#modal-final"
+                            data-bs-toggle="modal" disabled>
                         Create account
                     </button>
                 </div>
@@ -254,19 +254,19 @@
         }
     });
 
-        const usernameInput = document.getElementById('username');
-        const usernameFeedback = document.getElementsByClassName('ValidationUsername');
+    const usernameInput = document.getElementById('username');
+    const usernameFeedback = document.getElementsByClassName('ValidationUsername');
 
-        usernameInput.addEventListener('input', () => {
+    usernameInput.addEventListener('input', () => {
         if (usernameInput.value.length >= 1) {
-        usernameInput.classList.add('is-valid');
-        usernameInput.classList.remove('is-invalid');
-        usernameFeedback.style.display = 'none';
-    } else {
-        usernameInput.classList.remove('is-valid');
-        usernameInput.classList.add('is-invalid');
-        usernameFeedback.style.display = 'block';
-    }
+            usernameInput.classList.add('is-valid');
+            usernameInput.classList.remove('is-invalid');
+            usernameFeedback.style.display = 'none';
+        } else {
+            usernameInput.classList.remove('is-valid');
+            usernameInput.classList.add('is-invalid');
+            usernameFeedback.style.display = 'block';
+        }
     });
 
     const nextButton = document.querySelector('.step1-next-btn');

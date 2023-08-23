@@ -138,8 +138,8 @@
                     <img class="sidebar-user-avatar img-fluid" src="/images/noavatar-icon" alt="...">
                 </div>
                 <div class="sidebar-user">
-                    <span>Fullname</span>
-                    <span>@Username</span>
+                    <span><?php echo $userFullname; ?></span>
+                    <span><?php echo $userUsername; ?></span>
                 </div>
             </div>
         </a>

@@ -7,6 +7,8 @@ use dotwitter\app\Controllers\MainController;
 use dotwitter\app\Controllers\HomeController;
 use dotwitter\app\Controllers\ExploreController;
 use dotwitter\app\Controllers\ProfileController;
+use dotwitter\app\Controllers\RegisterController;
+use dotwitter\app\Controllers\LoginController;
 
 class Router
 {
@@ -25,6 +27,8 @@ class Router
             '/explore' => ['class' => ExploreController::class, 'action' => 'getPage'],
             '/profile' => ['class' => ProfileController::class, 'action' => 'getPage'],
             '/anonym-explore' => ['class' => AnonExpController::class, 'action' => 'getPage'],
+            '/register' => ['class' => RegisterController::class, 'action' => 'register'],
+            '/login' => ['class' => LoginController::class, 'action' => 'login']
         ];
 
         if (isset($routes[$path])) {
