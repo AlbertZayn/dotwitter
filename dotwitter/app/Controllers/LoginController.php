@@ -11,17 +11,25 @@ class LoginController
         $stmt = $bootController->pdo()->prepare("SELECT * FROM `user` WHERE `username` = :username");
         $stmt->execute(['username' => $_POST['username']]);
 
+        var_dump($stmt->queryString);
+        var_dump($stmt->errorInfo());
+
         if ($stmt->rowCount()) {
             $user = $stmt->fetch(PDO::FETCH_ASSOC);
             if (password_verify($_POST['password'], $user['password'])) {
                 $_SESSION['user_id'] = $user['id'];
-                header('Location: /');
+
+                var_dump($_SESSION);
+
+                header('Location: /profile');
                 exit;
             }
         }
 
         $flashMessage = 'Пароль неверен или пользователь не найден.';
         $_SESSION['flash'] = $flashMessage;
+
+        var_dump($flashMessage);
         header('Location: /login');
         exit;
     }
@@ -29,3 +37,7 @@ class LoginController
 
 $loginController = new LoginController();
 $loginController->login();
+
+var_dump($_SESSION);
+error_reporting(E_ALL);
+ini_set('display_errors', 1);

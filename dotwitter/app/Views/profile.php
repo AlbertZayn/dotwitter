@@ -16,7 +16,7 @@
                     </svg>
                 </a>
                 <div class="userheader-info">
-                    <span class="username-feed"><?php echo $userFullname; ?></span>
+                    <span class="username-feed"><?php echo $userFullname; ?> Fullname</span>
                     <span class="tweets-amount">n posts</span>
                 </div>
             </div>
@@ -94,6 +94,5 @@
 
             </div>
         </div>
-
     </div>
 </div>

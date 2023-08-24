@@ -9,8 +9,14 @@ class ProfileController
 {
     public static function getPage()
     {
+
         $title = 'Profile / dotwitter';
         $page = PageContent::clipboardContent('profile.php', $title);
+        extract([
+            'userFullname' => $userFullname,
+            'userUsername' => $userUsername,
+        ]);
+
         $page->render($page->getContent());
 
         if (!isset($_SESSION['user_id'])) {
@@ -30,9 +36,5 @@ class ProfileController
         $userUsername = $userData['username'];
 
 
-        extract([
-            'userFullname' => $userFullname,
-            'userUsername' => $userUsername,
-        ]);
     }
 }
