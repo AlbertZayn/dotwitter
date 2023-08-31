@@ -2,7 +2,6 @@
 
 namespace dotwitter\app\Core;
 
-use dotwitter\app\Controllers\AnonExpController;
 use dotwitter\app\Controllers\MainController;
 use dotwitter\app\Controllers\HomeController;
 use dotwitter\app\Controllers\ExploreController;
@@ -26,7 +25,6 @@ class Router
             '/home' => ['class' => HomeController::class, 'action' => 'getPage'],
             '/explore' => ['class' => ExploreController::class, 'action' => 'getPage'],
             '/profile' => ['class' => ProfileController::class, 'action' => 'getPage'],
-            '/anonym-explore' => ['class' => AnonExpController::class, 'action' => 'getPage'],
             '/register' => ['class' => RegisterController::class, 'action' => 'register'],
             '/login' => ['class' => LoginController::class, 'action' => 'login']
         ];

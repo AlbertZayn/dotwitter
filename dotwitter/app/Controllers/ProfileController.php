@@ -35,6 +35,5 @@ class ProfileController
         $userFullname = $userData['full_name'];
         $userUsername = $userData['username'];
 
-
     }
 }

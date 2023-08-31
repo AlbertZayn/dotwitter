@@ -2,11 +2,13 @@
     <div class="row explore-row">
 
         <!-- LEFT SIDEBAR -->
-        <?php echo $leftSidebarContent; ?>
+        <?php
+        echo $leftSidebarContent; ?>
+
         <!--TWEET FEED -->
         <div class="col col-lg-5 TweetFeedColumn">
             <!--      Profile feed header      -->
-            <div class="tweet-feed-header">
+            <div class="profile-feed-header">
                 <a href="http://45.9.41.41/home">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black"
                          class="bi bi-arrow-left modal-feed-backer" viewBox="0 0 16 16">
@@ -16,8 +18,8 @@
                     </svg>
                 </a>
                 <div class="userheader-info">
-                    <span class="username-feed"><?php echo $userFullname; ?> Fullname</span>
-                    <span class="tweets-amount">n posts</span>
+                    <span class="username-header"><?php echo $userFullname; ?>Fullname</span>
+                    <span class="tweets-amount"><?php echo $userAmountTweets; ?>n posts</span>
                 </div>
             </div>
             <!--      Profile envelope      -->
@@ -85,6 +87,38 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="profile-userbar">
+                <span class="profile-userbar-fullname"><?php echo $userFullname; ?> Fullname</span>
+                <span class="profile-userbar-username"><?php echo $userUsername; ?> @username</span>
+            </div>
+            <div class="profile-registeration-date">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(83, 100, 113)"
+                     class="bi bi-calendar4-week profile-calendar" viewBox="0 0 16 16">
+                    <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v1h14V3a1 1 0 0 0-1-1H2zm13 3H1v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V5z"/>
+                    <path d="M11 7.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-2 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z"/>
+                </svg>
+                <span>Registration date:<?php echo $regMonth; ?> month <?php echo $regYear; ?>year</span>
+            </div>
+            <div class="profile-follow-bar">
+                <span class="profile-follows"><span class="numFollows"><?php echo $userFollows; ?>n</span> follows</span>
+                <span class="profile-followers"><span class="numFollowers"><?php echo $userFollowers; ?>n</span> followers</span>
+            </div>
+            <div class="profile-fillet">
+                <ul class="nav nav-underline nav-fillet">
+                    <li class="nav-item fillet-item">
+                        <a class="nav-link fillet-link" href="#"><span class="fillet-span">Posts</span></a>
+                    </li>
+                    <li class="nav-item fillet-item">
+                        <a class="nav-link fillet-link" href="#">Replies</a>
+                    </li>
+                    <li class="nav-item fillet-item">
+                        <a class="nav-link fillet-link" href="#">Media</a>
+                    </li>
+                    <li class="nav-item fillet-item">
+                        <a class="nav-link fillet-link" href="#">Likes</a>
+                    </li>
+                </ul>
             </div>
         </div>
 
