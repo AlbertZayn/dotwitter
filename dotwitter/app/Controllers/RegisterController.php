@@ -1,32 +1,27 @@
 <?php
 
 namespace dotwitter\app\Controllers;
+
+use dotwitter\app\Models\UserModel;
+
 class RegisterController
 {
     public function register()
     {
-        $bootController = new BootController();
+        $userModel = new UserModel();
 
-        $stmt = $bootController->pdo()->prepare("SELECT * FROM `user` WHERE `username` = :username");
-        $stmt->execute(['username' => $_POST['username']]);
+        $existingUser = $userModel->findByUsername($_POST['username']);
 
-        if ($stmt->rowCount() > 0) {
+        if ($existingUser) {
             $flashMessage = 'Это имя пользователя уже занято.';
         } else {
-            $hashedPassword = password_hash($_POST['password'], PASSWORD_DEFAULT);
-            $stmt = $bootController->pdo()->prepare(
-                "INSERT INTO `user` (`full_name`, `email`,  `username`, `password`) 
-                 VALUES (:fullname, :email, :username, :password)"
-            );
-
-            $stmt->execute([
-                'fullname' => $_POST['fullname'],
-                'email' => $_POST['email'],
-                'username' => $_POST['username'],
-                'password' => $hashedPassword,
-            ]);
-            header('Location: /');
-            exit;
+            $created = $userModel->createUser($_POST['fullname'], $_POST['email'], $_POST['username'], $_POST['password']);
+            if ($created) {
+                header('Location: /');
+                exit;
+            } else {
+                $flashMessage = 'Произошла ошибка при регистрации.';
+            }
         }
 
         $flashMessage = $flashMessage ?? 'Произошла ошибка при регистрации.';
