@@ -111,18 +111,26 @@
             </div>
         </div>
         <!--    Userbar    -->
-        <a href="#" class="left-userbar-anchor">
-            <div class="userbar-anchor">
-                <div class="sidebar-user-icon">
-                    <img class="sidebar-user-avatar img-fluid" src="/images/noavatar-icon" alt="...">
+        <div class="dropdown">
+            <a href="#" class="left-userbar-anchor" type="button" data-bs-toggle="dropdown"
+               aria-expanded="false">
+                <div class="userbar-anchor">
+                    <div class="sidebar-user-icon">
+                        <img class="sidebar-user-avatar img-fluid" src="/images/noavatar-icon" alt="...">
+                    </div>
+                    <div class="sidebar-user">
+                        <span class=""><?php
+                            echo $_SESSION['user_data']['full_name']; ?></span>
+                        <span class="">@<?php
+                            echo $_SESSION['user_data']['username']; ?></span>
+                    </div>
                 </div>
-                <div class="sidebar-user">
-                    <span class=""><?php
-                        echo $userFullname; ?> Fullname</span>
-                    <span class=""><?php
-                        echo $userUsername; ?> @username</span>
-                </div>
-            </div>
-        </a>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                    <form action="/logout"><a class="dropdown-item logOut" href="/logout">Log Out</a></form>
+                </li>
+            </ul>
+        </div>
     </div>
 </div>

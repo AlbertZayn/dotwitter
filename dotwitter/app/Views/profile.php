@@ -18,7 +18,7 @@
                     </svg>
                 </a>
                 <div class="userheader-info">
-                    <span class="username-header"><?php echo $userFullname; ?>Fullname</span>
+                    <span class="username-header"><?php echo $_SESSION['user_data']['full_name']; ?></span>
                     <span class="tweets-amount"><?php echo $userAmountTweets; ?>n posts</span>
                 </div>
             </div>
@@ -89,8 +89,8 @@
                 </div>
             </div>
             <div class="profile-userbar">
-                <span class="profile-userbar-fullname"><?php echo $userFullname; ?> Fullname</span>
-                <span class="profile-userbar-username"><?php echo $userUsername; ?> @username</span>
+                <span class="profile-userbar-fullname"><?php echo $_SESSION['user_data']['full_name']; ?></span>
+                <span class="profile-userbar-username">@<?php echo $_SESSION['user_data']['username']; ?></span>
             </div>
             <div class="profile-registeration-date">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(83, 100, 113)"

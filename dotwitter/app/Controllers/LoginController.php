@@ -1,36 +1,39 @@
 <?php
 
 namespace dotwitter\app\Controllers;
-use PDO;
+
+use dotwitter\app\Models\UserModel;
+
 class LoginController
 {
     public function login()
     {
-        $bootController = new BootController();
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $username = $_POST['username'];
+            $password = $_POST['password'];
 
-        $stmt = $bootController->pdo()->prepare("SELECT * FROM `user` WHERE `username` = :username");
-        $stmt->execute(['username' => $_POST['username']]);
+            $userModel = new UserModel();
+            $user = $userModel->findByUsername($username);
 
-        var_dump($stmt->queryString);
-        var_dump($stmt->errorInfo());
-
-        if ($stmt->rowCount()) {
-            $user = $stmt->fetch(PDO::FETCH_ASSOC);
-            if (password_verify($_POST['password'], $user['password'])) {
+            if ($user && password_verify($password, $user['password'])) {
                 $_SESSION['user_id'] = $user['id'];
-
-                var_dump($_SESSION);
+                $userData = $userModel->getUserData($user['id']);
+                $_SESSION['user_data'] = $userData;
 
                 header('Location: /profile');
                 exit;
+            } else {
+                $_SESSION['flash'] = 'Пароль неверен или пользователь не найден.';
             }
         }
+        header('Location: /');
+        exit;
+    }
 
-        $flashMessage = 'Пароль неверен или пользователь не найден.';
-        $_SESSION['flash'] = $flashMessage;
-
-        var_dump($flashMessage);
-        header('Location: /login');
+    function logout()
+    {
+        session_destroy();
+        header('location: index.php');
         exit;
     }
 }

@@ -2,6 +2,7 @@
 
 namespace dotwitter\app\Core;
 
+use dotwitter\app\Controllers\LoginController;
 use dotwitter\app\Controllers\MainController;
 use dotwitter\app\Controllers\HomeController;
 use dotwitter\app\Controllers\ExploreController;
@@ -24,7 +25,9 @@ class Router
             '/home' => ['class' => HomeController::class, 'action' => 'getPage'],
             '/explore' => ['class' => ExploreController::class, 'action' => 'getPage'],
             '/profile' => ['class' => ProfileController::class, 'action' => 'getPage'],
-            '/register' => ['class' => RegisterController::class, 'action' => 'register']
+            '/register' => ['class' => RegisterController::class, 'action' => 'register'],
+            '/login' => ['class' => LoginController::class, 'action' => 'login'],
+            '/logout' => ['class' => LoginController::class, 'action' => 'logout']
         ];
 
         if (isset($routes[$path])) {

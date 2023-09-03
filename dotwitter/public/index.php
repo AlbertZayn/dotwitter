@@ -10,6 +10,7 @@ $container = Container::getInstance();
 $provider = new ServiceProvider($container);
 $provider->register();
 
+session_start();
 $router = new Router($container);
 $router->handleRequest();
 

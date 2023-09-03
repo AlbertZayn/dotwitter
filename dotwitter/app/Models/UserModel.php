@@ -21,6 +21,13 @@ class UserModel
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
+    public function getUserData($userId)
+    {
+        $stmt = $this->pdo->prepare("SELECT `full_name`, `username` FROM `user` WHERE `id` = :id");
+        $stmt->execute(['id' => $userId]);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
     public function createUser($fullname, $email, $username, $password)
     {
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
@@ -35,4 +42,6 @@ class UserModel
             'password' => $hashedPassword,
         ]);
     }
+
+
 }

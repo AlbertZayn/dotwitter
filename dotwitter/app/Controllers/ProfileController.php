@@ -3,6 +3,7 @@
 namespace dotwitter\app\Controllers;
 
 use dotwitter\app\Views\Recycles\PageContent;
+use dotwitter\app\Models\UserModel;
 use PDO;
 
 class ProfileController

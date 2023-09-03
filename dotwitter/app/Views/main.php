@@ -17,22 +17,21 @@
         </div>
         <!--LOGIN SIDE-->
         <div class="col-lg-6 MainPageColumns">
-
             <section class="loginSide">
-                <div class="container">
-                    <div class="row">
-                        <div class="col">
-                            <img src="https://cdn.iconscout.com/icon/free/png-256/free-twitter-241-721979.png"
-                                 height="34.2"
-                                 width="42.6" class="img-fluid" alt="...">
-                            <h1 class="loginSide-h1">Happening now</h1>
-                            <h2 class="loginSide-h2">Join dotwitter today</h2>
-                            <form method="post" action="/login">
+                <form method="post" action="/login">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <img src="https://cdn.iconscout.com/icon/free/png-256/free-twitter-241-721979.png"
+                                     height="34.2"
+                                     width="42.6" class="img-fluid" alt="...">
+                                <h1 class="loginSide-h1">Happening now</h1>
+                                <h2 class="loginSide-h2">Join dotwitter today</h2>
                                 <div class="loginSide-functionality">
-                                    <input type="text" id="username-login" minlength="1" maxlength="50"
+                                    <input type="text" id="username-login" name="username" minlength="1" maxlength="50"
                                            placeholder="Username"
                                            onfocus="" onblur="this.placeholder" required>
-                                    <input type="password" id="password-login" minlength="8" maxlength="50"
+                                    <input type="password" id="password-login" name="password" minlength="8" maxlength="50"
                                            placeholder="Password"
                                            onfocus="" onblur="this.placeholder" required>
                                     <button type="submit" class="login-btn">Log In</button>
@@ -63,20 +62,22 @@
                                         </div>
                                     </div>
                                 </div>
-                            </form>
-                            <footer>
-                                <div>
-                                    <a class="footer-spans"
-                                       href="https://coda.io/d/dotwitter_dCS56yYS_aJ/General-Description_suy5I#_luqY_">About</a>
-                                    <span class="footer-spans">Agreement</span>
-                                    <?php $currentYear = date("Y"); ?>
-                                    <a class="footer-spans footer-year"
-                                       href="https://dotwrk.com/"><?php echo '© ' . $currentYear . ' .wrk' ?></a>
-                                </div>
-                            </footer>
+                                <footer>
+                                    <div>
+                                        <a class="footer-spans"
+                                           href="https://coda.io/d/dotwitter_dCS56yYS_aJ/General-Description_suy5I#_luqY_">About</a>
+                                        <span class="footer-spans">Agreement</span>
+                                        <?php
+                                        $currentYear = date("Y"); ?>
+                                        <a class="footer-spans footer-year"
+                                           href="https://dotwrk.com/"><?php
+                                            echo '© ' . $currentYear . ' .wrk' ?></a>
+                                    </div>
+                                </footer>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </form>
             </section>
         </div>
     </div>
