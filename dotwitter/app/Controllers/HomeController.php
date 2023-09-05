@@ -9,7 +9,7 @@ class HomeController
     public static function getPage()
     {
         $title = 'Home / dotwitter';
-        $page = PageContent::clipboardContent('home.php', $title);
+        $page = PageContent::DynamicDataPage('home.php', $title);
         $page->render($page->getContent());
     }
 }

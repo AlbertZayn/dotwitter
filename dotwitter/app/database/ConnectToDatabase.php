@@ -28,7 +28,7 @@ class ConnectToDatabase
                 self::$connection = $con;
                 return self::$connection;
             } catch (PDOException $e) {
-                echo $e->getMessage();
+                echo $e->getException();
                 exit;
             }
         }

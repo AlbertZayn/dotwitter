@@ -17,5 +17,4 @@ spl_autoload_register(function ($className) {
     } else {
         echo "File not found: $fileName";
     }
-
 });

@@ -33,10 +33,11 @@ class LoginController
     function logout()
     {
         session_destroy();
-        header('location: index.php');
+        header('location: /');
         exit;
     }
 }
 
 $loginController = new LoginController();
 $loginController->login();
+$loginController->logout();

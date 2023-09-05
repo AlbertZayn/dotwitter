@@ -126,11 +126,13 @@
                     </div>
                 </div>
             </a>
-            <ul class="dropdown-menu">
-                <li>
-                    <form action="/logout"><a class="dropdown-item logOut" href="/logout">Log Out</a></form>
-                </li>
-            </ul>
+            <form method="post" action="/logout">
+                <ul class="dropdown-menu">
+                    <li>
+                        <a class="dropdown-item logOut" href="/logout">Log Out</a>
+                    </li>
+                </ul>
+            </form>
         </div>
     </div>
 </div>

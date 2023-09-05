@@ -9,7 +9,7 @@ class ExploreController
     public static function getPage()
     {
         $title = 'Explore / dotwitter';
-        $page = PageContent::clipboardContent('explore.php', $title);
+        $page = PageContent::DynamicDataPage('explore.php', $title);
         $page->render($page->getContent());
     }
 }

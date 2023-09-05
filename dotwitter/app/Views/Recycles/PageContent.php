@@ -13,7 +13,7 @@ class PageContent
         $this->title = $title;
     }
 
-    public static function clipboardContent($pageView, $title)
+    public static function DynamicDataPage($pageView, $title)
     {
         ob_start();
         require_once __DIR__ . '/../../Views/left-sidebar.php';
