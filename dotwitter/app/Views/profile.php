@@ -107,7 +107,7 @@
             <div class="profile-fillet">
                 <ul class="nav nav-underline nav-fillet">
                     <li class="nav-item fillet-item">
-                        <a class="nav-link fillet-link" href="#"><span class="fillet-span">Posts</span></a>
+                        <a class="nav-link fillet-link" href="#">Posts</a>
                     </li>
                     <li class="nav-item fillet-item">
                         <a class="nav-link fillet-link" href="#">Replies</a>

@@ -25,14 +25,14 @@ CREATE TABLE `user` (
   `email` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL DEFAULT '',
   `username` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL DEFAULT '',
   `password` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL DEFAULT '',
-  `tweet` varchar(280) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
-  `follows` bigint NOT NULL,
-  `followers` bigint NOT NULL,
-  `posts` bigint NOT NULL,
-  `registrationdate` datetime NOT NULL,
+  `tweet` varchar(280) COLLATE utf8mb3_unicode_ci NOT NULL DEFAULT '',
+  `follows` bigint NOT NULL DEFAULT '0',
+  `followers` bigint NOT NULL DEFAULT '0',
+  `posts` bigint NOT NULL DEFAULT '0',
+  `registrationdate` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 
--- 2023-09-05 17:48:35
+-- 2023-09-05 18:25:55

@@ -8,6 +8,7 @@ use dotwitter\app\Controllers\HomeController;
 use dotwitter\app\Controllers\ExploreController;
 use dotwitter\app\Controllers\ProfileController;
 use dotwitter\app\Controllers\RegisterController;
+use dotwitter\app\Controllers\TweetsController;
 
 class Router
 {
@@ -27,7 +28,8 @@ class Router
             '/profile' => ['class' => ProfileController::class, 'action' => 'getPage'],
             '/register' => ['class' => RegisterController::class, 'action' => 'register'],
             '/login' => ['class' => LoginController::class, 'action' => 'login'],
-            '/logout' => ['class' => LoginController::class, 'action' => 'logout']
+            '/logout' => ['class' => LoginController::class, 'action' => 'logout'],
+            '/post-tweet' => ['class' => TweetsController::class, 'action' => 'postTweet']
         ];
 
         if (isset($routes[$path])) {

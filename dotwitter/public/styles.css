@@ -728,10 +728,6 @@ footer {
     color: rgb(29, 155, 240);
 }
 
-.fillet-span:focus {
-    color: rgb(83, 100, 113);
-}
-
 /* Right sidebar */
 .RightSidebar {
     display: flex;
@@ -857,4 +853,27 @@ footer {
 }
 .form-floating .bio-input:focus {
     padding: 2rem 0.75rem 60px;
+}
+
+/* HOME PAGE */
+
+.tweet-home-form {
+    margin: 0;
+    border-radius: 16px;
+    max-height: 60vh;
+    height: 225px;
+    padding: 0;
+}
+
+.tweet-steps-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 9px;
+    border-bottom: none;
+    --bs-modal-header-padding: 8px 0 0 8px;
+}
+
+.fillet-home-item {
+    padding: 12px 56px;
 }
