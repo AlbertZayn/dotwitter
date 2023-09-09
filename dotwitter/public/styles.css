@@ -877,3 +877,23 @@ footer {
 .fillet-home-item {
     padding: 12px 56px;
 }
+
+.tweet-feed {
+    margin-top: 10px;
+}
+.tweet-box {
+    margin-top: 30px;
+}
+.tweet-box-fullname {
+    font-size: 15px;
+    font-weight: 700;
+}
+.tweet-box-username {
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.tweet-data {
+    margin-top: 30px;
+    width: 420px;
+}
