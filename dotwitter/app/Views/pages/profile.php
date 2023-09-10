@@ -2,8 +2,7 @@
     <div class="row explore-row">
 
         <!-- LEFT SIDEBAR -->
-        <?php
-        echo $leftSidebarContent; ?>
+        <?php echo $leftSidebarContent; ?>
 
         <!--TWEET FEED -->
         <div class="col col-lg-5 TweetFeedColumn">
@@ -108,6 +107,9 @@
                 <ul class="nav nav-underline nav-fillet">
                     <li class="nav-item fillet-item">
                         <a class="nav-link fillet-link" href="#">Posts</a>
+                        <div class="tweet-feed">
+
+                        </div>
                     </li>
                     <li class="nav-item fillet-item">
                         <a class="nav-link fillet-link" href="#">Replies</a>

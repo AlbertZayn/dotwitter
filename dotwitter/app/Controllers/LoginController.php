@@ -16,9 +16,11 @@ class LoginController
             $user = $userModel->findByUsername($username);
 
             if ($user && password_verify($password, $user['password'])) {
-                $_SESSION['user_id'] = $user['id'];
-                $userData = $userModel->getUserData($user['id']);
-                $_SESSION['user_data'] = $userData;
+                $_SESSION['user_data'] = [
+                    'id' => $user['id'],
+                    'full_name' => $user['full_name'],
+                    'username' => $user['username']
+                ];
 
                 header('Location: /profile');
                 exit;
@@ -30,14 +32,10 @@ class LoginController
         exit;
     }
 
-    function logout()
+    public function logout()
     {
         session_destroy();
         header('location: /');
         exit;
     }
 }
-
-$loginController = new LoginController();
-$loginController->login();
-$loginController->logout();

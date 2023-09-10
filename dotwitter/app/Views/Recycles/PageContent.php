@@ -16,11 +16,15 @@ class PageContent
     public static function DynamicDataPage($pageView, $title)
     {
         ob_start();
-        require_once __DIR__ . '/../../Views/left-sidebar.php';
+        require_once __DIR__ . '/../../Views/layouts/tweet-svg.php';
+        $tweetSvg = ob_get_clean();
+
+        ob_start();
+        require_once __DIR__ . '/../../Views/layouts/left-sidebar.php';
         $leftSidebarContent = ob_get_clean();
 
         ob_start();
-        require_once __DIR__ . '/../../Views/' . $pageView;
+        require_once __DIR__ . '/../../Views/pages/' . $pageView;
         $pageContent = ob_get_clean();
 
         return new self($pageContent, $title);
@@ -33,7 +37,7 @@ class PageContent
         $pageContent = ob_get_contents();
         ob_end_clean();
 
-        require_once __DIR__ . '/../page.php';
+        require_once __DIR__ . '/../layouts/page.php';
     }
 
     public function getContent()

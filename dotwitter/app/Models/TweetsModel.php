@@ -9,6 +9,7 @@ class TweetsModel
     public function createTweet($userId, $text)
     {
         try {
+            $config = include __DIR__ . '/../database/config.php';
             $db = ConnectToDatabase::connect($config);
 
             $stmt = $db->prepare("INSERT INTO `tweet` (`text`, `user`) VALUES (:text, :user)");

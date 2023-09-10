@@ -518,6 +518,12 @@ footer {
     background-color: rgb(26, 140, 216);
 }
 
+.dropdown {
+    margin: 0;
+    padding: 0;
+    width: 200px;
+}
+
 .sidebar-user {
     display: flex;
     flex-direction: column;
@@ -525,6 +531,16 @@ footer {
     font-size: 15px;
     font-weight: 400;
 }
+
+.left-sidebar-fullname {
+    font-weight: 700;
+}
+
+.left-sidebar-username {
+    font-weight: 400;
+    color: rgb(83, 100, 113);
+}
+
 
 .left-userbar-anchor {
     text-decoration: none;
@@ -545,13 +561,21 @@ footer {
     padding: 12px 12px;
 }
 
-.sidebar-user-icon {
+.left-sidebar-user-icon {
     display: flex;
     justify-content: center;
     margin: 0;
     width: 40px;
     height: 40px;
 }
+.sidebar-user-icon {
+    display: flex;
+    justify-content: center;
+    margin: 0 10px;
+    width: 40px;
+    height: 40px;
+}
+
 
 .tweet-modal-body {
     display: grid;
@@ -560,6 +584,10 @@ footer {
 
 .tweet-modal-textarea {
     margin: 12px 0;
+
+}
+.tweet-modal-textarea:focus {
+    box-shadow: none;
 }
 
 .tweet-modal-content {
@@ -590,7 +618,6 @@ footer {
 }
 
 .tweet-modal-footer {
-    display: flex;
     justify-content: space-between;
     border-top-width: 1px;
     border-top: none;
@@ -610,6 +637,7 @@ footer {
     border-width: 0;
     max-height: 720px;
     min-height: 24px;
+    width: 90%;
     padding: 0;
     cursor: text;
     font-weight: 400;
@@ -729,10 +757,15 @@ footer {
 }
 
 /* Right sidebar */
-.RightSidebar {
+.RightSidebar,
+.AnonRightSidebar {
     display: flex;
     flex-direction: column;
     padding: 12px 30px;
+}
+
+.AnonRightSidebar {
+    display: none;
 }
 
 .right-sidebar-functionality {
@@ -891,9 +924,60 @@ footer {
 .tweet-box-username {
     font-size: 15px;
     font-weight: 400;
+    color: rgb(83, 100, 113);
 }
 
 .tweet-data {
-    margin-top: 30px;
+    margin-top: 15px;
     width: 420px;
+}
+
+.tweet-footer {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+}
+
+.tweet-comments:hover .tweet-comments-number {
+    transition-duration: 0.2s;
+    color: rgb(29, 145, 240);
+}
+.tweet-comments-svg:hover {
+    transition-duration: 0.2s;
+    border-radius: 9999px;
+    background-color: rgb(29, 155, 240, 0.1);
+    color: rgb(29, 145, 240);
+    cursor: pointer;
+}
+
+.tweet-retweets:hover .tweet-retweets-number {
+    transition-duration: 0.2s;
+    color: rgb(0, 186, 144);
+}
+.tweet-retweet-svg:hover {
+    transition-duration: 0.2s;
+    border-radius: 9999px;
+    background-color: rgb(0, 186, 144, 0.1);
+    color: rgb(0, 186, 144);
+    cursor: pointer;
+}
+
+.tweet-likes:hover .tweet-likes-number {
+    transition-duration: 0.2s;
+    color: rgb(249, 24, 128);
+}
+.tweet-likes-svg:hover {
+    transition-duration: 0.2s;
+    border-radius: 9999px;
+    background-color: rgb(249, 24, 128, 0.1);
+    color: rgb(249, 24, 128);
+    cursor: pointer;
+}
+
+.tweet-send-svg:hover {
+    transition-duration: 0.2s;
+    border-radius: 9999px;
+    background-color: rgb(29, 155, 240, 0.1);
+    color: rgb(29, 145, 240);
+    cursor: pointer;
 }
