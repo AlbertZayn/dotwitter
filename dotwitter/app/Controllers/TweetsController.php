@@ -13,7 +13,6 @@ class TweetsController
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if (isset($_POST['tweet_text']) && !empty($_POST['tweet_text'])) {
-                // Retrieve the user ID from the session
                 if (isset($_SESSION['user_data']['id'])) {
                     $userId = $_SESSION['user_data']['id'];
                     $tweetText = $_POST['tweet_text'];
@@ -30,7 +29,6 @@ class TweetsController
                     }
                 } else {
                     // User is not logged in
-                    // Handle this case (e.g., redirect to the login page)
                     echo "User is not logged in.";
                 }
             } else {

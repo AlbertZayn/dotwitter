@@ -5,8 +5,6 @@ SET
 time_zone = '+00:00';
 SET
 foreign_key_checks = 0;
-SET
-sql_mode = 'NO_AUTO_VALUE_ON_ZERO';
 
 SET NAMES utf8mb4;
 
@@ -19,8 +17,10 @@ CREATE TABLE `tweet`
     `retweets` bigint       NOT NULL DEFAULT '0',
     `user`     int          NOT NULL,
     `replies`  bigint       NOT NULL DEFAULT '0',
+    `postTime` datetime     NOT NULL DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
 
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user`
@@ -39,4 +39,5 @@ CREATE TABLE `user`
     UNIQUE KEY `username` (`username`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
--- 2023-09-10 18:52:28
+
+-- 2023-09-11 16:19:23

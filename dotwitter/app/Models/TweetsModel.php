@@ -6,6 +6,7 @@ use PDO;
 
 class TweetsModel
 {
+    protected $pdo;
     public function createTweet($userId, $text)
     {
         try {
@@ -23,4 +24,12 @@ class TweetsModel
             return false;
         }
     }
+
+    public function getTweets()
+    {
+        $stmt = $this->pdo->prepare("SELECT * FROM `tweet` ORDER BY `id` DESC");
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
 }
