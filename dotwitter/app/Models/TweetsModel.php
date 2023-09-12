@@ -6,16 +6,20 @@ use PDO;
 
 class TweetsModel
 {
+    public function __construct()
+    {
+        $config = require_once __DIR__ . '/../database/config.php';
+        $this->pdo = ConnectToDatabase::connect($config);
+    }
     protected $pdo;
-    public function createTweet($userId, $text)
+    public function createTweet($userId, $text, $fullname, $username)
     {
         try {
-            $config = include __DIR__ . '/../database/config.php';
-            $db = ConnectToDatabase::connect($config);
-
-            $stmt = $db->prepare("INSERT INTO `tweet` (`text`, `user`) VALUES (:text, :user)");
+            $stmt = $this->pdo->prepare("INSERT INTO `tweet` (`text`, `user`, `full_name`, `username`) VALUES (:text, :user, :fullname, :username)");
             $stmt->bindParam(':text', $text, PDO::PARAM_STR);
             $stmt->bindParam(':user', $userId, PDO::PARAM_INT);
+            $stmt->bindParam(':fullname', $fullname, PDO::PARAM_STR);
+            $stmt->bindParam(':username', $username, PDO::PARAM_INT);
             $stmt->execute();
 
             return true;

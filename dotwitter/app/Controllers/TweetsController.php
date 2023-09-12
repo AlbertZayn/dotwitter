@@ -16,9 +16,11 @@ class TweetsController
                 if (isset($_SESSION['user_data']['id'])) {
                     $userId = $_SESSION['user_data']['id'];
                     $tweetText = $_POST['tweet_text'];
+                    $fullname = $_SESSION['user_data']['full_name'];
+                    $username = $_SESSION['user_data']['username'];
 
                     $tweetsModel = new TweetsModel();
-                    $result = $tweetsModel->createTweet($userId, $tweetText);
+                    $result = $tweetsModel->createTweet($userId, $tweetText, $fullname, $username);
 
                     if ($result) {
                         header("Location: /home");

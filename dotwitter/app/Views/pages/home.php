@@ -1,3 +1,10 @@
+<?php
+use dotwitter\app\Models\TweetsModel;
+$tweetsModel = new TweetsModel();
+$tweets = $tweetsModel->getTweets();
+
+?>
+
 <div class="container PageContainer">
     <div class="row explore-row">
 
@@ -44,12 +51,7 @@
             </div>
             <!--TWEET FEED-->
             <div class="tweet-feed">
-                <?php
-                use dotwitter\app\Models\TweetsModel;
-                $tweetsModel = new TweetsModel();
-                $tweets = $tweetsModel->getTweets();
-                foreach ($tweets as $tweet) {
-                ?>
+                 <?php foreach ($tweets as $tweet): ?>
                     <div class="tweet-box">
                         <div class="modal-body tweet-modal-body">
                             <div class="sidebar-user-icon tweet-modal-useravatar">
@@ -57,9 +59,9 @@
                             </div>
                             <div class="tweet-modal-functionality">
                                 <div>
-                                    <span class="tweet-box-fullname"><?php echo $_SESSION['user_data']['full_name']; ?></span>
-                                    <span class="tweet-box-username">@<?php echo $_SESSION['user_data']['username']; ?></span>
-                                    <span class="tweet-post-time"><!-- currentTime - tweetPostTime --></span>
+                                    <span class="tweet-box-fullname"><?php echo $tweet['full_name']; ?></span>
+                                    <span class="tweet-box-username">@<?php echo $tweet['username']; ?></span>
+                                    <span class="tweet-post-time"><?php echo $tweet['postTime']; ?></span>
                                 </div>
                                 <div class="tweet-data">
                                     <span><?php echo $tweet['text']; ?></span>
@@ -97,12 +99,9 @@
                             </div>
                         </div>
                     </div>
-                <?php
-                }
-                ?>
+                <?php endforeach; ?>
             </div>
         </div>
-
         <!--RIGHT SIDEBAR -->
         <div class="col col-lg-4 RightSidebar">
             <div class="right-sidebar-functionality">
