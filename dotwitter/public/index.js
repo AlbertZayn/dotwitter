@@ -66,11 +66,13 @@ function updateValidation(inputElement, isValid, feedbackElement) {
 
 function validateInput(inputElement, validationFunction, feedbackElement) {
     inputElement.addEventListener('input', () => {
-        const isValid = validationFunction(inputElement.value);
+        const inputValue = inputElement.value.trim();
+        const isValid = validationFunction(inputValue) && !inputValue.match(/^\s*$/);
         updateValidation(inputElement, isValid, feedbackElement);
         validateStep1();
     });
 }
+
 
 function validateFullname(fullname) {
     return fullname.length >= 1;
@@ -111,13 +113,17 @@ function validateStep1() {
     const isEmailValid = validateEmail(emailInput.value);
     const isUsernameValid = validateUsername(usernameInput.value);
 
-    nextButton.disabled = !(isFullnameValid && isEmailValid && isUsernameValid);
+    const isFullnameNoSpaces = !fullnameInput.value.trim().match(/^\s*$/);
+    const isUsernameNoSpaces = !usernameInput.value.trim().match(/^\s*$/);
+
+    nextButton.disabled = !(isFullnameValid && isEmailValid && isUsernameValid && isFullnameNoSpaces && isUsernameNoSpaces);
 }
 
 function validateStep2() {
     const isPasswordValid = validatePassword(passwordInput.value);
-    createAccButton.disabled = !isPasswordValid;
-    validateInput(passwordInput, validatePassword, passwordFeedback);
-    passwordInput.addEventListener('input', validateStep2);
+    const hasNoSpaces = !passwordInput.value.includes(' ');
+    createAccButton.disabled = !(isPasswordValid && hasNoSpaces);
 }
+
+passwordInput.addEventListener('input', validateStep2);
 validateStep2();

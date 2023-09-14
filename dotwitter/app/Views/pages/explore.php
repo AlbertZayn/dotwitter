@@ -2,7 +2,7 @@
     <div class="row explore-row">
 
         <!-- LEFT SIDEBAR -->
-        <?php echo $leftSidebarContent; ?>
+        <?php echo $leftSidebar; ?>
 
         <!--TWEET FEED -->
         <div class="col col-lg-5 TweetFeedColumn">
@@ -12,9 +12,7 @@
                     <img class="sidebar-icon" src="/images/settings-icon.png" alt="..." width="16" height="16">
                 </a>
             </div>
-            <div class="tweet-feed">
-
-            </div>
+            <?php echo $tweetsFeed; ?>
         </div>
 
         <!--RIGHT SIDEBAR -->

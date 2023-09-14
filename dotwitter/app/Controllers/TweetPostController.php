@@ -3,7 +3,7 @@
 namespace dotwitter\app\Controllers;
 use dotwitter\app\Models\TweetsModel;
 
-class TweetsController
+class TweetPostController
 {
     public function postTweet()
     {

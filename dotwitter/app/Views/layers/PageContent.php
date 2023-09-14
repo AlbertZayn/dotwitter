@@ -1,6 +1,6 @@
 <?php
 
-namespace dotwitter\app\Views\Recycles;
+namespace dotwitter\app\Views\layers;
 
 class PageContent
 {
@@ -13,15 +13,19 @@ class PageContent
         $this->title = $title;
     }
 
-    public static function DynamicDataPage($pageView, $title)
+    public static function dynamicDataPage($pageView, $title): PageContent
     {
         ob_start();
-        require_once __DIR__ . '/../../Views/layouts/tweet-svg.php';
-        $tweetSvg = ob_get_clean();
+        require_once __DIR__ . '/../../Views/layouts/tweetPostForm.svgs.php';
+        $tweetPostFormSvgs = ob_get_clean();
 
         ob_start();
-        require_once __DIR__ . '/../../Views/layouts/left-sidebar.php';
-        $leftSidebarContent = ob_get_clean();
+        require_once __DIR__ . '/../../Views/layouts/leftSidebar.tpl.php';
+        $leftSidebar = ob_get_clean();
+
+        ob_start();
+        require_once __DIR__ . '/../../Views/layouts/tweetsFeed.tpl.php';
+        $tweetsFeed = ob_get_clean();
 
         ob_start();
         require_once __DIR__ . '/../../Views/pages/' . $pageView;
@@ -37,7 +41,7 @@ class PageContent
         $pageContent = ob_get_contents();
         ob_end_clean();
 
-        require_once __DIR__ . '/../layouts/page.php';
+        require_once __DIR__ . '/../layouts/page.tpl.php';
     }
 
     public function getContent()

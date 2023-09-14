@@ -11,11 +11,14 @@ class RegisterController
         $userModel = new UserModel();
 
         $existingUser = $userModel->findByUsername($_POST['username']);
+        $username = trim($_POST['username']);
 
         if ($existingUser) {
             $flashMessage = 'Это имя пользователя уже занято.';
+        } else if (empty($username)) {
+            $flashMessage = 'Имя пользователя не может состоять только из пробелов.';
         } else {
-            $created = $userModel->createUser($_POST['fullname'], $_POST['email'], $_POST['username'], $_POST['password']);
+            $created = $userModel->createUser(trim($_POST['fullname']), trim($_POST['email']), trim($_POST['username']), trim($_POST['password']));
             if ($created) {
                 header('Location: /');
                 exit;

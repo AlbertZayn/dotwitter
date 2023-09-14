@@ -72,7 +72,7 @@
                                           placeholder="What's happening" maxlength="280"></textarea>
                             </div>
                         </div>
-                        <?php echo $tweetSvg ?>
+                        <?php echo $tweetPostFormSvgs ?>
                     </form>
                 </div>
             </div>

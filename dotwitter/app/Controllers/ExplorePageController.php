@@ -2,14 +2,14 @@
 
 namespace dotwitter\app\Controllers;
 
-use dotwitter\app\Views\Recycles\PageContent;
+use dotwitter\app\Views\layers\PageContent;
 
-class ExploreController
+class ExplorePageController
 {
     public static function getPage()
     {
         $title = 'Explore / dotwitter';
-        $page = PageContent::DynamicDataPage('explore.php', $title);
+        $page = PageContent::dynamicDataPage('explore.php', $title);
         $page->render($page->getContent());
     }
 }

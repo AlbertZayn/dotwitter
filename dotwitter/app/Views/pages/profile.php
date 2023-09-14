@@ -2,7 +2,7 @@
     <div class="row explore-row">
 
         <!-- LEFT SIDEBAR -->
-        <?php echo $leftSidebarContent; ?>
+        <?php echo $leftSidebar; ?>
 
         <!--TWEET FEED -->
         <div class="col col-lg-5 TweetFeedColumn">
@@ -18,7 +18,7 @@
                 </a>
                 <div class="userheader-info">
                     <span class="username-header"><?php echo $_SESSION['user_data']['full_name']; ?></span>
-                    <span class="tweets-amount"><?php echo $userAmountTweets; ?>n posts</span>
+                    <span class="tweets-amount">n posts<!-- ammount of user tweets --></span>
                 </div>
             </div>
             <!--      Profile envelope      -->
@@ -97,19 +97,17 @@
                     <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v1h14V3a1 1 0 0 0-1-1H2zm13 3H1v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V5z"/>
                     <path d="M11 7.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-2 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z"/>
                 </svg>
-                <span>Registration date:<?php echo $regMonth; ?> month <?php echo $regYear; ?>year</span>
+                <span>Registration date:<!--month of registration--> month <!--year of registration-->year</span>
             </div>
             <div class="profile-follow-bar">
-                <span class="profile-follows"><span class="numFollows"><?php echo $userFollows; ?>n</span> follows</span>
-                <span class="profile-followers"><span class="numFollowers"><?php echo $userFollowers; ?>n</span> followers</span>
+                <span class="profile-follows"><span class="numFollows"><!--user follows-->n</span> follows</span>
+                <span class="profile-followers"><span class="numFollowers"><!--user followers-->n</span> followers</span>
             </div>
             <div class="profile-fillet">
                 <ul class="nav nav-underline nav-fillet">
                     <li class="nav-item fillet-item">
                         <a class="nav-link fillet-link" href="#">Posts</a>
-                        <div class="tweet-feed">
 
-                        </div>
                     </li>
                     <li class="nav-item fillet-item">
                         <a class="nav-link fillet-link" href="#">Replies</a>
@@ -122,6 +120,7 @@
                     </li>
                 </ul>
             </div>
+            <?php echo $tweetsFeed; ?>
         </div>
 
         <!--RIGHT SIDEBAR -->

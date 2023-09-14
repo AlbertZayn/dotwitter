@@ -195,7 +195,7 @@
                                class="form-control name-input password-creator" placeholder="name@example.com" required>
                         <label for="password">Password</label>
                         <div class="invalid-feedback ValidationPassword">
-                            definitely not 8 characters
+                            8 characters without spaces
                         </div>
                     </div>
                 </div>
