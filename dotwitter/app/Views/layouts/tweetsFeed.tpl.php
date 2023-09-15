@@ -16,16 +16,12 @@ $tweets = $tweetsModel->getTweets();
                 </div>
                 <div class="tweet-modal-functionality">
                     <div>
-                        <span class="tweet-box-fullname"><?php
-                            echo $tweet['full_name']; ?></span>
-                        <span class="tweet-box-username">@<?php
-                            echo $tweet['username']; ?></span>
-                        <span class="tweet-post-time"><?php
-                            echo $tweet['postTime']; ?></span>
+                        <span class="tweet-box-fullname"><?php echo $tweet['full_name']; ?></span>
+                        <span class="tweet-box-username">@<?php echo $tweet['username']; ?></span>
+                        <span class="tweet-post-time"><?php echo $tweet['postTime']; ?></span>
                     </div>
                     <div class="tweet-data">
-                        <span><?php
-                            echo $tweet['text']; ?></span>
+                        <span><?php echo $tweet['text']; ?></span>
                     </div>
                     <div class="tweet-footer">
                         <div class="tweet-comments">
@@ -62,3 +58,5 @@ $tweets = $tweetsModel->getTweets();
         </div>
     </div>
 <?php endforeach; ?>
+
+

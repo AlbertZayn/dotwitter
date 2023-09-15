@@ -35,4 +35,6 @@ class UserModel
             'password' => $hashedPassword,
         ]);
     }
+
+
 }

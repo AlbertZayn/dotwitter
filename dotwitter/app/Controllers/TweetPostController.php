@@ -20,7 +20,7 @@ class TweetPostController
                     $username = $_SESSION['user_data']['username'];
 
                     $tweetsModel = new TweetsModel();
-                    $result = $tweetsModel->createTweet($userId, $tweetText, $fullname, $username);
+                    $result = $tweetsModel->createTweet($userId, $tweetText, $fullname);
 
                     if ($result) {
                         header("Location: /home");

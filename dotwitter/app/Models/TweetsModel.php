@@ -12,14 +12,14 @@ class TweetsModel
         $this->pdo = ConnectToDatabase::connect($config);
     }
     protected $pdo;
-    public function createTweet($userId, $text, $fullname, $username)
+    public function createTweet($userId, $text, $fullname)
     {
         try {
             $stmt = $this->pdo->prepare("INSERT INTO `tweet` (`text`, `user`, `full_name`, `username`) VALUES (:text, :user, :fullname, :username)");
             $stmt->bindParam(':text', $text, PDO::PARAM_STR);
             $stmt->bindParam(':user', $userId, PDO::PARAM_INT);
             $stmt->bindParam(':fullname', $fullname, PDO::PARAM_STR);
-            $stmt->bindParam(':username', $username, PDO::PARAM_INT);
+            $stmt->bindParam(':username', $_SESSION['user_data']['username'], PDO::PARAM_STR);
             $stmt->execute();
 
             return true;
