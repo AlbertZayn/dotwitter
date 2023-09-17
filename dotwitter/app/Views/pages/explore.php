@@ -7,7 +7,15 @@
         <!--TWEET FEED -->
         <div class="col col-lg-5 TweetFeedColumn">
             <div class="explore-feed-header">
-                <span>Explore</span>
+                <div class="input-group mb-3 explore-header-search">
+                    <span class="explore-header-search-icon" tabindex="0">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-search"
+                        viewBox="-10 -10 26 26">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                        </svg>
+                    </span>
+                    <input type="search" class="explore-input-search" placeholder="Search">
+                </div>
                 <a href="#" class="tweet-feed-icon">
                     <img class="sidebar-icon" src="/images/settings-icon.png" alt="..." width="16" height="16">
                 </a>

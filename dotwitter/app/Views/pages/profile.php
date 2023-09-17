@@ -124,10 +124,6 @@
         </div>
 
         <!--RIGHT SIDEBAR -->
-        <div class="col col-lg-4 RightSidebar">
-            <div class="right-sidebar-functionality">
-
-            </div>
-        </div>
+        <?php echo $rightSidebar ?>
     </div>
 </div>

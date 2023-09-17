@@ -28,12 +28,16 @@
                                 <h1 class="loginSide-h1">Happening now</h1>
                                 <h2 class="loginSide-h2">Join dotwitter today</h2>
                                 <div class="loginSide-functionality">
-                                    <input type="text" id="username-login" name="username" minlength="1" maxlength="50"
-                                           placeholder="Username"
-                                           onfocus="" onblur="this.placeholder" required>
-                                    <input type="password" id="password-login" name="password" minlength="8" maxlength="50"
-                                           placeholder="Password"
-                                           onfocus="" onblur="this.placeholder" required>
+                                    <div class="username-login-box">
+                                        <input type="text" id="username-login" name="username" minlength="1"
+                                               maxlength="50" placeholder="Username" onfocus=""
+                                               onblur="this.placeholder" required>
+                                    </div>
+                                    <div class="username-password-box">
+                                        <input type="password" id="password-login" name="password" minlength="8"
+                                               maxlength="50" placeholder="Password" onfocus=""
+                                               onblur="this.placeholder" required>
+                                    </div>
                                     <button type="submit" class="login-btn">Log In</button>
                                     <div class="or">
                                         <hr>
