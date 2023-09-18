@@ -29,7 +29,7 @@ class TweetsModel
         }
     }
 
-    public function getTweets()
+    public function getAllTweets()
     {
         $stmt = $this->pdo->prepare("SELECT * FROM `tweet` ORDER BY `id` DESC");
         $stmt->execute();
@@ -37,3 +37,4 @@ class TweetsModel
     }
 
 }
+

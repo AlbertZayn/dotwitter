@@ -8,7 +8,7 @@ use dotwitter\app\Core\ServiceProvider;
 
 $container = Container::getInstance();
 $provider = new ServiceProvider($container);
-$provider->register();
+$provider->pageContentRender();
 
 session_start();
 $router = new Router($container);

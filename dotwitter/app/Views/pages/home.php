@@ -43,7 +43,7 @@
                 </div>
             </div>
             <!--TWEET FEED-->
-            <?php echo $tweetsFeed; ?>
+            <?php echo $globalTweetsFeed; ?>
         </div>
         <!--RIGHT SIDEBAR -->
         <?php echo $rightSidebar ?>

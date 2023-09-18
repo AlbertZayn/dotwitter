@@ -13,10 +13,10 @@ class ServiceProvider
         $this->container = $container;
     }
 
-    public function register()
+    public function pageContentRender()
     {
         $this->container->bind('PageContent', function () {
-            return new PageContent('', '');
+            return new PageContent('', '', '');
         });
     }
 }

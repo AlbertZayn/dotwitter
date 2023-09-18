@@ -20,7 +20,7 @@
                     <img class="sidebar-icon" src="/images/settings-icon.png" alt="..." width="16" height="16">
                 </a>
             </div>
-            <?php echo $tweetsFeed; ?>
+            <?php echo $globalTweetsFeed; ?>
         </div>
 
         <!--RIGHT SIDEBAR -->

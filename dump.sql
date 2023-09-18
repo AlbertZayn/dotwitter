@@ -13,13 +13,13 @@ CREATE TABLE `tweet`
 (
     `id`        int          NOT NULL AUTO_INCREMENT,
     `text`      varchar(280) NOT NULL,
-    `likes`     bigint       NOT NULL DEFAULT '0',
-    `retweets`  bigint       NOT NULL DEFAULT '0',
+    `likes`     bigint       NOT NULL                                         DEFAULT '0',
+    `retweets`  bigint       NOT NULL                                         DEFAULT '0',
     `user`      int          NOT NULL,
-    `replies`   bigint       NOT NULL DEFAULT '0',
-    `postTime`  datetime     NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    `full_name` varchar(100)          DEFAULT NULL,
-    `username`  varchar(50)           DEFAULT NULL,
+    `replies`   bigint       NOT NULL                                         DEFAULT '0',
+    `postTime`  datetime     NOT NULL                                         DEFAULT CURRENT_TIMESTAMP,
+    `full_name` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+    `username`  varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -42,4 +42,4 @@ CREATE TABLE `user`
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 
--- 2023-09-12 18:16:21
+-- 2023-09-18 18:04:00

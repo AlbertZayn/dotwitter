@@ -120,7 +120,7 @@
                     </li>
                 </ul>
             </div>
-            <?php echo $tweetsFeed; ?>
+            <?php echo $globalTweetsFeed; ?>
         </div>
 
         <!--RIGHT SIDEBAR -->

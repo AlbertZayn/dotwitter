@@ -1,13 +1,4 @@
-<?php
-
-use dotwitter\app\Models\TweetsModel;
-
-$tweetsModel = new TweetsModel();
-$tweets = $tweetsModel->getTweets();
-
-?>
-
-<?php foreach ($tweets as $tweet): ?>
+<?php foreach ($globalTweets as $tweet): ?>
     <div class="tweet-feed">
         <div class="tweet-box">
             <div class="modal-body tweet-modal-body">
