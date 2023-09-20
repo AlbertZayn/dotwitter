@@ -3,6 +3,7 @@
 namespace dotwitter\app\Core;
 
 use dotwitter\app\Views\layers\PageContent;
+use dotwitter\app\Views\layers\TweetsFeedView;
 
 class ServiceProvider
 {
@@ -17,6 +18,13 @@ class ServiceProvider
     {
         $this->container->bind('PageContent', function () {
             return new PageContent('', '', '');
+        });
+    }
+
+    public function tweetFeedRender()
+    {
+        $this->container->bind('TweetsFeedView', function() {
+            return new TweetsFeedView('');
         });
     }
 }

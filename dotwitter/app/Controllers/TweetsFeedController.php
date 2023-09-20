@@ -7,11 +7,8 @@ use dotwitter\app\Views\layers\TweetsFeedView;
 
 class TweetsFeedController
 {
-    public function showTweetsFeed()
+    public function tweetSearch()
     {
-        $tweetsModel = new TweetsModel();
-        $tweets = $tweetsModel->getTweets();
-        $tweetsFeedView = new TweetsFeedView($tweets);
-        return $tweetsFeedView->tweetFeedShowContent();
+
     }
 }

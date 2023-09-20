@@ -5,17 +5,17 @@ namespace dotwitter\app\Views\layers;
 class TweetsFeedView
 {
     private $tweets;
-    public function __construct($tweets)
+    public function __construct()
     {
         $this->tweets = $tweets;
     }
 
-    public function tweetFeedShowContent()
+    public function dynamicTweetsFeed($pageView, $filteredTweets)
     {
         ob_start();
         require_once __DIR__ . '/../../Views/layouts/globalTweetsFeed.tpl.php';
-        $tweetsFeed = ob_get_clean();
-        return $tweetsFeed;
+        $filteredTweets = ob_get_clean();
+        return $filteredTweets;
     }
 
     public function render()

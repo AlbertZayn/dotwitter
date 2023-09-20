@@ -11,8 +11,17 @@ class ExplorePageController
     {
         $title = 'Explore / dotwitter';
         $tweetsModel = new TweetsModel();
-        $globalTweets = $tweetsModel->getAllTweets();
+
+        if (isset($_POST['search_keyword']) && !empty($_POST['search_keyword'])) {
+            $keyword = $_POST['search_keyword'];
+            $globalTweets = $tweetsModel->tweetsByKeyword($keyword);
+        }
+        else {
+            $globalTweets = $tweetsModel->getAllTweets();
+        }
+
         $page = PageContent::dynamicDataPage('explore.php', $title, $globalTweets);
         $page->render($page->getContent());
     }
+
 }

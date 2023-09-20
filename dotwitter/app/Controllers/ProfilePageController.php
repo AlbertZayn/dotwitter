@@ -27,3 +27,4 @@ class ProfilePageController
         $page->render($page->getContent());
     }
 }
+
