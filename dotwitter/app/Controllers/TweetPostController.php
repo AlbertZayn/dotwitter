@@ -25,17 +25,15 @@ class TweetPostController
                         header("Location: /home");
                     } else {
                         // Ошибка при создании твита
-                        // Отображение сообщения пользователю
-                        echo "Error creating tweet.";
+                        echo "Error creating tweet";
                     }
                 } else {
-                    // User is not logged in
-                    echo "User is not logged in.";
+                    // Пользователь не авторизован
+                    echo "User is not logged in";
                 }
             } else {
                 // Пользователь не ввел текст твита
-                // Отображение сообщения пользователю
-                echo "Invalid request.";
+                echo "Invalid request";
             }
         }
     }
