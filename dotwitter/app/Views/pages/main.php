@@ -71,11 +71,10 @@
                                         <a class="footer-spans"
                                            href="https://coda.io/d/dotwitter_dCS56yYS_aJ/General-Description_suy5I#_luqY_">About</a>
                                         <span class="footer-spans">Agreement</span>
-                                        <?php
-                                        $currentYear = date("Y"); ?>
-                                        <a class="footer-spans footer-year"
-                                           href="https://dotwrk.com/"><?php
-                                            echo '© ' . $currentYear . ' .wrk' ?></a>
+                                        <?php $currentYear = date("Y"); ?>
+                                        <a class="footer-spans footer-year"  href="https://dotwrk.com/">
+                                            <?php echo '© ' . $currentYear . ' .wrk' ?>
+                                        </a>
                                     </div>
                                 </footer>
                             </div>
@@ -120,6 +119,7 @@
                     </div>
                     <div class="form-floating mb-3 modal-username-box">
                         <input type="text" id="username" name="username" minlength="1" maxlength="50"
+                        <!-- #^[a-zA-Z0-9]{1,50}$# -->
                                class="form-control username-input" placeholder="name@example.com" required>
                         <label for="username" class="form-label">Username</label>
                         <div class="invalid-feedback ValidationUsername">

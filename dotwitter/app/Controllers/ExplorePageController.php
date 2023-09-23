@@ -9,7 +9,6 @@ class ExplorePageController
 {
     public static function getPage()
     {
-        $title = 'Explore / dotwitter';
         $tweetsModel = new TweetsModel();
 
         if (isset($_POST['search_keyword']) && !empty($_POST['search_keyword'])) {
@@ -20,8 +19,8 @@ class ExplorePageController
             $globalTweets = $tweetsModel->getAllTweets();
         }
 
+        $title = 'Explore / dotwitter';
         $page = PageContent::dynamicDataPage('explore.php', $title, $globalTweets);
         $page->render($page->getContent());
     }
-
 }

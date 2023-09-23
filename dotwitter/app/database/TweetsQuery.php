@@ -4,7 +4,7 @@ namespace dotwitter\app\database;
 
 use PDO;
 
-class TweetQuery
+class TweetsQuery
 {
     private $pdo;
 
@@ -39,7 +39,7 @@ class TweetQuery
 
     public function tweetsByKeyword($keyword)
     {
-        $stmt = $this->pdo->prepare("SELECT * FROM 'tweet' WHERE LOWER(`text`) LIKE :keyword ORDER BY `id` DESC");
+        $stmt = $this->pdo->prepare("SELECT * FROM `tweet` WHERE LOWER(`text`) LIKE :keyword ORDER BY `id` DESC");
         $keyword = '%' . strtolower($keyword) . '%';
         $stmt->bindParam(':keyword', $keyword, PDO::PARAM_STR);
         $stmt->execute();
