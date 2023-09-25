@@ -99,5 +99,29 @@
                 </ul>
             </form>
         </div>
+        <!--    Admin Panel    -->
+        <?php if ($_SESSION['user_data']['role'] === 'admin'): ?>
+        <a class="left-sidebar-anchor admin-anchor">
+            <div class="sidebar-anchor">
+                <div class="sidebar-icon">
+                    <img class="sidebar-icon img-fluid left-admin-icon" src="/images/admin-icon.png" alt="...">
+                </div>
+                <div class="sidebar-span">
+                    <span>Admin Panel</span>
+                </div>
+            </div>
+        </a>
+        <?php else: ?>
+        <a class="left-sidebar-anchor hidden-admin-anchor">
+            <div class="sidebar-anchor">
+                <div class="sidebar-icon">
+                    <img class="sidebar-icon img-fluid left-admin-icon" src="/images/admin-icon.png" alt="...">
+                </div>
+                <div class="sidebar-span">
+                    <span>Admin Panel</span>
+                </div>
+            </div>
+        </a>
+        <?php endif; ?>
     </div>
 </div>

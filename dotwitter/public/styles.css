@@ -21,8 +21,8 @@ form {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: auto;
     padding: 0;
+    height: auto;
 }
 
 .birdSide {
@@ -53,8 +53,7 @@ form {
 }
 
 .loginSide-h1 {
-    margin-bottom: 38px;
-    margin-top: 38px;
+    margin: 24px 0;
     font-size: 64px;
     font-weight: 800;
     letter-spacing: 2px;
@@ -72,6 +71,11 @@ form {
     flex-direction: column;
 }
 
+.login-form {
+    margin: 0;
+    padding: 0;
+}
+
 #username-login, #password-login {
     margin-bottom: 20px;
     border-radius: 24px;
@@ -80,6 +84,11 @@ form {
     width: 300px;
     height: 44px;
     text-indent: 12px;
+}
+
+.username-login-box .username-password-box {
+    margin: 0;
+    padding: 0;
 }
 
 .username-login-box:focus-within #username-login {
@@ -459,6 +468,10 @@ footer {
     color: #333;
 }
 
+.hidden-admin-anchor {
+    display: none;
+}
+
 .sidebar-anchor {
     display: flex;
     flex-direction: row;
@@ -807,8 +820,7 @@ footer {
 }
 
 /* Right sidebar */
-.RightSidebar,
-.AnonRightSidebar {
+.RightSidebar {
     display: flex;
     flex-direction: column;
     padding: 12px 30px;
@@ -816,6 +828,8 @@ footer {
 
 .AnonRightSidebar {
     display: none;
+    flex-direction: column;
+    padding: 12px 30px;
 }
 
 .input-search-icon {
@@ -1023,6 +1037,15 @@ footer {
     color: rgb(83, 100, 113);
 }
 
+.admin-tweet-header {
+    display: flex;
+    justify-content: space-between;
+}
+.admin-tweet-btns {
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
 .tweet-data {
     margin-top: 15px;
     width: 420px;
@@ -1031,6 +1054,12 @@ footer {
 .tweet-footer {
     display: flex;
     justify-content: space-around;
+    margin-top: 15px;
+}
+.tweet-admin-footer {
+    display: flex;
+    justify-content: space-around;
+    width: 400px;
     margin-top: 15px;
 }
 
