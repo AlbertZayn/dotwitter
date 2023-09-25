@@ -23,8 +23,8 @@ class ServiceProvider
 
     public function tweetFeedRender()
     {
-        $this->container->bind('TweetsFeedView', function() {
-            return new TweetsFeedView('');
+        $this->container->bind('TweetsFeedView', function () {
+            return new TweetsFeedView('', '', '');
         });
     }
 }

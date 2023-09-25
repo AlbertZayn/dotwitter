@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
+    <?php echo $tweetsFeedView; ?>
     <?php echo $pageContent; ?>
     <script src="/index.js"></script>
 </body>

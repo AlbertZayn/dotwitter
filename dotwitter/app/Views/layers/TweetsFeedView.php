@@ -4,22 +4,45 @@ namespace dotwitter\app\Views\layers;
 
 class TweetsFeedView
 {
-    private $tweets;
-    public function __construct()
+    private $content;
+
+    public function __construct($content, $title, $adminTweets)
     {
-        $this->tweets = $tweets;
+        $this->content = $content;
+        $this->title = $title;
+        $this->adminTweets = $adminTweets;
     }
 
-    public function dynamicTweetsFeed($pageView, $filteredTweets)
+    public static function adminDataPage($pageView, $title, $adminTweets): TweetsFeedView
     {
         ob_start();
-        require_once __DIR__ . '/../../Views/layouts/globalTweetsFeed.tpl.php';
-        $filteredTweets = ob_get_clean();
-        return $filteredTweets;
+        require_once __DIR__ . '/../../Views/layouts/leftSidebar.tpl.php';
+        $leftSidebar = ob_get_clean();
+
+        ob_start();
+        require_once __DIR__ . '/../../Views/layouts/adminTweetsFeed.tpl.php';
+        $adminTweetsFeed = ob_get_clean();
+
+        ob_start();
+        require_once __DIR__ . '/../../Views/pages/' . $pageView;
+        $pageContent = ob_get_clean();
+
+        return new self($pageContent, $title, $adminTweets);
     }
 
-    public function render()
+    public function render($tweetsFeedView)
     {
-        require_once __DIR__ . '/../../Views/layouts/globalTweetsFeed.tpl.php';
+        ob_start();
+        echo $tweetsFeedView;
+        $tweetsFeedView = ob_get_contents();
+        ob_end_clean();
+
+        require_once __DIR__ . '/../layouts/page.tpl.php';
     }
+
+    public function getContent()
+    {
+        return $this->content;
+    }
+
 }

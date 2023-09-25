@@ -4,7 +4,6 @@ namespace dotwitter\app\Models;
 
 use dotwitter\app\database\ConnectToDatabase;
 use dotwitter\app\database\TweetsQuery;
-use PDO;
 
 class TweetsModel
 {

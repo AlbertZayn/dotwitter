@@ -9,6 +9,7 @@ use dotwitter\app\Core\ServiceProvider;
 $container = Container::getInstance();
 $provider = new ServiceProvider($container);
 $provider->pageContentRender();
+$provider->tweetFeedRender();
 
 session_start();
 $router = new Router($container);

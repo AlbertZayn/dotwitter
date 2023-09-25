@@ -37,9 +37,10 @@ CREATE TABLE `user`
     `followers`        bigint                                                        NOT NULL DEFAULT '0',
     `posts`            bigint                                                        NOT NULL DEFAULT '0',
     `registrationdate` datetime                                                      NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `role`             enum('admin','user') COLLATE utf8mb3_unicode_ci NOT NULL DEFAULT 'user',
     PRIMARY KEY (`id`),
     UNIQUE KEY `username` (`username`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 
--- 2023-09-18 18:04:00
+-- 2023-09-25 13:32:35
