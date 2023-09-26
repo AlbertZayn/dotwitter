@@ -19,10 +19,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700;800;900&display=swap" rel="stylesheet">
     <!-- CSS -->
     <link rel="stylesheet" href="/styles.css">
+    <script src="/index.js" defer></script>
 </head>
 <body>
-    <?php echo $tweetsFeedView; ?>
     <?php echo $pageContent; ?>
-    <script src="/index.js"></script>
+    <?php echo $tweetsFeedView; ?>
 </body>
 </html>

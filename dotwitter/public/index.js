@@ -1,11 +1,15 @@
 // ******* LEFT-SIDEBAR *********
 document.addEventListener("DOMContentLoaded", function () {
+
     const links = [
         { href: "http://45.9.41.41/home", iconClass: ".left-home-icon", anchorClass: ".home-anchor" },
         { href: "http://45.9.41.41/profile", iconClass: ".left-profile-icon", anchorClass: ".profile-anchor" },
-        { href: "http://45.9.41.41/explore", iconClass: ".left-explore-icon", anchorClass: ".explore-anchor" },
-        { href: "http://45.9.41.41/admin", iconClass: ".left-admin-icon", anchorClass: ".admin-anchor" }
+        { href: "http://45.9.41.41/explore", iconClass: ".left-explore-icon", anchorClass: ".explore-anchor" }
     ];
+
+    if (role === 'admin') {
+        links.push({ href: "http://45.9.41.41/admin", iconClass: ".left-admin-icon", anchorClass: ".admin-anchor" });
+    }
 
     function updateStyles(clickedLink) {
         links.forEach(link => {

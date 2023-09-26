@@ -8,6 +8,7 @@
                  alt="...">
         </a>
         <!--    Home    -->
+        <?php if (isset($_SESSION['user_data']['id']) && ($_SESSION['user_data']['role'] === 'admin' || $_SESSION['user_data']['role'] === 'user')): ?>
         <a class="left-sidebar-anchor home-anchor">
             <div class="sidebar-anchor">
                 <div class="sidebar-icon">
@@ -18,6 +19,7 @@
                 </div>
             </div>
         </a>
+        <?php endif; ?>
         <!--    Explore    -->
         <a class="left-sidebar-anchor explore-anchor">
             <div class="sidebar-anchor">
@@ -29,7 +31,7 @@
                 </div>
             </div>
         </a>
-
+        <?php if (isset($_SESSION['user_data']['id']) && ($_SESSION['user_data']['role'] === 'admin' || $_SESSION['user_data']['role'] === 'user')): ?>
         <!--    Profile    -->
         <a class="left-sidebar-anchor profile-anchor">
             <div class="sidebar-anchor">
@@ -99,20 +101,10 @@
                 </ul>
             </form>
         </div>
+        <?php endif; ?>
         <!--    Admin Panel    -->
-        <?php if ($_SESSION['user_data']['role'] === 'admin'): ?>
+        <?php if ($_SESSION['user_data']['id'] && $_SESSION['user_data']['role'] === 'admin'): ?>
         <a class="left-sidebar-anchor admin-anchor">
-            <div class="sidebar-anchor">
-                <div class="sidebar-icon">
-                    <img class="sidebar-icon img-fluid left-admin-icon" src="/images/admin-icon.png" alt="...">
-                </div>
-                <div class="sidebar-span">
-                    <span>Admin Panel</span>
-                </div>
-            </div>
-        </a>
-        <?php else: ?>
-        <a class="left-sidebar-anchor hidden-admin-anchor">
             <div class="sidebar-anchor">
                 <div class="sidebar-icon">
                     <img class="sidebar-icon img-fluid left-admin-icon" src="/images/admin-icon.png" alt="...">
@@ -125,3 +117,7 @@
         <?php endif; ?>
     </div>
 </div>
+
+<script>
+    let role = <?php echo json_encode($_SESSION['user_data']['role']); ?>
+</script>

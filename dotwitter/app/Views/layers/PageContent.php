@@ -5,6 +5,8 @@ namespace dotwitter\app\Views\layers;
 class PageContent
 {
     private $content;
+    private $title;
+    private $globalTweets;
 
     public function __construct($content, $title, $globalTweets)
     {

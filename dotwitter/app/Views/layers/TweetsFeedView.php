@@ -5,6 +5,8 @@ namespace dotwitter\app\Views\layers;
 class TweetsFeedView
 {
     private $content;
+    private $title;
+    private $adminTweets;
 
     public function __construct($content, $title, $adminTweets)
     {
@@ -40,7 +42,7 @@ class TweetsFeedView
         require_once __DIR__ . '/../layouts/page.tpl.php';
     }
 
-    public function getContent()
+    public function getAdminContent()
     {
         return $this->content;
     }
