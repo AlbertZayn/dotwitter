@@ -33,5 +33,12 @@ class UserQuery
             'password' => $hashedPassword,
         ]);
     }
+
+    public function blockUser($userId)
+    {
+        $stmt = $this->pdo->prepare("UPDATE `user` SET `access` = 'blocked' WHERE `id` = :userId");
+        $stmt->bindParam(':userId', $userId, PDO::PARAM_STR);
+        $stmt->execute();
+    }
 }
 

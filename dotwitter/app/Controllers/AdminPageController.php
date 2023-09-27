@@ -14,14 +14,33 @@ class AdminPageController
         });
     }
 
+    public static function deleteTweet()
+    {
+        if (isset($_POST['tweet_id'])) {
+            $tweetId = $_POST['tweet_id'];
+            $tweetsModel = new TweetsModel();
+            $success = $tweetsModel->deleteTweet($tweetId);
+            if ($success) {
+                header("Location: /admin");
+            } else {
+                // Ошибка при удалении твита
+                echo "Error deleting tweet";
+            }
+        }
+    }
+
+    public static function blockUser()
+    {
+
+    }
+
     public static function getPage()
-     {
+    {
         $tweetsModel = new TweetsModel();
         $authorizedUserId = $_SESSION['user_data']['id'];
 
         if (isset($_POST['search_keyword']) && !empty($_POST['search_keyword'])) {
             $keyword = $_POST['search_keyword'];
-
             $adminTweets = $tweetsModel->tweetsByKeyword($keyword);
         }
         else {
@@ -31,6 +50,6 @@ class AdminPageController
         $filteredTweets = self::getAdminTweets($adminTweets, $authorizedUserId);
         $title = 'Admin Panel / dotwitter';
         $page = TweetsFeedView::adminDataPage('admin.php', $title, $filteredTweets);
-        $page->render($page->getContent());
+        $page->render($page->getAdminContent());
     }
 }

@@ -13,9 +13,18 @@
                             <span class="tweet-post-time"><?php echo $tweet['postTime']; ?></span>
                         </div>
                         <div class="admin-tweet-btns">
-                            <button type="button" class="btn btn-primary admin-btn">Delete tweet</button>
-                            <button type="button" class="btn btn-warning admin-btn">Block user</button>
-                            <button type="button" class="btn btn-danger admin-btn">Delete user</button>
+                            <form method="POST" action="/delete-tweet">
+                                <input type="hidden" name="tweet_id" value="<?php echo $tweet['id']; ?>">
+                                <button type="submit" class="btn btn-primary admin-btn del-tweet-btn">Delete tweet</button>
+                            </form>
+                            <form method="POST" action="/block-user">
+                                <input type="hidden" name="tweet_user">
+                                <button type="button" class="btn btn-warning admin-btn block-user-btn">Block user</button>
+                            </form>
+                            <form method="POST" action="/delete-user">
+                                <input type="hidden" >
+                                <button type="button" class="btn btn-danger admin-btn del-user-btn">Delete user</button>
+                            </form>
                         </div>
                     </div>
                     <div class="tweet-data">

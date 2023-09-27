@@ -45,5 +45,14 @@ class TweetsQuery
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    public function deleteTweet($tweetId)
+    {
+        $stmt = $this->pdo->prepare("DELETE FROM `tweet` WHERE `id` = :tweet_id");
+        $stmt->bindParam(':tweet_id', $tweetId, PDO::PARAM_INT);
+        $stmt->execute();
+        return true;
+    }
+
 }
 

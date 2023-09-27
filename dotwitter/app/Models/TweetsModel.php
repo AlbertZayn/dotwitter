@@ -9,12 +9,14 @@ class TweetsModel
 {
     protected $pdo;
     protected $tweetsQuery;
+
     public function __construct()
     {
         $config = require_once __DIR__ . '/../database/config.php';
         $this->pdo = ConnectToDatabase::connect($config);
         $this->tweetsQuery = new TweetsQuery($this->pdo);
     }
+
     public function createTweet($userId, $text, $fullname)
     {
         $username = $_SESSION['user_data']['username'];
@@ -30,5 +32,9 @@ class TweetsModel
     {
         return $this->tweetsQuery->tweetsByKeyword($keyword);
     }
-}
 
+    public function deleteTweet($tweetId)
+    {
+        return $this->tweetsQuery->deleteTweet($tweetId);
+    }
+}

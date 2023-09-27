@@ -25,4 +25,9 @@ class UserModel
     {
         return $this->userQuery->createUser();
     }
+
+    public function blockUser($userId)
+    {
+        return $this->userQuery->blockUser($userId);
+    }
 }
