@@ -477,6 +477,8 @@ footer {
     flex-direction: row;
 }
 
+
+
 .sidebar-icon {
     margin: 0;
     width: 1.75rem;
@@ -496,6 +498,17 @@ footer {
     border-radius: 9999px;
     background-color: rgb(15, 20, 25, 0.1);
     cursor: pointer;
+}
+
+.blocked-sidebar-anchor {
+    font-size: 18px;
+    font-weight: 700;
+    color: crimson;
+}
+.block-anchor:hover,
+.left-blocked-icon:hover,
+.blocked-sidebar-anchor:hover {
+    background-color: beige;
 }
 
 .sidebar-tweet {
@@ -1042,8 +1055,21 @@ footer {
     justify-content: space-between;
 }
 .admin-tweet-btns {
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: flex;
+    justify-content: space-around;
+}
+
+.del-tweet-btn {
+    color: #333;
+    --bs-btn-bg: rgb(26, 140, 216, 0.15);
+}
+.block-user-btn {
+    color: #333;
+    --bs-btn-bg: rgb(255, 193, 7, 0.15);
+}
+.del-user-btn {
+    color: #333;
+    --bs-btn-bg: rgb(220, 53, 69, 0.15);
 }
 
 .tweet-data {

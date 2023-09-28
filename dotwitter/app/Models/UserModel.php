@@ -26,8 +26,13 @@ class UserModel
         return $this->userQuery->createUser();
     }
 
-    public function blockUser($userId)
+    public function blockUser($tweetUserId)
     {
-        return $this->userQuery->blockUser($userId);
+        return $this->userQuery->blockUser($tweetUserId);
+    }
+
+    public function deleteUser($userId)
+    {
+        return $this->userQuery->deleteUser($userId);
     }
 }

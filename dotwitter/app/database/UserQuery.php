@@ -34,11 +34,17 @@ class UserQuery
         ]);
     }
 
-    public function blockUser($userId)
+    public function blockUser($tweetUserId)
     {
-        $stmt = $this->pdo->prepare("UPDATE `user` SET `access` = 'blocked' WHERE `id` = :userId");
-        $stmt->bindParam(':userId', $userId, PDO::PARAM_STR);
-        $stmt->execute();
+        $stmt = $this->pdo->prepare("UPDATE `user` SET `access` = 'blocked' WHERE `id` = :tweet_user");
+        $stmt->bindParam(':tweet_user', $tweetUserId, PDO::PARAM_INT);
+        return $stmt->execute();
+    }
+
+    public function deleteUser($userId)
+    {
+        $stmt = $this->pdo->prepare("DELETE FROM `user` WHERE `id` = :tweet_user");
+        $stmt->bindParam(':tweet_user', $userId, PDO::PARAM_INT);
+        return $stmt->execute();
     }
 }
-

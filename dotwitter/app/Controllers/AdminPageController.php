@@ -3,6 +3,7 @@
 namespace dotwitter\app\Controllers;
 
 use dotwitter\app\Models\TweetsModel;
+use dotwitter\app\Models\UserModel;
 use dotwitter\app\Views\layers\TweetsFeedView;
 
 class AdminPageController
@@ -31,7 +32,28 @@ class AdminPageController
 
     public static function blockUser()
     {
+        $tweetUserId = $_POST['tweet_user'];
+        $userModel = new UserModel();
+        $success = $userModel->blockUser($tweetUserId);
 
+        if ($success) {
+            header("Location: /admin");
+        } else {
+            echo "Error of blocking user";
+        }
+    }
+
+    public static function deleteUser()
+    {
+        $userId = $_POST['delete_user'];
+        $userModel = new UserModel();
+        $success = $userModel->deleteUser($userId);
+
+        if ($success) {
+            header("Location: /admin");
+        } else {
+            echo "Error of deleting user";
+        }
     }
 
     public static function getPage()

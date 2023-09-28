@@ -18,12 +18,12 @@
                                 <button type="submit" class="btn btn-primary admin-btn del-tweet-btn">Delete tweet</button>
                             </form>
                             <form method="POST" action="/block-user">
-                                <input type="hidden" name="tweet_user">
-                                <button type="button" class="btn btn-warning admin-btn block-user-btn">Block user</button>
+                                <input type="hidden" name="tweet_user" value="<?php echo $tweet['user']; ?>">
+                                <button type="submit" class="btn btn-warning admin-btn block-user-btn">Block user</button>
                             </form>
                             <form method="POST" action="/delete-user">
-                                <input type="hidden" >
-                                <button type="button" class="btn btn-danger admin-btn del-user-btn">Delete user</button>
+                                <input type="hidden" name="delete_user" value="<?php echo $tweet['user']; ?>">
+                                <button type="submit" class="btn btn-danger admin-btn del-user-btn">Delete user</button>
                             </form>
                         </div>
                     </div>
@@ -65,3 +65,5 @@
         </div>
     </div>
 <?php endforeach; ?>
+
+

@@ -22,6 +22,10 @@ class TweetsFeedView
         $leftSidebar = ob_get_clean();
 
         ob_start();
+        require_once __DIR__ . '/../../Views/layouts/tweetPostForm.svgs.php';
+        $tweetPostFormSvgs = ob_get_clean();
+
+        ob_start();
         require_once __DIR__ . '/../../Views/layouts/adminTweetsFeed.tpl.php';
         $adminTweetsFeed = ob_get_clean();
 
@@ -46,5 +50,4 @@ class TweetsFeedView
     {
         return $this->content;
     }
-
 }

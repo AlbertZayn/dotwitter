@@ -35,7 +35,8 @@ class Router
             '/admin' => ['class' => AdminPageController::class, 'action' => 'getPage'],
             '/admin-tweets-search' => ['class' => AdminPageController::class, 'action' => 'getPage'],
             '/delete-tweet' => ['class' => AdminPageController::class, 'action' => 'deleteTweet'],
-            '/block-user' => ['class' => AdminPageController::class, 'action' => 'blockUser']
+            '/block-user' => ['class' => AdminPageController::class, 'action' => 'blockUser'],
+            '/delete-user' => ['class' => AdminPageController::class, 'action' => 'deleteUser']
         ];
 
         if (isset($routes[$path])) {

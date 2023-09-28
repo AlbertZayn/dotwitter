@@ -1,6 +1,7 @@
 <?php
 
 namespace dotwitter\app\Controllers;
+
 use dotwitter\app\Models\TweetsModel;
 
 class TweetPostController
@@ -12,28 +13,33 @@ class TweetPostController
         }
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            if (isset($_POST['tweet_text']) && !empty($_POST['tweet_text'])) {
-                if (isset($_SESSION['user_data']['id'])) {
-                    $userId = $_SESSION['user_data']['id'];
-                    $tweetText = $_POST['tweet_text'];
-                    $fullname = $_SESSION['user_data']['full_name'];
+            if ($_SESSION['user_data']['access'] !== 'blocked') {
+                if (isset($_POST['tweet_text']) && !empty($_POST['tweet_text'])) {
+                    if (isset($_SESSION['user_data']['id'])) {
+                        $userId = $_SESSION['user_data']['id'];
+                        $tweetText = $_POST['tweet_text'];
+                        $fullname = $_SESSION['user_data']['full_name'];
 
-                    $tweetsModel = new TweetsModel();
-                    $result = $tweetsModel->createTweet($userId, $tweetText, $fullname);
+                        $tweetsModel = new TweetsModel();
+                        $result = $tweetsModel->createTweet($userId, $tweetText, $fullname);
 
-                    if ($result) {
-                        header("Location: /home");
+                        if ($result) {
+                            header("Location: /home");
+                        } else {
+                            // Ошибка при создании твита
+                            echo "Error creating tweet";
+                        }
                     } else {
-                        // Ошибка при создании твита
-                        echo "Error creating tweet";
+                        // Пользователь не авторизован
+                        echo "User is not logged in";
                     }
                 } else {
-                    // Пользователь не авторизован
-                    echo "User is not logged in";
+                    // Пользователь не ввел текст твита
+                    echo "Invalid request";
                 }
             } else {
-                // Пользователь не ввел текст твита
-                echo "Invalid request";
+                // Пользователь заблокирован
+                echo "You have been blocked";
             }
         }
     }

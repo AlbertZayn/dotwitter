@@ -20,7 +20,8 @@ class LoginController
                     'id' => $user['id'],
                     'full_name' => $user['full_name'],
                     'username' => $user['username'],
-                    'role' => $user['role']
+                    'role' => $user['role'],
+                    'access' => $user['access']
                 ];
 
                 header('Location: /profile');

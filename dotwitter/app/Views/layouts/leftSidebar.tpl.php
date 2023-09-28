@@ -74,7 +74,7 @@
                                           placeholder="What's happening" maxlength="280"></textarea>
                             </div>
                         </div>
-                        <?php echo $tweetPostFormSvgs ?>
+                        <?php echo $tweetPostFormSvgs; ?>
                     </form>
                 </div>
             </div>
@@ -114,6 +114,18 @@
                 </div>
             </div>
         </a>
+        <?php endif; ?>
+        <?php if ($_SESSION['user_data']['id'] && $_SESSION['user_data']['access'] === 'blocked'): ?>
+            <a class="left-sidebar-anchor block-anchor">
+                <div class="sidebar-anchor blocked-sidebar-anchor">
+                    <div class="sidebar-icon">
+                        <img class="sidebar-icon img-fluid left-blocked-icon" fill="red" src="/images/blocked-user.png" alt="...">
+                    </div>
+                    <div class="sidebar-span blocked-user-span">
+                        <span>Account blocked</span>
+                    </div>
+                </div>
+            </a>
         <?php endif; ?>
     </div>
 </div>
