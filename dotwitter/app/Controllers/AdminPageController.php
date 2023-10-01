@@ -6,7 +6,7 @@ use dotwitter\app\Models\TweetsModel;
 use dotwitter\app\Models\UserModel;
 use dotwitter\app\Views\layers\TweetsFeedView;
 
-class AdminPageController
+class AdminPageController extends SessionController
 {
     public static function getAdminTweets($adminTweets, $authorizedUserId)
     {
@@ -58,6 +58,9 @@ class AdminPageController
 
     public static function getPage()
     {
+        self::checkAuthorization();
+        self::checkAdminRole();
+
         $tweetsModel = new TweetsModel();
         $authorizedUserId = $_SESSION['user_data']['id'];
 

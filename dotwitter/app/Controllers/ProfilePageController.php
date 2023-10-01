@@ -5,7 +5,7 @@ namespace dotwitter\app\Controllers;
 use dotwitter\app\Models\TweetsModel;
 use dotwitter\app\Views\layers\PageContent;
 
-class ProfilePageController
+class ProfilePageController extends SessionController
 {
     public static function getUserTweets($globalTweets, $authorizedUserId)
     {
@@ -16,6 +16,8 @@ class ProfilePageController
 
     public static function getPage()
     {
+        self::checkAuthorization();
+
         $title = 'Profile / dotwitter';
         $tweetsModel = new TweetsModel();
         $globalTweets = $tweetsModel->getAllTweets();

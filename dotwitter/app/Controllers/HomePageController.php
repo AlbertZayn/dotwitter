@@ -5,10 +5,12 @@ namespace dotwitter\app\Controllers;
 use dotwitter\app\Models\TweetsModel;
 use dotwitter\app\Views\layers\PageContent;
 
-class HomePageController
+class HomePageController extends SessionController
 {
     public static function getPage()
     {
+        self::checkAuthorization();
+
         $title = 'Home / dotwitter';
         $tweetsModel = new TweetsModel();
         $globalTweets = $tweetsModel->getAllTweets();
