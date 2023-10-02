@@ -10,6 +10,7 @@ use dotwitter\app\Controllers\ProfilePageController;
 use dotwitter\app\Controllers\RegisterController;
 use dotwitter\app\Controllers\TweetPostController;
 use dotwitter\app\Controllers\AdminPageController;
+use dotwitter\app\Controllers\TweetLikeController;
 
 class Router
 {
@@ -36,7 +37,8 @@ class Router
             '/admin-tweets-search' => ['class' => AdminPageController::class, 'action' => 'getPage'],
             '/delete-tweet' => ['class' => AdminPageController::class, 'action' => 'deleteTweet'],
             '/block-user' => ['class' => AdminPageController::class, 'action' => 'blockUser'],
-            '/delete-user' => ['class' => AdminPageController::class, 'action' => 'deleteUser']
+            '/delete-user' => ['class' => AdminPageController::class, 'action' => 'deleteUser'],
+            '/like-tweet' => ['class' => TweetLikeController::class, 'action' => 'likeTweet']
         ];
 
         if (isset($routes[$path])) {

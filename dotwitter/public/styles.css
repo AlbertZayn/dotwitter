@@ -1125,6 +1125,17 @@ footer {
     cursor: pointer;
 }
 
+.tweet-likes-btn {
+    border: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+    outline: none;
+}
+
 .tweet-send-svg:hover {
     transition-duration: 0.2s;
     border-radius: 9999px;

@@ -22,4 +22,6 @@ Homestead.json
 /.vagrant
 .phpunit.result.cache
 .idea
+
+# Custom
 config.php

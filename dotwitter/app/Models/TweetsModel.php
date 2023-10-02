@@ -37,4 +37,9 @@ class TweetsModel
     {
         return $this->tweetsQuery->deleteTweet($tweetId);
     }
+
+    public function likeTweet($tweetId, $liked)
+    {
+        return $this->tweetsQuery->likeTweet($tweetId, $liked);
+    }
 }

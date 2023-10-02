@@ -54,5 +54,20 @@ class TweetsQuery
         return true;
     }
 
+    public function likeTweet($tweetId, $liked)
+    {
+        try {
+            $stmt = $this->pdo->prepare("UPDATE `tweet` SET `likes` = CASE WHEN :liked = 1 THEN `likes` + 1 ELSE `likes` - 1 END WHERE `id` = :tweetId");
+            $stmt->bindParam(':tweetId', $tweetId, PDO::PARAM_INT);
+            $stmt->bindParam(':liked', $liked, PDO::PARAM_INT);
+            $stmt->execute();
+
+            return true;
+        } catch (PDOException $e) {
+            // Handle database error
+            return false;
+        }
+    }
+
 }
 
