@@ -24,7 +24,7 @@ class LoginController
                     'access' => $user['access']
                 ];
 
-                header('Location: /profile');
+                header("Location: /profile ");
                 exit;
             } else {
                 $_SESSION['flash'] = 'Пароль неверен или пользователь не найден.';

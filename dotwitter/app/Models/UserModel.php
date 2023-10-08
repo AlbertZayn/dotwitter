@@ -21,9 +21,14 @@ class UserModel
         return $this->userQuery->findByUsername($username);
     }
 
-    public function createUser()
+    public function getUsersByKeyword($keyword)
     {
-        return $this->userQuery->createUser();
+        return $this->userQuery->getUsersByKeyword($keyword);
+    }
+
+    public function createUser($fullname, $email, $username, $password)
+    {
+        return $this->userQuery->createUser($fullname, $email, $username, $password);
     }
 
     public function blockUser($tweetUserId)
