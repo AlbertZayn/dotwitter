@@ -9,7 +9,7 @@ class MainPageController
     public static function getPage()
     {
         $title = 'Main / dotwitter';
-        $page = PageContent::dynamicDataPage('main.php', $title, $globalTweets);
+        $page = PageContent::dynamicDataPage('main.php', $title);
         $page->render($page->getContent());
     }
 }

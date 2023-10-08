@@ -13,7 +13,7 @@ class ExplorePageController
 
         if (isset($_POST['search_keyword']) && !empty($_POST['search_keyword'])) {
             $keyword = $_POST['search_keyword'];
-            $globalTweets = $tweetsModel->tweetsByKeyword($keyword);
+            $globalTweets = $tweetsModel->getTweetsByKeyword($keyword);
         }
         else {
             $globalTweets = $tweetsModel->getAllTweets();

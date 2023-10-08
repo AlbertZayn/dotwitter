@@ -7,37 +7,44 @@ class PageContent
     private $content;
     private $title;
     private $globalTweets;
+    private $searchedUsers;
 
-    public function __construct($content, $title, $globalTweets)
+    public function __construct($content, $title, $globalTweets, $searchedUsers)
     {
         $this->content = $content;
         $this->title = $title;
         $this->globalTweets = $globalTweets;
+        $this->searchedUsers = $searchedUsers;
     }
 
-    public static function dynamicDataPage($pageView, $title, $globalTweets): PageContent
+    public static function dynamicDataPage($pageView, $title, $globalTweets = null, $searchedUsers = null): PageContent
     {
-        ob_start();
-        require_once __DIR__ . '/../../Views/layouts/leftSidebar.tpl.php';
-        $leftSidebar = ob_get_clean();
-
         ob_start();
         require_once __DIR__ . '/../../Views/layouts/tweetPostForm.svgs.php';
         $tweetPostFormSvgs = ob_get_clean();
+
+        ob_start();
+        require_once __DIR__ . '/../../Views/layouts/leftSidebar.tpl.php';
+        $leftSidebar = ob_get_clean();
 
         ob_start();
         require_once __DIR__ . '/../../Views/layouts/globalTweetsFeed.tpl.php';
         $globalTweetsFeed = ob_get_clean();
 
         ob_start();
+        require_once __DIR__ . '/../../Views/layouts/searchedUsersList.tpl.php';
+        $searchedUsersList = ob_get_clean();
+
+        ob_start();
         require_once __DIR__ . '/../../Views/layouts/rightSidebar.tpl.php';
         $rightSidebar = ob_get_clean();
+
 
         ob_start();
         require_once __DIR__ . '/../../Views/pages/' . $pageView;
         $pageContent = ob_get_clean();
 
-        return new self($pageContent, $title, $globalTweets);
+        return new self($pageContent, $title, $globalTweets, $searchedUsers);
     }
 
     public function render($pageContent)

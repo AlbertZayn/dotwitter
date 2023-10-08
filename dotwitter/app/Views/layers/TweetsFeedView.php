@@ -18,12 +18,12 @@ class TweetsFeedView
     public static function adminDataPage($pageView, $title, $adminTweets): TweetsFeedView
     {
         ob_start();
-        require_once __DIR__ . '/../../Views/layouts/leftSidebar.tpl.php';
-        $leftSidebar = ob_get_clean();
-
-        ob_start();
         require_once __DIR__ . '/../../Views/layouts/tweetPostForm.svgs.php';
         $tweetPostFormSvgs = ob_get_clean();
+
+        ob_start();
+        require_once __DIR__ . '/../../Views/layouts/leftSidebar.tpl.php';
+        $leftSidebar = ob_get_clean();
 
         ob_start();
         require_once __DIR__ . '/../../Views/layouts/adminTweetsFeed.tpl.php';

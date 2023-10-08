@@ -66,7 +66,7 @@ class AdminPageController extends SessionController
 
         if (isset($_POST['search_keyword']) && !empty($_POST['search_keyword'])) {
             $keyword = $_POST['search_keyword'];
-            $adminTweets = $tweetsModel->tweetsByKeyword($keyword);
+            $adminTweets = $tweetsModel->getTweetsByKeyword($keyword);
         }
         else {
             $adminTweets = $tweetsModel->getAllTweets();
