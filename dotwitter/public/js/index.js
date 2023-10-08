@@ -1,3 +1,53 @@
+// ******* TWEET LIKE *********
+document.addEventListener("DOMContentLoaded", function () {
+    const likeButtons = document.querySelectorAll(".tweet-likes-btn");
+
+
+    likeButtons.forEach((button) => {
+        button.addEventListener("click", function () {
+            console.log("Like button clicked");
+            const tweetId = this.dataset.tweetId;
+            const liked = this.getAttribute("data-liked") === 'true'; // Преобразуйте в булевой тип
+
+            console.log(tweetId);
+            fetch("/like-tweet", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json" // Добавьте этот заголовок
+                },
+                body: JSON.stringify({ tweetId, liked }),
+            })
+                .then((response) => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! Status: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then((data) => {
+                    console.log("Response data:", data);
+
+                    if (data.success) {
+                        const likeCount = this.querySelector(".tweet-likes-number");
+                        if (data.likes !== null && typeof data.likes === 'number' && !isNaN(data.likes)) {
+                            likeCount.textContent = data.likes;
+                        } else {
+                            console.error("Invalid like count received from the server.");
+                        }
+                        this.setAttribute("data-liked", data.liked ? 'true' : 'false'); // Обновите data-liked
+                    } else {
+                        console.error("Failed to like the tweet: " + data.message);
+                    }
+                })
+                .catch((error) => {
+                    console.error("Error while liking the tweet:", error);
+                });
+        });
+    });
+});
+
+
+// ******* SEARCH USERS *********
+
 // ******* LEFT-SIDEBAR *********
 document.addEventListener("DOMContentLoaded", function () {
 

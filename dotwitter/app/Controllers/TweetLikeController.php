@@ -3,26 +3,31 @@
 namespace dotwitter\app\Controllers;
 
 use dotwitter\app\Models\TweetsModel;
+use Exception;
 
-class TweetLikeController extends SessionController
+class TweetLikeController
 {
     public function likeTweet()
     {
-        if (!isset($_POST['tweetId']) || !isset($_POST['liked'])) {
-            echo json_encode(['success' => false, 'message' => 'Invalid request']);
-            return;
-        }
+        try {
+            $tweetId = $_POST["tweetId"];
+            $liked = $_POST["liked_by_user"];
 
-        $tweetId = $_POST['tweetId'];
-        $liked = $_POST['liked'];
+            $tweetsModel = new TweetsModel();
 
-        $tweetsModel = new TweetsModel();
-        $success = $tweetsModel->likeTweet($tweetId, $liked);
+            $tweetLikes = $tweetsModel->getTweetLikesCount($tweetId);
 
-        if ($success) {
-            echo json_encode(['success' => true]);
-        } else {
-            echo json_encode(['success' => false, 'message' => 'Failed to update like']);
+            if (!$liked) {
+                $tweetLikes++;
+                $tweetsModel->likeTweet($tweetId);
+            } else {
+                $tweetLikes--;
+                $tweetsModel->unlikeTweet($tweetId);
+            }
+
+            echo json_encode(["success" => true, "likes" => (int)$tweetLikes]);;
+        } catch (Exception $e) {
+            echo json_encode(["success" => false, "message" => $e->getMessage()]);
         }
     }
 }

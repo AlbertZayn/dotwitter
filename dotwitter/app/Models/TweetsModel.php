@@ -28,18 +28,30 @@ class TweetsModel
         return $this->tweetsQuery->getAllTweets();
     }
 
-    public function tweetsByKeyword($keyword)
+    public function getTweetsByKeyword($keyword)
     {
-        return $this->tweetsQuery->tweetsByKeyword($keyword);
+        return $this->tweetsQuery->getTweetsByKeyword($keyword);
     }
 
-    public function deleteTweet($tweetId)
+    public function deleteTweet($tweetId): bool
     {
         return $this->tweetsQuery->deleteTweet($tweetId);
     }
 
-    public function likeTweet($tweetId, $liked)
+    public function likeTweet($tweetId): bool
     {
-        return $this->tweetsQuery->likeTweet($tweetId, $liked);
+        return $this->tweetsQuery->likeTweet($tweetId);
     }
+
+    public function getTweetLikesCount($tweetId)
+    {
+        return $this->tweetsQuery->getTweetLikesCount($tweetId);
+    }
+
+    public function unlikeTweet($tweetId)
+    {
+        return $this->tweetsQuery->unlikeTweet($tweetId);
+    }
+
+
 }
