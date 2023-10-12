@@ -21,7 +21,11 @@ class LoginController
                     'full_name' => $user['full_name'],
                     'username' => $user['username'],
                     'role' => $user['role'],
-                    'access' => $user['access']
+                    'access' => $user['access'],
+                    'registrationdate' => $user['registrationdate'],
+                    'follows' => $user['follows'],
+                    'followers' => $user['followers'],
+                    'posts' => $user['posts']
                 ];
 
                 header("Location: /profile ");
@@ -36,6 +40,7 @@ class LoginController
 
     public function logout()
     {
+
         session_destroy();
         header('location: /');
         exit;

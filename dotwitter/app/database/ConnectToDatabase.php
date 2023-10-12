@@ -3,15 +3,13 @@
 namespace dotwitter\app\database;
 
 use PDO;
-use const PDOException;
 
 class ConnectToDatabase
 {
-    public static $connection = false;
+    private static $connection = null;
 
     private function __construct()
     {
-
     }
 
     public static function connect($config)
@@ -26,11 +24,12 @@ class ConnectToDatabase
                 $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 $con->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
                 self::$connection = $con;
-                return self::$connection;
             } catch (PDOException $e) {
-                echo $e->getException();
+                echo $e->getMessage();
                 exit;
             }
         }
+
+        return self::$connection;
     }
 }

@@ -11,7 +11,7 @@ class UserModel
     protected $userQuery;
     public function __construct()
     {
-        $config = require_once __DIR__ . '/../database/config.php';
+        $config = require __DIR__ . '/../database/config.php';
         $this->pdo = ConnectToDatabase::connect($config);
         $this->userQuery = new UserQuery($this->pdo);
     }
@@ -26,6 +26,8 @@ class UserModel
         return $this->userQuery->getUsersByKeyword($keyword);
     }
 
+
+    
     public function createUser($fullname, $email, $username, $password)
     {
         return $this->userQuery->createUser($fullname, $email, $username, $password);

@@ -26,7 +26,7 @@ class HomePageController extends SessionController
 
         $tweetsModel = new TweetsModel();
         $globalTweets = $tweetsModel->getAllTweets();
-        $page = PageContent::dynamicDataPage('home.php', $title, $globalTweets, $searchedUsers);
+        $page = PageContent::dynamicDataPage('home.php', $title, $globalTweets, '', $searchedUsers);
         $page->render($page->getContent());
     }
 }

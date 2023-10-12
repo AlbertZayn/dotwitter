@@ -17,8 +17,8 @@
                     </svg>
                 </a>
                 <div class="userheader-info">
-                    <span class="username-header"><?php echo $_SESSION['user_data']['full_name']; ?></span>
-                    <span class="tweets-amount">n posts<!-- ammount of user tweets --></span>
+                    <span class="username-header"><?php echo $userData['full_name']; ?></span>
+                    <span class="tweets-amount"><?php echo $userData['posts']; ?> posts</span>
                 </div>
             </div>
             <!--      Profile envelope      -->
@@ -88,8 +88,8 @@
                 </div>
             </div>
             <div class="profile-userbar">
-                <span class="profile-userbar-fullname"><?php echo $_SESSION['user_data']['full_name']; ?></span>
-                <span class="profile-userbar-username">@<?php echo $_SESSION['user_data']['username']; ?></span>
+                <span class="profile-userbar-fullname"><?php echo $userData['full_name']; ?></span>
+                <span class="profile-userbar-username">@<?php echo $userData['username']; ?></span>
             </div>
             <div class="profile-registeration-date">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(83, 100, 113)"
@@ -97,11 +97,11 @@
                     <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v1h14V3a1 1 0 0 0-1-1H2zm13 3H1v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V5z"/>
                     <path d="M11 7.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-2 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z"/>
                 </svg>
-                <span>Registration date:<!--month of registration--> month <!--year of registration-->year</span>
+                <span>Registration date: <b><?php echo date('F Y', strtotime($userData['registrationdate'])); ?></b></span>
             </div>
             <div class="profile-follow-bar">
-                <span class="profile-follows"><span class="numFollows"><!--user follows-->n</span> follows</span>
-                <span class="profile-followers"><span class="numFollowers"><!--user followers-->n</span> followers</span>
+                <span class="profile-follows"><span class="numFollows"><?php echo $userData['follows']; ?></span> follows</span>
+                <span class="profile-followers"><span class="numFollowers"><?php echo $userData['followers']; ?></span> followers</span>
             </div>
             <div class="profile-fillet">
                 <ul class="nav nav-underline nav-fillet">

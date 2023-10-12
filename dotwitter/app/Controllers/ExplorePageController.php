@@ -20,7 +20,7 @@ class ExplorePageController
         }
 
         $title = 'Explore / dotwitter';
-        $page = PageContent::dynamicDataPage('explore.php', $title, $globalTweets);
+        $page = PageContent::dynamicDataPage('explore.php', $title, $globalTweets, '', '');
         $page->render($page->getContent());
     }
 }

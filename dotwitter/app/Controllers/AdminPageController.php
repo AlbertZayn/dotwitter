@@ -24,7 +24,6 @@ class AdminPageController extends SessionController
             if ($success) {
                 header("Location: /admin");
             } else {
-                // Ошибка при удалении твита
                 echo "Error deleting tweet";
             }
         }
