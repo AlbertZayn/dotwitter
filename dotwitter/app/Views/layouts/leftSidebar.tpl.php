@@ -129,7 +129,5 @@
         <?php endif; ?>
     </div>
 </div>
-
-<script>
-    let role = <?php echo json_encode($_SESSION['user_data']['role']); ?>
-</script>
+<script>let role = <?php echo json_encode($_SESSION['user_data']['role']); ?></script>
+<script src="/js/leftSidebarMenu.js"></script>
