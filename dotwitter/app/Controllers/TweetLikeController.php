@@ -10,22 +10,20 @@ class TweetLikeController
     public function likeTweet()
     {
         try {
+            $_POST = json_decode(file_get_contents("php://input"), true);
             $tweetId = $_POST["tweetId"];
-            $liked = $_POST["liked_by_user"];
+            $userId = $_SESSION['user_data']['id'];
 
             $tweetsModel = new TweetsModel();
 
-            $tweetLikes = $tweetsModel->getTweetLikesCount($tweetId);
-
-            if (!$liked) {
-                $tweetLikes++;
-                $tweetsModel->likeTweet($tweetId);
+            $isLiked = $tweetsModel->checkTweetLike($userId, $tweetId);
+            if ($isLiked) {
+                $tweetLikes = $tweetsModel->unlikeTweet($tweetId, $userId);
             } else {
-                $tweetLikes--;
-                $tweetsModel->unlikeTweet($tweetId);
+                $tweetLikes = $tweetsModel->likeTweet($tweetId, $userId);
             }
 
-            echo json_encode(["success" => true, "likes" => (int)$tweetLikes]);;
+            echo json_encode(["success" => true, "likes" => (int)$tweetLikes, "isLiked" => $isLiked]);
         } catch (Exception $e) {
             echo json_encode(["success" => false, "message" => $e->getMessage()]);
         }

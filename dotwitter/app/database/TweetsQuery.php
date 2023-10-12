@@ -1,6 +1,7 @@
 <?php
 
 namespace dotwitter\app\database;
+use dotwitter\app\Models\UserModel;
 
 use PDO;
 use PDOException;
@@ -17,19 +18,25 @@ class TweetsQuery
     public function createTweet($userId, $text, $fullname, $username): bool
     {
         try {
-            $stmt = $this->pdo->prepare("INSERT INTO `tweet` (`text`, `user`, `full_name`, `username`) VALUES (:text, :user, :fullname, :username)");
-            $stmt->bindParam(':text', $text, PDO::PARAM_STR);
-            $stmt->bindParam(':user', $userId, PDO::PARAM_INT);
-            $stmt->bindParam(':fullname', $fullname, PDO::PARAM_STR);
-            $stmt->bindParam(':username', $username, PDO::PARAM_STR);
-            $stmt->execute();
+            $insertStmt = $this->pdo->prepare("INSERT INTO `tweet` (`text`, `user`, `full_name`, `username`) VALUES (:text, :user, :fullname, :username)");
+            $updateStmt = $this->pdo->prepare("UPDATE `user` SET `posts` = `posts` + 1 WHERE `id` = :user");
+
+            $insertStmt->bindParam(':text', $text, PDO::PARAM_STR);
+            $insertStmt->bindParam(':user', $userId, PDO::PARAM_INT);
+            $insertStmt->bindParam(':fullname', $fullname, PDO::PARAM_STR);
+            $insertStmt->bindParam(':username', $username, PDO::PARAM_STR);
+
+            $insertStmt->execute();
+            $updateStmt->bindParam(':user', $userId, PDO::PARAM_INT);
+            $updateStmt->execute();
 
             return true;
         } catch (PDOException $e) {
-            // Обработка ошибок
+            // Handle errors
             return false;
         }
     }
+
 
     public function getAllTweets()
     {
@@ -55,6 +62,16 @@ class TweetsQuery
         return true;
     }
 
+    public function checkTweetLike($userId, $tweetId)
+    {
+        $stmt = $this->pdo->prepare("SELECT 1 FROM `tweet_likes` WHERE `user_id` = :user_id AND `tweet_id` = :tweet_id");
+        $stmt->bindParam(':user_id', $userId, PDO::PARAM_INT);
+        $stmt->bindParam(':tweet_id', $tweetId, PDO::PARAM_INT);
+        $stmt->execute();
+
+        return $stmt->fetch(PDO::FETCH_COLUMN) !== false;
+    }
+
     public function getTweetLikesCount($tweetId)
     {
         $stmt = $this->pdo->prepare("SELECT `likes` FROM `tweet` WHERE `id` = :tweet_id");
@@ -65,27 +82,51 @@ class TweetsQuery
         return $result["likes"];
     }
 
-    public function likeTweet($tweetId)
+    public function likeTweet($tweetId, $userId)
     {
+        $this->pdo->beginTransaction();
+
         try {
-            $stmt = $this->pdo->prepare("UPDATE `tweet` SET `likes` = `likes` + 1, `liked_by_user` = 1 WHERE `id` = :tweet_id");
-            $stmt->bindParam(':tweet_id', $tweetId, PDO::PARAM_INT);
-            $stmt->execute();
-            return true;
+            if (!$this->checkTweetLike($userId, $tweetId)) {
+                $stmt = $this->pdo->prepare("INSERT INTO `tweet_likes` (`user_id`, `tweet_id`) VALUES (:user_id, :tweet_id)");
+                $stmt->bindParam(':user_id', $userId, PDO::PARAM_INT);
+                $stmt->bindParam(':tweet_id', $tweetId, PDO::PARAM_INT);
+                $stmt->execute();
+
+                $stmt = $this->pdo->prepare("UPDATE `tweet` SET `likes` = `likes` + 1 WHERE `id` = :tweet_id");
+                $stmt->bindParam(':tweet_id', $tweetId, PDO::PARAM_INT);
+                $stmt->execute();
+            }
+            $this->pdo->commit();
+
+            return $this->getTweetLikesCount($tweetId);
         } catch (PDOException $e) {
-            return false;
+            $this->pdo->rollBack();
+            throw $e;
         }
     }
 
-    public function unlikeTweet($tweetId)
+    public function unlikeTweet($tweetId, $userId)
     {
+        $this->pdo->beginTransaction();
+
         try {
-            $stmt = $this->pdo->prepare("UPDATE `tweet` SET `likes` = `likes` - 1, `liked_by_user` = 0 WHERE `id` = :tweet_id");
-            $stmt->bindParam(':tweet_id', $tweetId, PDO::PARAM_INT);
-            $stmt->execute();
-            return true;
+            if ($this->checkTweetLike($userId, $tweetId)) {
+                $stmt = $this->pdo->prepare("DELETE FROM `tweet_likes` WHERE `user_id` = :user_id AND `tweet_id` = :tweet_id");
+                $stmt->bindParam(':user_id', $userId, PDO::PARAM_INT);
+                $stmt->bindParam(':tweet_id', $tweetId, PDO::PARAM_INT);
+                $stmt->execute();
+
+                $stmt = $this->pdo->prepare("UPDATE `tweet` SET `likes` = `likes` - 1 WHERE `id` = :tweet_id");
+                $stmt->bindParam(':tweet_id', $tweetId, PDO::PARAM_INT);
+                $stmt->execute();
+            }
+            $this->pdo->commit();
+
+            return $this->getTweetLikesCount($tweetId);
         } catch (PDOException $e) {
-            return false;
+            $this->pdo->rollBack();
+            throw $e;
         }
     }
 }

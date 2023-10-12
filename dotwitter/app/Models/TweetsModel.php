@@ -23,10 +23,17 @@ class TweetsModel
         return $this->tweetsQuery->createTweet($userId, $text, $fullname, $username);
     }
 
-    public function getAllTweets()
-    {
-        return $this->tweetsQuery->getAllTweets();
+    public function getAllTweets() {
+        $tweets = $this->tweetsQuery->getAllTweets();
+        $userId = $_SESSION['user_data']['id'];
+
+        foreach ($tweets as &$tweet) {
+            $tweet['isLiked'] = $this->getLikedStatusForUser($tweet['id'], $userId);
+        }
+
+        return $tweets;
     }
+
 
     public function getTweetsByKeyword($keyword)
     {
@@ -38,20 +45,27 @@ class TweetsModel
         return $this->tweetsQuery->deleteTweet($tweetId);
     }
 
-    public function likeTweet($tweetId): bool
-    {
-        return $this->tweetsQuery->likeTweet($tweetId);
-    }
-
     public function getTweetLikesCount($tweetId)
     {
         return $this->tweetsQuery->getTweetLikesCount($tweetId);
     }
 
-    public function unlikeTweet($tweetId)
+    public function checkTweetLike($userId, $tweetId)
     {
-        return $this->tweetsQuery->unlikeTweet($tweetId);
+        return $this->tweetsQuery->checkTweetLike($userId, $tweetId);
     }
 
+    public function getLikedStatusForUser($tweetId, $userId) {
+        return $this->tweetsQuery->checkTweetLike($userId, $tweetId);
+    }
 
+    public function likeTweet($tweetId, $userId): bool
+    {
+        return $this->tweetsQuery->likeTweet($tweetId, $userId);
+    }
+
+    public function unlikeTweet($tweetId, $userId)
+    {
+        return $this->tweetsQuery->unlikeTweet($tweetId, $userId);
+    }
 }

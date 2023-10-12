@@ -30,10 +30,12 @@
                             <span class="tweet-retweets-number"><?php echo $tweet['retweets']; ?></span>
                         </div>
                         <div class="tweet-likes">
-                            <button class="tweet-likes-btn" name="tweetId_like" data-tweet-id="<?php echo $tweet['id']; ?>" data-liked="<?php echo $tweet['liked_by_user'] ? 'true' : 'false'; ?>"">
+                            <button class="tweet-likes-btn <?php echo $tweet['isLiked'] ? 'liked' : ''; ?>" name="tweetId_like"
+                                    data-tweet-id="<?php echo $tweet['id']; ?>"
+                                    data-tweet-userId="<?php echo $tweet['user']; ?>">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor"
-                                 class="bi bi-heart tweet-likes-svg" viewBox="-10 -6 36 30">
-                                <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
+                                     class="bi bi-heart tweet-likes-svg" viewBox="-10 -6 36 30">
+                                    <path fill-rule="evenodd" d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
                                 </svg>
                                 <span class="tweet-likes-number"><?php echo $tweet['likes']; ?></span>
                             </button>
@@ -51,3 +53,4 @@
         </div>
     </div>
 <?php endforeach; ?>
+<script src="/js/tweetLikes.js"></script>
