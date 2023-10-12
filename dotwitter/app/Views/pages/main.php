@@ -223,3 +223,4 @@
         </div>
     </div>
 </form>
+<script src="/js/createAccValidation.js"></script>
