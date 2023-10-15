@@ -7,15 +7,17 @@
             </svg>
         </span>
             <div class="dropdown">
-
-                <input type="search" class="input-search dropdown-toggle input-users-search" name="user_keyword" placeholder="Search"
+                <input type="search" class="input-search dropdown-toggle input-users-search" name="user_keyword"
+                       placeholder="Search users"
                        data-bs-container="body" data-bs-toggle="dropdown" data-bs-placement="bottom"
                        aria-expanded="false">
-                <?php $searchedUsersList; ?>
+                <ul class="dropdown-menu search-results">
+                        <?php echo $searchedUsersList; ?>
+                </ul>
             </div>
     </div>
     <div class="right-sidebar-functionality">
 
     </div>
 </div>
-
+<script src="/js/usersSearch.js"></script>

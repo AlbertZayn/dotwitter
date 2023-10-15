@@ -9,17 +9,19 @@ class PageContent
     private $globalTweets;
     private $userData;
     private $searchedUsers;
+    private $usersPages;
 
-    public function __construct($content, $title, $globalTweets, $userData, $searchedUsers)
+    public function __construct($content, $title, $globalTweets, $userData, $searchedUsers, $usersPages)
     {
         $this->content = $content;
         $this->title = $title;
         $this->globalTweets = $globalTweets;
         $this->userData = $userData;
         $this->searchedUsers = $searchedUsers;
+        $this->usersPages = $usersPages;
     }
 
-    public static function dynamicDataPage($pageView, $title, $globalTweets = null, $userData = null, $searchedUsers = null): PageContent
+    public static function dynamicDataPage($pageView, $title, $globalTweets = null, $userData = null, $searchedUsers = null, $usersPages = null): PageContent
     {
         ob_start();
         require_once __DIR__ . '/../../Views/layouts/tweetPostForm.svgs.php';
@@ -45,7 +47,7 @@ class PageContent
         require_once __DIR__ . '/../../Views/pages/' . $pageView;
         $pageContent = ob_get_clean();
 
-        return new self($pageContent, $title, $globalTweets, $userData, $searchedUsers);
+        return new self($pageContent, $title, $globalTweets, $userData, $searchedUsers, $usersPages);
     }
 
     public function render($pageContent)
@@ -62,5 +64,4 @@ class PageContent
     {
         return $this->content;
     }
-
 }

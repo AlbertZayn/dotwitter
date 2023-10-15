@@ -563,6 +563,14 @@ footer {
     font-weight: 400;
 }
 
+.profile-link-ref-fullname{
+    text-decoration: none;
+    color: #333;
+}
+.profile-link-ref {
+    text-decoration: none;
+}
+
 .left-sidebar-fullname {
     font-weight: 700;
 }
@@ -715,6 +723,11 @@ footer {
     color: rgb(83, 100, 113);
     font-size: 15px;
 }
+
+.search-results {
+    width: 275px;
+}
+
 .explore-header-search-icon {
     display: flex;
     justify-content: center;

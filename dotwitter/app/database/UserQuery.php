@@ -20,14 +20,22 @@ class UserQuery
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
+    public function getAllUsers()
+    {
+        $stmt = $this->pdo->prepare("SELECT * FROM `user` ORDER BY `id` DESC");
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     public function getUsersByKeyword($keyword)
     {
-        $stmt = $this->pdo->prepare("SELECT * FROM `user` WHERE LOWER(`text`) LIKE :keyword ORDER BY `id` DESC");
+        $stmt = $this->pdo->prepare("SELECT * FROM `user` WHERE LOWER(`full_name`) LIKE :keyword OR LOWER(`username`) LIKE :keyword ORDER BY `id` DESC");
         $keyword = '%' . strtolower($keyword) . '%';
         $stmt->bindParam(':keyword', $keyword, PDO::PARAM_STR);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
 
     public function createUser($fullname, $email, $username, $password)
     {

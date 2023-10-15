@@ -21,13 +21,16 @@ class UserModel
         return $this->userQuery->findByUsername($username);
     }
 
+    public function getAllUsers()
+    {
+        return $this->userQuery->getAllUsers();
+    }
+
     public function getUsersByKeyword($keyword)
     {
         return $this->userQuery->getUsersByKeyword($keyword);
     }
 
-
-    
     public function createUser($fullname, $email, $username, $password)
     {
         return $this->userQuery->createUser($fullname, $email, $username, $password);
