@@ -1,5 +1,40 @@
-// ******* MAIN PAGE *********
+// ******* Login Account *********
+document.addEventListener("DOMContentLoaded", function () {
+    const loginInputBtn = document.querySelector(".login-form");
+    loginInputBtn.addEventListener("submit", function (event) {
+        event.preventDefault();
 
+        let LoginUsernameInput = document.getElementById("username-login");
+        let LoginPasswordInput = document.getElementById("password-login");
+        let LoginFeedback = document.getElementById("login-feedback");
+
+        let username = LoginUsernameInput.value;
+        let password = LoginPasswordInput.value;
+
+        fetch("/login", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({username, password}),
+        })
+            .then((response) => {
+                if (response.status === 401 || response.status === 403) {
+                    LoginUsernameInput.classList.add("is-invalid");
+                    LoginPasswordInput.classList.add("is-invalid");
+                    LoginFeedback.style.visibility = "visible";
+                } else if (response.status === 200) {
+                    LoginUsernameInput.classList.remove("is-invalid");
+                    LoginPasswordInput.classList.remove("is-invalid");
+                    LoginFeedback.style.visibility = "hidden";
+                    window.location.href = "/profile";
+                }
+            })
+            .catch((error) => {
+                console.error("Error:", error);
+            });
+    });
+})
+
+// ******* Create Account *********
 function updateValidation(inputElement, isValid, feedbackElement) {
     inputElement.classList.toggle('is-valid', isValid);
     inputElement.classList.toggle('is-invalid', !isValid);

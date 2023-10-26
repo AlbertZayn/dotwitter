@@ -25,16 +25,31 @@
                                 <h1 class="loginSide-h1">Happening now</h1>
                                 <h2 class="loginSide-h2">Join dotwitter today</h2>
                                 <div class="loginSide-functionality">
-                                    <form class="login-form" method="post" action="/login">
+                                    <form class="login-form needs-validation" method="POST" action="/login" novalidate>
                                         <div class="username-login-box">
-                                            <input type="text" id="username-login" name="username" minlength="1"
-                                                 maxlength="50" placeholder="Username" onfocus=""
-                                                 onblur="this.placeholder" required>
+                                            <input type="text"
+                                                   id="username-login"
+                                                   class="form-control"
+                                                   name="username"
+                                                   minlength="1"
+                                                   maxlength="50"
+                                                   placeholder="Username"
+                                                   onfocus="" onblur="this.placeholder"
+                                                   required>
                                         </div>
                                         <div class="username-password-box">
-                                            <input type="password" id="password-login" name="password" minlength="8"
-                                                maxlength="50" placeholder="Password" onfocus=""
-                                                onblur="this.placeholder" required>
+                                            <input type="password"
+                                                   id="password-login"
+                                                   class="form-control"
+                                                   name="password"
+                                                   minlength="8"
+                                                   maxlength="50"
+                                                   placeholder="Password"
+                                                   onfocus="" onblur="this.placeholder"
+                                                   required>
+                                            <div id="login-feedback" class="invalid-feedback">
+                                                Incorrect username and/or password
+                                            </div>
                                         </div>
                                         <button type="submit" class="login-btn">Log In</button>
                                     </form>
@@ -67,7 +82,7 @@
                                 </div>
                                 <footer>
                                     <div>
-                                        <a class="footer-spans" href="https://coda.io/d/dotwitter_dCS56yYS_aJ/General-Description_suy5I#_luqY_">About</a>
+                                        <a class="footer-spans" href="https://coda.io/d/dotwitter_dRFeCeaR9Yd/Development-plan_sumWF#_lupJ5">About</a>
                                         <span class="footer-spans">Agreement</span>
                                         <?php $currentYear = date("Y"); ?>
                                         <a class="footer-spans footer-year" href="https://dotwrk.com/"><?php echo '© ' . $currentYear . ' .wrk' ?></a>
@@ -97,24 +112,40 @@
                 <div class="modal-body modal-steps-body">
                     <h1 class="modal-h1">Create your account</h1>
                     <div class="form-floating mb-3 modal-name-box">
-                        <input type="text" id="fullname" name="fullname" minlength="1" maxlength="50"
-                               class="form-control fullname-input" placeholder="name@example.com" required>
+                        <input type="text"
+                               id="fullname"
+                               name="fullname"
+                               minlength="1"
+                               maxlength="50"
+                               class="form-control fullname-input"
+                               placeholder="name@example.com"
+                               required>
                         <label for="fullname" class="form-label">Fullname</label>
                         <div class="invalid-feedback ValidationFullname">
                             What is your name?
                         </div>
                     </div>
                     <div class="form-floating mb-3 modal-email-box">
-                        <input type="email" id="email" name="email" class="form-control email-input"
-                               placeholder="name@example.com" required>
+                        <input type="email"
+                               id="email"
+                               name="email"
+                               class="form-control email-input"
+                               placeholder="name@example.com"
+                               required>
                         <label for="email" class="form-label">Email</label>
                         <div class="invalid-feedback ValidationEmail">
                             Please enter a valid email address
                         </div>
                     </div>
                     <div class="form-floating mb-3 modal-username-box">
-                        <input type="text" id="username" name="username" minlength="1" maxlength="50"
-                               class="form-control username-input" placeholder="name@example.com" required>
+                        <input type="text"
+                               id="username"
+                               name="username"
+                               minlength="1"
+                               maxlength="50"
+                               class="form-control username-input"
+                               placeholder="name@example.com"
+                               required>
                         <label for="username" class="form-label">Username</label>
                         <div class="invalid-feedback ValidationUsername">
                             Please enter your @username
@@ -189,8 +220,14 @@
                     <h1 class="modal-h1">You'll need a password</h1>
                     <span class="modal-warning">Make sure it's 8 characters or more</span>
                     <div class="form-floating mb-3 modal-password-box">
-                        <input type="password" id="password" name="password" minlength="8" maxlength="50"
-                               class="form-control name-input password-creator" placeholder="name@example.com" required>
+                        <input type="password"
+                               id="password"
+                               name="password"
+                               minlength="8"
+                               maxlength="50"
+                               class="form-control name-input password-creator"
+                               placeholder="name@example.com"
+                               required>
                         <label for="password">Password</label>
                         <div class="invalid-feedback ValidationPassword">
                             8 characters without spaces
@@ -223,4 +260,4 @@
         </div>
     </div>
 </form>
-<script src="/js/createAccValidation.js"></script>
+<script src="/js/login&CreateAccValidation.js"></script>

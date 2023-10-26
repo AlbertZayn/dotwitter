@@ -2,17 +2,18 @@
 
 namespace dotwitter\app\Controllers;
 
-use dotwitter\app\Models\UserModel;
+use dotwitter\app\Models\User;
 
 class LoginController
 {
     public function login()
     {
+        $_POST = json_decode(file_get_contents("php://input"), true);
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $username = $_POST['username'];
             $password = $_POST['password'];
 
-            $userModel = new UserModel();
+            $userModel = new User();
             $user = $userModel->findByUsername($username);
 
             if ($user && password_verify($password, $user['password'])) {
@@ -28,19 +29,16 @@ class LoginController
                     'posts' => $user['posts']
                 ];
 
-                header("Location: /profile ");
+                http_response_code(200);
                 exit;
             } else {
-                $_SESSION['flash'] = 'Пароль неверен или пользователь не найден.';
+                http_response_code(401);
             }
         }
-        header('Location: /');
-        exit;
     }
 
     public function logout()
     {
-
         session_destroy();
         header('location: /');
         exit;
