@@ -2,8 +2,8 @@
 
 namespace dotwitter\app\Controllers;
 
-use dotwitter\app\Models\TweetsModel;
-use dotwitter\app\Models\UserModel;
+use dotwitter\app\Models\Tweet;
+use dotwitter\app\Models\User;
 use dotwitter\app\Views\layers\PageContent;
 use Exception;
 
@@ -18,7 +18,7 @@ class HomePageController extends SessionController
         $searchedUsers = [];
         try {
             $keyword = $_POST['keyword'] ?? '';
-            $userModel = new UserModel();
+            $userModel = new User();
 
             if (!$keyword) {
                 if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest') {
@@ -36,7 +36,7 @@ class HomePageController extends SessionController
             }
         }
 
-        $tweetsModel = new TweetsModel();
+        $tweetsModel = new Tweet();
         $globalTweets = $tweetsModel->getAllTweets();
         $title = 'Home / dotwitter';
         $page = PageContent::dynamicDataPage('home.php', $title, $globalTweets, '', $searchedUsers);

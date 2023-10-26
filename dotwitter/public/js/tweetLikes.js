@@ -9,9 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             fetch("/like-tweet", {
                 method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
+                headers: {"Content-Type": "application/json"},
                 body: JSON.stringify({ tweetId, tweetUserId }),
             })
                 .then((response) => {
@@ -21,7 +19,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     return response.json();
                 })
                 .then((data) => {
-                    console.log("Response data:", data);
                     if (data.success) {
                         if (data.isLiked) {
                             button.classList.add('liked');

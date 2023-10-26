@@ -2,13 +2,13 @@
 
 namespace dotwitter\app\Controllers;
 
-use dotwitter\app\Models\UserModel;
+use dotwitter\app\Models\User;
 
 class RegisterController
 {
     public function register()
     {
-        $userModel = new UserModel();
+        $userModel = new User();
 
         $existingUser = $userModel->findByUsername($_POST['username']);
         $username = trim($_POST['username']);

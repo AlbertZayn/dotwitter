@@ -260,4 +260,4 @@
         </div>
     </div>
 </form>
-<script src="/js/login&CreateAccValidation.js"></script>
+<script src="/js/loginCreateAccValidation.js"></script>

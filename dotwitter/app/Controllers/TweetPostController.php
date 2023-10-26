@@ -2,7 +2,7 @@
 
 namespace dotwitter\app\Controllers;
 
-use dotwitter\app\Models\TweetsModel;
+use dotwitter\app\Models\Tweet;
 
 class TweetPostController
 {
@@ -20,7 +20,7 @@ class TweetPostController
                         $tweetText = $_POST['tweet_text'];
                         $fullname = $_SESSION['user_data']['full_name'];
 
-                        $tweetsModel = new TweetsModel();
+                        $tweetsModel = new Tweet();
                         $result = $tweetsModel->createTweet($userId, $tweetText, $fullname);
 
                         if ($result) {

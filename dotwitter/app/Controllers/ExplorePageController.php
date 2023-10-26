@@ -2,16 +2,16 @@
 
 namespace dotwitter\app\Controllers;
 
-use dotwitter\app\Models\TweetsModel;
+use dotwitter\app\Models\Tweet;
 use dotwitter\app\Views\layers\PageContent;
 
 class ExplorePageController
 {
     public static function getPage()
     {
-        $tweetsModel = new TweetsModel();
+        $tweetsModel = new Tweet();
 
-        if (isset($_POST['search_keyword']) && !empty($_POST['search_keyword'])) {
+        if (!empty($_POST['search_keyword'])) {
             $keyword = $_POST['search_keyword'];
             $globalTweets = $tweetsModel->getTweetsByKeyword($keyword);
         }

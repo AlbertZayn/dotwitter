@@ -2,8 +2,8 @@
 
 namespace dotwitter\app\Controllers;
 
-use dotwitter\app\Models\TweetsModel;
-use dotwitter\app\Models\UserModel;
+use dotwitter\app\Models\Tweet;
+use dotwitter\app\Models\User;
 use dotwitter\app\Views\layers\PageContent;
 use Exception;
 
@@ -32,7 +32,7 @@ class ProfilePageController extends SessionController
 
         try {
             $keyword = $POST['keyword'] ?? '';
-            $userModel = new UserModel();
+            $userModel = new User();
 
             if (!$keyword) {
                 if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest') {
@@ -52,23 +52,22 @@ class ProfilePageController extends SessionController
         $username = self::extractUsernameFromURL($url);
 
         if ($url === '/profile/([a-zA-Z0-9_]+)') {
-
-            $userModel = new UserModel();
+            $userModel = new User();
             $usersPages = $userModel->findByUsername($username);
 
             $title = 'Profile / ' . $usersPages['username'];
-            $tweetsModel = new TweetsModel();
+            $tweetsModel = new Tweet();
             $globalTweets = $tweetsModel->getAllTweets();
             $authorizedUserId = $usersPages['id'];
             $userTweets = self::getUserTweets($globalTweets, $authorizedUserId);
-            $userModel = new UserModel();
+            $userModel = new User();
             $userData = $userModel->findByUsername($username);
         } else {
             $authorizedUserId = $_SESSION['user_data']['id'];
-            $userModel = new UserModel();
+            $userModel = new User();
             $userData = $userModel->findByUsername($_SESSION['user_data']['username']);
             $title = 'Profile / dotwitter';
-            $tweetsModel = new TweetsModel();
+            $tweetsModel = new Tweet();
             $globalTweets = $tweetsModel->getAllTweets();
             $userTweets = self::getUserTweets($globalTweets, $authorizedUserId);
         }

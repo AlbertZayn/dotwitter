@@ -2,8 +2,8 @@
 
 namespace dotwitter\app\Controllers;
 
-use dotwitter\app\Models\TweetsModel;
-use dotwitter\app\Models\UserModel;
+use dotwitter\app\Models\Tweet;
+use dotwitter\app\Models\User;
 use dotwitter\app\Views\layers\TweetsFeedView;
 
 class AdminPageController extends SessionController
@@ -19,7 +19,7 @@ class AdminPageController extends SessionController
     {
         if (isset($_POST['tweet_id'])) {
             $tweetId = $_POST['tweet_id'];
-            $tweetsModel = new TweetsModel();
+            $tweetsModel = new Tweet();
             $success = $tweetsModel->deleteTweet($tweetId);
             if ($success) {
                 header("Location: /admin");
@@ -32,7 +32,7 @@ class AdminPageController extends SessionController
     public static function blockUser()
     {
         $tweetUserId = $_POST['tweet_user'];
-        $userModel = new UserModel();
+        $userModel = new User();
         $success = $userModel->blockUser($tweetUserId);
 
         if ($success) {
@@ -45,7 +45,7 @@ class AdminPageController extends SessionController
     public static function deleteUser()
     {
         $userId = $_POST['delete_user'];
-        $userModel = new UserModel();
+        $userModel = new User();
         $success = $userModel->deleteUser($userId);
 
         if ($success) {
@@ -60,7 +60,7 @@ class AdminPageController extends SessionController
         self::checkAuthorization();
         self::checkAdminRole();
 
-        $tweetsModel = new TweetsModel();
+        $tweetsModel = new Tweet();
         $authorizedUserId = $_SESSION['user_data']['id'];
 
         if (isset($_POST['search_keyword']) && !empty($_POST['search_keyword'])) {

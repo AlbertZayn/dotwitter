@@ -28,7 +28,7 @@ class Router
             '/home' => ['class' => HomePageController::class, 'action' => 'getPage'],
             '/explore' => ['class' => ExplorePageController::class, 'action' => 'getPage'],
             '/profile' => ['class' => ProfilePageController::class, 'action' => 'getPage'],
-            '/profile/{username}' => ['class' => ProfilePageController::class, 'action' => 'getPage'],
+            '/profile/([a-zA-Z0-9_]+)' => ['class' => ProfilePageController::class, 'action' => 'getPage'],
             '/register' => ['class' => RegisterController::class, 'action' => 'register'],
             '/login' => ['class' => LoginController::class, 'action' => 'login'],
             '/logout' => ['class' => LoginController::class, 'action' => 'logout'],

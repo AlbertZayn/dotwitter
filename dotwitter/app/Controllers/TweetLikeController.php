@@ -2,7 +2,7 @@
 
 namespace dotwitter\app\Controllers;
 
-use dotwitter\app\Models\TweetsModel;
+use dotwitter\app\Models\Tweet;
 use Exception;
 
 class TweetLikeController
@@ -14,7 +14,7 @@ class TweetLikeController
             $tweetId = $_POST["tweetId"];
             $userId = $_SESSION['user_data']['id'];
 
-            $tweetsModel = new TweetsModel();
+            $tweetsModel = new Tweet();
 
             $isLiked = $tweetsModel->checkTweetLike($userId, $tweetId);
             if ($isLiked) {
